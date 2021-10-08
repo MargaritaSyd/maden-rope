@@ -1,31 +1,67 @@
-
+main{
+    padding-right: 15%;
+    padding-left: 15%;
+}
 .carousel slide{
     display: flex;
 }
 .carousel{
     width: 100%;
     height: auto;
-    padding: 5%;
+    padding: 3%;
 }
-.conteiner{
+#conteiner{
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: space-around;
+   
+    width: 100%;
+    height: auto;
+    
+}
+#title{
+    display: flex;
     justify-content: center;
-    width: 75%;
-    border: red;
 }
 .product{
     width: 30%;
-    padding: 10;
-    
 }
 
 .textcard{
     color: black;
 }
-
+.cont-logo{
+    display: flex;
+    justify-content: center;
+    padding-top: 7%;
+}
 .the-header{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    
+   
+}
+
+
+
+#user-card{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+#navbar{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-bottom: 5%;
+}
+#foot{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: vh;
+    padding-right: 10%;
+    padding-top: 10%;
 }
