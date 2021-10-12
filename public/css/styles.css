@@ -48,9 +48,8 @@ main{
 
 #user-card{
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
 }
+
 #navbar{
     display: flex;
     flex-wrap: nowrap;
@@ -65,3 +64,4 @@ main{
     padding-right: 10%;
     padding-top: 10%;
 }
+
