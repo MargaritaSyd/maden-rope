@@ -60,50 +60,53 @@
    
     </header>
     <main>
-
-        
-
         <div id="conteiner">
-            <div class="card bg-dark text-white product">
-                <img src="./img/prod1.jpg" class="card-img">
-                <div class="card-img-overlay">
-                    <h5 class="card-title textcard">Card title</h5>
-                    <p class="card-text textcard">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                   
+            <div class="category-product">
+            <h2 class="category"> Bozales</h2>
+            <% for(let i=0; i<productosC1.length; i++){%>
+                <div class="card bg-dark text-white product productConteiner">
+                    <% if(productosC1[i].image_product){%>
+                        <img src="/img/productImages/<%=productosC1.image_product%>" > 
+                    <%}else{%>
+                        <img src="/img/logo.jpg" >
+                    <%}%>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title textcard"><%= productosC1[i].name %></h5> 
+                    </div>
                 </div>
+            <%}%>
             </div>
-            <div class="card bg-dark text-white product">
-                <img src="./img/prod1.jpg" class="card-img">
-                <div class="card-img-overlay">
-                    <h5 class="card-title textcard">Card title</h5>
-                    <p class="card-text textcard">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                   
+            <div class="category-product">
+            <h2 class="category">Riendas</h2>
+            <% for(let i=0; i<productosC2.length; i++){%>
+                <div class="card bg-dark text-white product productConteiner">
+                    <% if(productosC2[i].image_product){%>
+                        <img src="/img/productImages/<%=productosC2[i].image_product%>" > 
+                    <%}else{%>
+                        <img src="/img/logo.jpg" >
+                    <%}%>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title textcard"><%= productosC2[i].name %></h5>
+                    </div>
                 </div>
+            <%}%>
             </div>
-            <div class="card bg-dark text-white product">
-                <img src="./img/prod2.jpg" class="card-img">
-                <div class="card-img-overlay">
-                    <h5 class="card-title textcard">Card title</h5>
-                    <p class="card-text textcard">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    
+            <div class="category-product">
+            <h2 class="category">Accesorios</h2>
+            <% for(let i=0; i<productosC3.length; i++){%>
+                <div class="card bg-dark text-white product productConteiner">
+                    <% if(productosC3[i].image_product){%>
+                        <img src="/img/productImages/<%=productosC3[i].image_product%>" > 
+                    <%}else{%>
+                        <img src="/img/logo.jpg" >
+                    <%}%>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title textcard"><%= productosC3[i].name %></h5>
+                    </div>
                 </div>
+            <%}%>
             </div>
-            <div class="card bg-dark text-white product">
-                <img src="./img/prod1.jpg" class="card-img">
-                <div class="card-img-overlay">
-                    <h5 class="card-title textcard">Card title</h5>
-                    <p class="card-text textcard">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                 
-                </div>
-            </div>
-            <div class="card bg-dark text-white product">
-                <img src="./img/prod2.jpg" class="card-img">
-                <div class="card-img-overlay">
-                    <h5 class="card-title textcard">Card title</h5>
-                    <p class="card-text textcard">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    
-                </div>
-            </div>
+        
         </div>
       
         <footer id="foot">

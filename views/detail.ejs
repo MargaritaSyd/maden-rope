@@ -2,15 +2,52 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/77ea5851fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Made in Rope</title>
 </head>
 <body>
     <header>
-
+        <span class="cont-logo">
+            <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
+        </span>
+        <div class="the-header">
+            <form id="search">
+                <input type="text"> <i class="fas fa-search"></i>
+            </form>
+            <div id="user-cart">
+                <i class="far fa-user fa-2x "></i>
+                <i class="fas fa-shopping-cart fa-2x "></i>
+            </div>
+        </div>
+        <nav id="navbar">
+            <a href="#"><button type="button" class="btn btn-secondary">CONOCENOS!</button></a>
+            <a href="#"><button type="button" class="btn btn-secondary">Tabla de talles</button></a>
+            <a href="#"><button type="button" class="btn btn-secondary">Cómo comprar</button></a>
+            <a href="#"><button type="button" class="btn btn-secondary">Preguntas frecuentes</button></a>
+        </nav>
+    
     </header>
+    
     <main>
-
+        <h1 > <%=product.name%> </h1>
+        <div id="detail-conteiner">
+            <div id="img-conteiner">
+                <img id="detail-img" src="/img/productImages/<%=product.image_product%>" class="img-fluid" alt="...">
+                <div class="thumb-img-content">
+                    <img class="thumb-img"  src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
+                    <img class="thumb-img" src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
+                    <img class="thumb-img" src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
+                </div>
+            </div>
+            <div class='detail-product'>
+                <%=product.description%>
+            </div>
+            <p>Agregar al carrito<i class="fas fa-shopping-cart fa-2x "></i> </p>
+        </div>
     </main>
     <footer>
         

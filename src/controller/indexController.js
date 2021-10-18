@@ -1,13 +1,21 @@
 
+const { promiseImpl } = require('ejs');
 let fs = require ('fs');
 let path = require ('path');
 let db = require("../database/models");
 let Op = db.Sequelize.Op;
 
 let indexController = {
-    index: function(req,res){
-        res.render("index")
-    },
+    
+     index: function(req,res){
+         db.product.findAll()
+         .then(function(productos){
+            let productosC1 = productos.filter(productos=>productos.id_category==1);
+            let productosC2 = productos.filter(productos=>productos.id_category==2);
+            let productosC3 = productos.filter(productos=>productos.id_category==3);
+            res.render("index" , {productosC1,productosC2,productosC3})
+         })
+     },
     error: function(req,res){
         res.render("error")
     },
@@ -73,12 +81,50 @@ let indexController = {
                 where: {id: req.params.id}
             })
             .then(function(){
-                res.render("index")
+                res.redirect('panel')
             })
             .catch(function(e){
                 res.send("error")
             })
                 
+    },
+    detail: function(req,res){
+        let product = db.product.findByPk(req.params.id);
+        let category = db.category.findAll();
+        Promise.all([product,category])
+        .then(function([product,category]){
+            res.render("detail", {product, category})
+        })
+        
+    },
+    register: function(req,res){
+        res.render("register")
+    },
+    newUser: function(req,res){
+        let imageUser;
+        if(req.file){
+            imageUser = req.file.filename;
+        } else {
+            imageUser = "";
+        }
+        db.user.create({
+            mail: req.body.mail,
+            user_name: req.body.user_name,
+            last_name: req.body.last_name,
+            dni: req.body.dni,
+            tel: req.body.tel,
+            adress: req.body.adress,
+            admin: 0,
+            password: req.body.password,
+            user_image: imageUser
+        })
+        .then(function(){
+            res.render("login")
+        });
+    },
+
+    login: function(req,res){
+        res.render('login')
     }
 }
 

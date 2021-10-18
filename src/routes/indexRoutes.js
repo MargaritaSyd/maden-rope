@@ -8,7 +8,7 @@ router.get('/' , indexController.index);
 
 router.get('/error', indexController.error);
 
-//router.get('/detail/:id' , indexController.detail)
+router.get('/detail/:id' , indexController.detail)
 
 router.get('/create' , indexController.create);
 
@@ -16,7 +16,12 @@ router.post('/create' , fileUpload.single('image_product') , indexController.new
 
 router.get('/edit/:id' , indexController.edit);
 
-router.post('/edit/:id' , indexController.editProduct)
+router.post('/edit/:id' , indexController.editProduct);
 
+router.get('/user/register' , indexController.register);
+
+router.post('user/register' , indexController.newUser);
+
+router.get('user/login' , indexController.login);
 
 module.exports = router;
