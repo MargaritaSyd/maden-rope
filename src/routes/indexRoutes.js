@@ -24,6 +24,10 @@ router.get('/user/register' , indexController.register);
 
 router.post('/user/register', fileUploadUser.single('user_image') , userValidations , indexController.newUser);
 
-router.get('user/login' , indexController.login);
+router.get('/user/login' , indexController.login);
+
+router.post('/user/login' , indexController.logged);
+
+router.get('/user/profile' , indexController.profile);
 
 module.exports = router;

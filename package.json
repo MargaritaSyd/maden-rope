@@ -27,7 +27,8 @@
     "mysql2": "^2.3.0",
     "node": "^16.10.0",
     "npm": "^7.24.2",
-    "sequelize": "^5.22.4"
+    "sequelize": "^5.22.4",
+    "session": "^0.1.0"
   },
   "devDependencies": {}
 }

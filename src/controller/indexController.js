@@ -5,6 +5,7 @@ let path = require ('path');
 let db = require("../database/models");
 let Op = db.Sequelize.Op;
 const {validationResult} = require ('express-validator');
+const bcrypt = require('bcryptjs')
 
 let indexController = {
     
@@ -118,7 +119,7 @@ let indexController = {
             dni: req.body.dni,
             tel: req.body.tel,
             admin: 1,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 12),
             user_image: imageUser,
             adress: req.body.adress,
         })
@@ -133,6 +134,35 @@ let indexController = {
 
     login: function(req,res){
         res.render('login')
+    },
+
+    logged: function(req,res){
+        let errorMsg = "Las credenciales son invalidas";
+
+        db.user.findOne({
+            where: {
+                mail: req.body.mail
+            }
+        })
+        .then(function(userToLog){
+            let passwordOk = bcrptjs.compareSync(req.body.password , userToLog.password);
+            if(!passwordOk){
+                res.render('login' , {errorMsg})
+            } else {
+                req.session.userLogged = userToLog;
+            }
+        })
+        .then(function(){
+            res.redirect("profile")
+           
+        })
+        .catch(function(e){
+            return res.render("login" , {errorMsg})
+        })
+    },
+
+    profile: function(req,res){
+        res.render("profile")
     }
 }
 
