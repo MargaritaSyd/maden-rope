@@ -16,7 +16,7 @@ module.exports = function(sequelize, dataTypes)
             type: dataTypes.STRING,
             allowNull: false
         },
-        name: {
+        user_name: {
             type: dataTypes.STRING,
             allowNull: false
         },
@@ -28,13 +28,22 @@ module.exports = function(sequelize, dataTypes)
             type: dataTypes.STRING,
             allowNull: true
         },
+        tel: {
+            type: dataTypes.INTEGER,
+            allowNull: true
+        },
         dni: {
             type: dataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         admin: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: true
             
+        },
+        adress: {
+            type: dataTypes.STRING,
+            allowNull: true
         }
     };
      const config = {

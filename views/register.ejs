@@ -3,33 +3,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
 </head>
 <body>
-    <h1>Registro</h1>
+    <h1>Registrate</h1>
     <form action="/user/register" method="POST" enctype="multipart/form-data">
     <div class="form-floating mb-3">
+        <% if (locals.error&&error.user_name) { %>
+        <input type="text" class="form-control" id="floatingInput" value="<%=locals.old&&old.user_name%>" name="user_name">
+        <small style="color:red;"><%=error.user_name.msg%></small>
+        <%} else {%>
         <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" name="user_name">
+        <%}%>
     </div>
     <div class="form-floating mb-3">
+        <% if (locals.error&&error.last_name) { %>
+        <input type="text" class="form-control" id="floatingInput" value="<%=old.last_name%>" name="last_name">
+        <small style="color:red;"><%=error.last_name.msg%></small>
+        <%} else {%>
         <input type="text" class="form-control" id="floatingInput" placeholder="Apellido" name="last_name">
+        <%}%>
     </div>
     <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInput" placeholder="DNI" name="dni">
+        <% if (locals.error&&error.dni) { %>
+        <input type="number" class="form-control" id="floatingInput" value="<%=old.dni%>" name="dni">
+        <small style="color:red;"><%=error.dni.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" placeholder="Numero de identificación" name="dni">
+        <%}%>
     </div>
     <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInput" placeholder="Telefono" name="tel">
+        <% if (locals.error&&error.tel) { %>
+        <input type="number" class="form-control" id="floatingInput" value="<%=old.tel%>" name="tel">
+        <small style="color:red;"><%=error.tel.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" placeholder="Telefono" name="tel">
+        <%}%>
     </div>
     <div class="form-floating mb-3">
+        <% if (locals.error&&error.adress) { %>
+        <input type="text" class="form-control" id="floatingInput" value="<%=old.adress%>"  name="adress">
+        <small style="color:red;"><%=error.adress.msg%></small>
+        <%} else {%>
         <input type="text" class="form-control" id="floatingInput" placeholder="Dirección"  name="adress">
+        <%}%>
     </div>
     <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="Correo Electrónico" name="mail">
-        
+        <% if (locals.error&&error.mail) { %>
+        <input type="email" class="form-control" id="floatingInput" value="<%=old.mail%>" name="mail"> 
+        <small style="color:red;"><%=error.mail.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" placeholder="Correo electrónico"  name="mail">
+        <%}%>
+    </div>
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" name="user_image" accept=".jpeg,.jpg">
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="password">
+        <% if (locals.error&&error.password) { %>
+            <small style="color:red;"><%=error.password.msg%></small>
+        <%}%>
     </div>
+  
     <button type="submit" class="btn btn-primary">Registrate</button>
     </form>
 </body>

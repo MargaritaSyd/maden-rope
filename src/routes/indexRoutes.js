@@ -2,7 +2,9 @@ const express = require('express');
 const path = require ('path');
 const router = express.Router();
 const indexController = require('../controller/indexController');
-const fileUpload = require("../middlewares/productMiddleware");
+const fileUploadProduct = require("../middlewares/productMiddleware");
+const fileUploadUser = require("../middlewares/userMulter")
+const userValidations = require('../middlewares/userValidation')
 
 router.get('/' , indexController.index);
 
@@ -12,15 +14,15 @@ router.get('/detail/:id' , indexController.detail)
 
 router.get('/create' , indexController.create);
 
-router.post('/create' , fileUpload.single('image_product') , indexController.newProduct);
+router.post('/create' , fileUploadProduct.single('image_product') , indexController.newProduct);
 
 router.get('/edit/:id' , indexController.edit);
 
-router.post('/edit/:id' , indexController.editProduct);
+router.post('/edit/:id' , fileUploadProduct.single('image_product')  , indexController.editProduct);
 
 router.get('/user/register' , indexController.register);
 
-router.post('user/register' , indexController.newUser);
+router.post('/user/register', fileUploadUser.single('user_image') , userValidations , indexController.newUser);
 
 router.get('user/login' , indexController.login);
 

@@ -4,6 +4,7 @@ let fs = require ('fs');
 let path = require ('path');
 let db = require("../database/models");
 let Op = db.Sequelize.Op;
+const {validationResult} = require ('express-validator');
 
 let indexController = {
     
@@ -101,6 +102,9 @@ let indexController = {
         res.render("register")
     },
     newUser: function(req,res){
+        
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
         let imageUser;
         if(req.file){
             imageUser = req.file.filename;
@@ -113,14 +117,18 @@ let indexController = {
             last_name: req.body.last_name,
             dni: req.body.dni,
             tel: req.body.tel,
-            adress: req.body.adress,
-            admin: 0,
+            admin: 1,
             password: req.body.password,
-            user_image: imageUser
+            user_image: imageUser,
+            adress: req.body.adress,
         })
         .then(function(){
             res.render("login")
-        });
+        })
+        } else {
+            error = errors.mapped()
+            return res.render("register" , {error, old:req.body})
+        }
     },
 
     login: function(req,res){
