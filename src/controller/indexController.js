@@ -1,5 +1,5 @@
 
-const { promiseImpl } = require('ejs');
+//const { promiseImpl } = require('ejs');
 let fs = require ('fs');
 let path = require ('path');
 let db = require("../database/models");
@@ -137,31 +137,30 @@ let indexController = {
     },
 
     logged: function(req,res){
-        let errorMsg = "Las credenciales son invalidas";
+        let errorMsg= 'Las credenciales son inválidas';
 
-        db.user.findOne({
+        db.user.findOne( {
             where: {
                 mail: req.body.mail
             }
         })
         .then(function(userToLog){
-            let passwordOk = bcrptjs.compareSync(req.body.password , userToLog.password);
-            if(!passwordOk){
-                res.render('login' , {errorMsg})
-            } else {
-                req.session.userLogged = userToLog;
-            }
+        
+            let passwordOk= bcrypt.compareSync(req.body.password , userToLog.password)
+            if(!passwordOk){               
+                    res.render('login',{errorMsg})
+                } else {
+                    req.session.user = userToLog
+                    res.render("profile" , {userToLog})
+                }
         })
-        .then(function(){
-            res.redirect("profile")
-           
-        })
+               
         .catch(function(e){
-            return res.render("login" , {errorMsg})
+            return res.render('login',{errorMsg})
         })
     },
-
-    profile: function(req,res){
+    
+      profile: function(req,res){
         res.render("profile")
     }
 }
