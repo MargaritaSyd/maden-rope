@@ -71,7 +71,7 @@
                         <img src="/img/logo.jpg" >
                     <%}%>
                     <div class="card-img-overlay">
-                        <h5 class="card-title textcard"><%= productosC1[i].name %></h5> 
+                       <a href="/detail/<%=productosC1[i].id%>"> <h5 class="card-title textcard"><%= productosC1[i].name %></h5> </a>
                     </div>
                 </div>
             <%}%>
@@ -86,13 +86,14 @@
                         <img src="/img/logo.jpg" >
                     <%}%>
                     <div class="card-img-overlay">
-                        <h5 class="card-title textcard"><%= productosC2[i].name %></h5>
+                       <a href="/detail/<%=productosC2[i].id%>"><h5 class="card-title textcard"><%= productosC2[i].name %></h5> </a>
                     </div>
                 </div>
             <%}%>
             </div>
             <div class="category-product">
             <h2 class="category">Accesorios</h2>
+
             <% for(let i=0; i<productosC3.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
                     <% if(productosC3[i].image_product){%>
@@ -101,7 +102,7 @@
                         <img src="/img/logo.jpg" >
                     <%}%>
                     <div class="card-img-overlay">
-                        <h5 class="card-title textcard"><%= productosC3[i].name %></h5>
+                       <a href="/detail/<%=productosC3[i].id%>"> <h5 class="card-title textcard"><%= productosC3[i].name %></h5> </a>
                     </div>
                 </div>
             <%}%>

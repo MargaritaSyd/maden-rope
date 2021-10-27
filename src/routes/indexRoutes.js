@@ -3,8 +3,11 @@ const path = require ('path');
 const router = express.Router();
 const indexController = require('../controller/indexController');
 const fileUploadProduct = require("../middlewares/productMiddleware");
-const fileUploadUser = require("../middlewares/userMulter")
-const userValidations = require('../middlewares/userValidation')
+const fileUploadUser = require("../middlewares/userMulter");
+const userValidations = require('../middlewares/userValidation');
+const logged = require("../middlewares/logged");
+const notLogged = require("../middlewares/notLogged");
+const { index } = require('../controller/indexController');
 
 router.get('/' , indexController.index);
 
@@ -20,14 +23,16 @@ router.get('/edit/:id' , indexController.edit);
 
 router.post('/edit/:id' , fileUploadProduct.single('image_product')  , indexController.editProduct);
 
-router.get('/user/register' , indexController.register);
+router.get('/user/register' , logged , indexController.register);
 
 router.post('/user/register', fileUploadUser.single('user_image') , userValidations , indexController.newUser);
 
-router.get('/user/login' , indexController.login);
+router.get('/user/login' , logged , indexController.login);
 
 router.post('/user/login' , indexController.logged);
 
-router.get('/user/profile' , indexController.profile);
+router.get('/user/profile' , notLogged , indexController.profile);
+
+router.get("/user/logout" , indexController.logout);
 
 module.exports = router;

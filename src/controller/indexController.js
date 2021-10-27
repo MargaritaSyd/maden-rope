@@ -161,8 +161,14 @@ let indexController = {
     },
     
       profile: function(req,res){
-        res.render("profile")
-    }
+        let userToLog = req.session.user
+        res.render("profile" , {userToLog})
+    },
+
+    logout: function(req,res){
+        req.session.destroy();
+        res.redirect("/")
+    }    
 }
 
 module.exports = indexController;
