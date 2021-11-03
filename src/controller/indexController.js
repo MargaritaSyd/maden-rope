@@ -48,12 +48,13 @@ let indexController = {
             }
         )
         .then(function(){
-            res.render("index")
+            res.redirect("/")
         });
         
     },
 
     edit: function(req,res){
+        
         let product = db.product.findByPk(req.params.id);
         let category = db.category.findAll(); 
         Promise.all([product, category])
@@ -63,6 +64,7 @@ let indexController = {
     },
 
     editProduct: function(req,res){
+        
         let product = db.product.findByPk(req.params.id)
         let imageProduct;
         if(req.file){
@@ -83,7 +85,7 @@ let indexController = {
                 where: {id: req.params.id}
             })
             .then(function(){
-                res.redirect('panel')
+                res.redirect('/')
             })
             .catch(function(e){
                 res.send("error")
@@ -91,11 +93,12 @@ let indexController = {
                 
     },
     detail: function(req,res){
+        let userToLog = req.session.user
         let product = db.product.findByPk(req.params.id);
         let category = db.category.findAll();
         Promise.all([product,category])
         .then(function([product,category]){
-            res.render("detail", {product, category})
+            res.render("detail", {product, category, userToLog})
         })
         
     },

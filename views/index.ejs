@@ -66,14 +66,15 @@
             <% for(let i=0; i<productosC1.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
                     <% if(productosC1[i].image_product){%>
-                        <img src="/img/productImages/<%=productosC1.image_product%>" > 
+                        <img src="/img/productImages/<%=productosC1[i].image_product%>" > 
                     <%}else{%>
                         <img src="/img/logo.jpg" >
                     <%}%>
                     <div class="card-img-overlay">
-                       <a href="/detail/<%=productosC1[i].id%>"> <h5 class="card-title textcard"><%= productosC1[i].name %></h5> </a>
+                        <a href="/detail/<%=productosC1[i].id%>"><h5 class="card-title textcard"><%= productosC1[i].name %></h5></a>
                     </div>
                 </div>
+                
             <%}%>
             </div>
             <div class="category-product">

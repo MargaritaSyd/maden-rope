@@ -33,7 +33,7 @@
     </header>
     
     <main>
-        <h1 > <%=product.name%> </h1>
+        <h1 id="productName" > <%=product.name%> </h1>
         <div id="detail-conteiner">
             <div id="img-conteiner">
                 <img id="detail-img" src="/img/productImages/<%=product.image_product%>" class="img-fluid" alt="...">
@@ -43,14 +43,22 @@
                     <img class="thumb-img" src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
                 </div>
             </div>
-            <div class='detail-product'>
+            <div class='detail-product' id="productDescription">
                 <%=product.description%>
             </div>
-            <p>Agregar al carrito<i class="fas fa-shopping-cart fa-2x "></i> </p>
+            <div class='detail-product' id="productPrice">
+                <%=product.price%>
+            </div>
+        <%if(userToLog && userToLog.admin==0){%>
+            <p><a href="/edit/<%=product.id%>"> <button class="btn btn-primary" id="logout" type="submit">Editar producto</button></a> </p>
+        <%} else {%>
+            <p id="cart">Agregar al carrito<i class="fas fa-shopping-cart fa-2x "></i> </p>
+        <%}%>   
         </div>
     </main>
     <footer>
         
     </footer>
+    <script src="/javascript/cart.js"></script>
 </body>
 </html>

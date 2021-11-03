@@ -34,6 +34,9 @@
     </header>
   <h1> Bienvenid@ <%= userToLog.user_name%></h1>
 
+  <% if(userToLog.admin==0){%>  
+    <a href="/create"> <button class="btn btn-primary" id="logout" type="submit">Crear producto</button></a>
+  <%}%>
   <div class="d-grid gap-2">
     <form action="/user/logout" method="GET">
     <button class="btn btn-primary" id="logout" type="submit">Cerrar sesión</button>
