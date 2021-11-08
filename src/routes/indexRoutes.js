@@ -11,7 +11,7 @@ const { index } = require('../controller/indexController');
 
 router.get('/' , indexController.index);
 
-//router.get('/error', indexController.error);
+router.get('/error', indexController.error);
 
 router.get('/detail/:id' , indexController.detail)
 

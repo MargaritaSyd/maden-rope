@@ -15,7 +15,7 @@ let indexController = {
             let productosC1 = productos.filter(productos=>productos.id_category==1);
             let productosC2 = productos.filter(productos=>productos.id_category==2);
             let productosC3 = productos.filter(productos=>productos.id_category==3);
-            res.render("error" , {productosC1,productosC2,productosC3})
+            res.render("index1" , {productosC1,productosC2,productosC3})
          })
      },
     error: function(req,res){
