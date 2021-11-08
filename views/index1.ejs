@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/css/styles.css">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -16,7 +17,9 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="#home" class="w3-bar-item w3-button">Made in Rope</a>
+   
+        <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
+   
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">Nosotros</a>
@@ -30,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
   <img class="w3-image" src="/img/carrousel1.jpg" alt="Hamburger Catering" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large w3-opacity">
-    <h1 class="w3-xxlarge">Algun título</h1>
+    <h1 class="w3-xxlarge" id="titulo-index">Made in rope</h1>
   </div>
 </header>
 
@@ -53,12 +56,12 @@ h1, h2, h3, h4, h5, h6 {
   
   <hr>
   
-  <!-- Menu Section -->
+  <!-- productos -->
   <div class="w3-row w3-padding-64" id="menu">
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">Nuestros productos</h1><br>
       <h4>Bozales</h4>
-      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
+      <p class="w3-text-grey">Un poco de sarasa por aqui</p><br>
     
 
       <% for(let i=0; i<productosC1.length; i++){%>
@@ -75,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
         
       <%}%>
       <h4>Riendas</h4>
-      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+      <p class="w3-text-grey">Un poco de sarasa por alla</p><br>
     
       <% for(let i=0; i<productosC2.length; i++){%>
         <div class="card bg-dark text-white product productConteiner">
@@ -91,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
       <%}%>
 
       <h4>Accesorios</h4>
-      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
+      <p class="w3-text-grey">Un poco más de sarasa</p><br>
     
       <% for(let i=0; i<productosC3.length; i++){%>
         <div class="card bg-dark text-white product productConteiner">
@@ -106,9 +109,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       <%}%>
           
-    <div class="w3-col l6 w3-padding-large">
-      <img src="/img/carrousel3" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
-    </div>
+    
   </div>
 
   <hr>
@@ -118,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
     <h1>Contacto</h1><br>
     <p>Cualquier duda contactanos</p>
     <p class="w3-text-blue-grey w3-large"><b>La dire Manzanares 123</b></p>
-    <p>Por whatsapp al 12345678 o email sarasa.com, or you can send us a message here:</p>
+    <p>Por whatsapp al 12345678 o email sarasa.com, o dejanos un mensaje:</p>
     <form action="/action_page.php" target="_blank">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
