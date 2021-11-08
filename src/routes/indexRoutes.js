@@ -11,7 +11,7 @@ const { index } = require('../controller/indexController');
 
 router.get('/' , indexController.index);
 
-router.get('/error', indexController.error);
+//router.get('/error', indexController.error);
 
 router.get('/detail/:id' , indexController.detail)
 
@@ -34,5 +34,7 @@ router.post('/user/login' , indexController.logged);
 router.get('/user/profile' , notLogged , indexController.profile);
 
 router.get("/user/logout" , indexController.logout);
+
+router.get("/user/cart" , notLogged , indexController.cart)
 
 module.exports = router;
