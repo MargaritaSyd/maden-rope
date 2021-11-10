@@ -39,4 +39,5 @@ router.get("/user/logout" , indexController.logout);
 
 router.get("/user/cart" , notLogged , indexController.cart)
 
+router.get('/api/products' , indexController.allProductsApi)
 module.exports = router;

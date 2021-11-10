@@ -177,7 +177,32 @@ let indexController = {
         let userToLog = req.session.user;
         res.render("cart" , {userToLog})
         
-    }
+    },
+    allProductsApi: (req , res) => {
+        db.product.findAll()
+        .then (products => {
+            let productArray = [];
+            for(let i=0; i<products.length; i++){
+                let oneProduct = {
+                    id: products[i].id,
+                    name: products[i].name,
+                    description: products[i].description,
+                    price: products[i].price,
+                    stock: products[i].stock,
+                    id_category: products[i].id_category,
+                    image_product: "https://localhost3000/img/productImages/" + products[i].image_product
+                }    
+
+                productArray.push(oneProduct);
+            }
+            
+            return res.status(200).json({
+                count: productArray.length,
+                products: productArray,
+                status: 200
+            })
+        })
+    },
 }
 
 module.exports = indexController;
