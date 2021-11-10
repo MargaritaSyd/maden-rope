@@ -7,6 +7,8 @@ const fileUploadUser = require("../middlewares/userMulter");
 const userValidations = require('../middlewares/userValidation');
 const logged = require("../middlewares/logged");
 const notLogged = require("../middlewares/notLogged");
+const notAdmin = require("../middlewares/notAdmin");
+
 const { index } = require('../controller/indexController');
 
 router.get('/' , indexController.index);
@@ -19,7 +21,7 @@ router.get('/create' , indexController.create);
 
 router.post('/create' , fileUploadProduct.single('image_product') , indexController.newProduct);
 
-router.get('/edit/:id' , indexController.edit);
+router.get('/edit/:id' ,notAdmin, indexController.edit);
 
 router.post('/edit/:id' , fileUploadProduct.single('image_product')  , indexController.editProduct);
 

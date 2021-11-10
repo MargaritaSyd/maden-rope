@@ -69,7 +69,7 @@ let indexController = {
         let imageProduct;
         if(req.file){
             imageProduct = req.file.filename;
-            fs.unlinkSync(path.join(__dirname+'/../../public/img/productImages/'+ product.image_product));
+        //    fs.unlinkSync(path.join(__dirname+'../../../public/img/productImages/'+ imgProduct));
         } else {
             imageProduct = product.image_product;
         }

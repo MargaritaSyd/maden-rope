@@ -1,4 +1,4 @@
-let db = "../database/models";
+
 //const op = db.Sequelize.op;
 
 window.addEventListener("load" , function(){
