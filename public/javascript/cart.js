@@ -27,7 +27,7 @@ if(localStorage){
 })
 */
 window.addEventListener("load" , function(){
-   // localStorage.clear()
+  //  localStorage.clear()
 
 let cart = document.querySelector("#cart");
 cart.addEventListener("click" , function(){
@@ -81,14 +81,39 @@ let nameProductCart = document.querySelector("#nameProductCart")
 
 if(localStorage.getItem("cartList") != null){
 
-    function addProduct(item){
-        let li = document.createElement('li');
-        li.textContent = item;
-        return li;
+    function addProductName(item){
+        let p = document.createElement('p');
+        p.className = "cart-product-name"
+        p.textContent = item;
+        return p;
+    };
+
+    function addProductDescription(item){
+        let p = document.createElement('p');
+        p.className = "cart-product-description"
+        p.textContent = item;
+        return p;
+    };
+
+    function addProductPrice(item){
+        let p = document.createElement('p');
+        p.className = "cart-product-price"
+        p.textContent = item;
+        return p;
+    };
+
+    function addProductImg(imgProduct){
+        let img = document.createElement('img');
+        img.src = imgProduct;
+        return img
     }
 
     let parseCartList = JSON.parse(localStorage.getItem("cartList"));
     for(let i=0; i<parseCartList.length; i++){
-        nameProductCart.appendChild(addProduct(parseCartList[i].productName))
+        nameProductCart.appendChild(addProductName(parseCartList[i].productName))
+        nameProductCart.appendChild(addProductImg(parseCartList[i].productImg))
+        nameProductCart.appendChild(addProductDescription(parseCartList[i].productDescription))
+        nameProductCart.appendChild(addProductPrice(parseCartList[i].productPrice))
+        
     }
 }
