@@ -5,7 +5,8 @@ let path = require ('path');
 let db = require("../database/models");
 let Op = db.Sequelize.Op;
 const {validationResult} = require ('express-validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const { response } = require('express');
 
 let indexController = {
     
@@ -18,6 +19,15 @@ let indexController = {
             res.render("index" , {productosC1,productosC2,productosC3})
          })
      },
+/*
+     probando: function(req,res){
+        fetch('http://localhost:3000/api/products')
+        .then(response => response.json)
+        .then(products => {
+            res.render('probando' , {products})
+        })
+     },
+*/
     error: function(req,res){
         res.render("error")
     },
@@ -203,6 +213,36 @@ let indexController = {
             })
         })
     },
+    /*
+    allProductsApi: (req , res) => {
+        db.product.findAll()
+        .then (products => {
+            let nameProductArray = [];
+            for(let i=0; i<products.length; i++){
+                let oneProductName = {
+                    name: products[i].name,
+                }    
+                nameProductArray.push(oneProductName);
+            }
+        db.category.findAll()
+        .then(categories => {
+            for(let i=0; i<categories.length; i++){
+                let oneCategory = {
+                    name = categories[i].name,
+                }
+                nameProductArray.push(oneCategory);
+            }
+        
+            
+            return res.status(200).json({
+                count: nameProductArray.length,
+                products: productArray,
+                status: 200
+            })
+        })
+    } */
+
+
 }
 
 module.exports = indexController;

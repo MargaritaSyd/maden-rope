@@ -1,20 +1,18 @@
+let searchBar = document.getElementById('searchBar')
 
-//const op = db.Sequelize.op;
+searchBar.addEventListener('click', function(){
 
-window.addEventListener("load" , function(){
-    console.log(db)
-/*
-    searchBar.addEventListener("change" , function(){  
-    let searchBar = document.querySelector('#searchBar');
-    
-    db.product.findAll({
-        where: {
-            name: {[op.Like]: '%p%'}
+    fetch('http://localhost:3000/api/products')
+    .then(function(respuesta){
+        return respuesta.json();
+    })
+    .then(function(data){
+        let product = data.products
+        for(let i=o; i<product.length; i++){
+            console.log('alg')
         }
-    }) .then(resultado => {
-        console.log(resultado)
+        
     })
-    })
-   // searchBar.addEventListener()  
-   */
+    
+    
 })
