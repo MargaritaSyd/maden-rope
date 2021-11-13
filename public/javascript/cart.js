@@ -81,32 +81,59 @@ if(localStorage.getItem("productForCart") != null){
 
 let nameProductCart = document.querySelector("#nameProductCart")
 
+let quantity = document.querySelector('#quantity')
+
 if(localStorage.getItem("cartList") != null){
 
     function addProductName(item){
-        let p = document.createElement('p');
-       // let input = document.createElement('input');
-        p.className = "cart-product-name"
-        p.textContent = item;
-       // input.className = "cart-product-name"
-       // input.textContent = item;
-       // input.name = name;
+       let p = document.createElement('p');
+       p.className = "cart-product-name"
+       p.textContent = item;
 
         return p;
     };
 
+    function addProductNameInput(item){
+        let input = document.createElement('input');
+        input.type = "hidden";
+        input.value = item;
+        input.name = 'name';
+
+        return input
+    }
+
     function addProductDescription(item){
+    
         let p = document.createElement('p');
         p.className = "cart-product-description"
         p.textContent = item;
         return p;
     };
 
+    function addProductDescriptionInput(item){
+        let input = document.createElement('input');
+        input.type = "hidden";
+        input.value = item;
+        input.name = 'Description';
+
+        return input
+    };
+
     function addProductPrice(item){
+    
         let p = document.createElement('p');
         p.className = "cart-product-price"
         p.textContent = item;
         return p;
+    
+    };
+    function addProductPriceInput(item){
+        let input = document.createElement('input');
+        input.type = "hidden";
+        input.value = item;
+        input.name = 'Price';
+
+        return input
     };
 
     function addProductImg(imgProduct){
@@ -114,13 +141,25 @@ if(localStorage.getItem("cartList") != null){
         img.src = imgProduct;
         return img
     }
+    
+    function addProductQuantityInput(item){
+        let input = document.createElement('input');
+        input.type = "number";
+        input.value = 1;
+        input.name = 'quantity';
+
+        return input
+    };
 
     let parseCartList = JSON.parse(localStorage.getItem("cartList"));
     for(let i=0; i<parseCartList.length; i++){
         nameProductCart.appendChild(addProductName(parseCartList[i].productName))
+        nameProductCart.appendChild(addProductNameInput(parseCartList[i].productName))
         nameProductCart.appendChild(addProductImg(parseCartList[i].productImg))
         nameProductCart.appendChild(addProductDescription(parseCartList[i].productDescription))
         nameProductCart.appendChild(addProductPrice(parseCartList[i].productPrice))
+        nameProductCart.appendChild(addProductPriceInput(parseCartList[i].productPrice))
+        nameProductCart.appendChild(addProductQuantityInput(quantity))
         
     }
 }
