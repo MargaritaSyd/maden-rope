@@ -30,10 +30,12 @@ window.addEventListener("load" , function(){
   //  localStorage.clear()
 
 let cart = document.querySelector("#cart");
-cart.addEventListener("click" , function(){
+let clear = document.querySelector('#clear')
 
-
-    
+//clear.addEventListener('click' , function(){
+//    localStorage.clear()
+//})
+cart.addEventListener("click" , function(){  
     let productInfo = {
         productId: window.location.pathname.slice(8),
         productName: document.querySelector("#productName").innerHTML,
@@ -83,8 +85,13 @@ if(localStorage.getItem("cartList") != null){
 
     function addProductName(item){
         let p = document.createElement('p');
+       // let input = document.createElement('input');
         p.className = "cart-product-name"
         p.textContent = item;
+       // input.className = "cart-product-name"
+       // input.textContent = item;
+       // input.name = name;
+
         return p;
     };
 
