@@ -7,6 +7,7 @@ let Op = db.Sequelize.Op;
 const {validationResult} = require ('express-validator');
 const bcrypt = require('bcryptjs');
 const { response } = require('express');
+const mercadopago = require('mercadopago');
 
 let indexController = {
     
@@ -188,6 +189,39 @@ let indexController = {
         res.render("cart" , {userToLog})
         
     },
+
+     checkout: (req,res)=>{
+
+         mercadopago.configure({
+             access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
+         })
+
+         let preference = {
+             items: [
+
+                 {
+                     title: req.body.name,
+                     unit_price: 100,
+                     quantity: 1
+                 }
+             ],
+             back_urls: {
+                 success: "http://localhost:8000/user/cart",
+                 failure: "http://localhost:8000/user/cart",
+                 pending: "http://localhost:8000/user/cart"
+             },
+             auto_return: "approved"
+         };
+
+         mercadopago.preferences.create(preference)
+         .then(function(response){
+             res.redirect(response.body.init_point);
+         })
+         .catch(function(e){
+             console.log(e)
+         })
+     },
+
     allProductsApi: (req , res) => {
         db.product.findAll()
         .then (products => {

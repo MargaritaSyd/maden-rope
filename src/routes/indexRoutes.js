@@ -39,6 +39,8 @@ router.get("/user/logout" , indexController.logout);
 
 router.get("/user/cart" , notLogged , indexController.cart);
 
+router.post("/checkout" , indexController.checkout)
+
 router.get('/api/products' , indexController.allProductsApi);
 
 router.get('/lamorita' , indexController.lamorita)

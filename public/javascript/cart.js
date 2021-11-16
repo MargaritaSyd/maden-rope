@@ -115,14 +115,14 @@ if(localStorage.getItem("cartList") != null){
         return img
     }
     
-    function addProductQuantityInput(item){
-        let input = document.createElement('input');
-        input.type = "number";
-        input.value = 1;
-        input.name = 'quantity';
+     function addProductQuantityInput(){
+         let input = document.createElement('input');
+         input.type = "number";
+         input.value = 1;
+         input.name = 'quantity';
 
-        return input
-    };
+         return input
+     };
 
     let parseCartList = JSON.parse(localStorage.getItem("cartList"));
     for(let i=0; i<parseCartList.length; i++){
@@ -134,5 +134,14 @@ if(localStorage.getItem("cartList") != null){
         nameProductCart.appendChild(addProductPriceInput(parseCartList[i].productPrice))
         nameProductCart.appendChild(addProductQuantityInput(quantity))
         
-    }
+    };
 }
+
+
+// mercadopago.preferences.create(preference)
+// .then(function(response){
+//     res.redirect(response.body.init_point);
+// })
+// .catch(function(e){
+//     console.log(e)
+// })
