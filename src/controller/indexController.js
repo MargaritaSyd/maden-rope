@@ -201,8 +201,8 @@ let indexController = {
 
                  {
                      title: req.body.name,
-                     unit_price: 100,
-                     quantity: 1
+                     unit_price: parseInt(req.body.price),
+                     quantity: parseInt(req.body.quantity)
                  }
              ],
              back_urls: {

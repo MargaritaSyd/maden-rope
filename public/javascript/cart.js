@@ -104,7 +104,7 @@ if(localStorage.getItem("cartList") != null){
         let input = document.createElement('input');
         input.type = "hidden";
         input.value = item;
-        input.name = 'Price';
+        input.name = 'price';
 
         return input
     };
@@ -125,7 +125,10 @@ if(localStorage.getItem("cartList") != null){
      };
 
     let parseCartList = JSON.parse(localStorage.getItem("cartList"));
+
+   
     for(let i=0; i<parseCartList.length; i++){
+        
         nameProductCart.appendChild(addProductName(parseCartList[i].productName))
         nameProductCart.appendChild(addProductNameInput(parseCartList[i].productName))
         nameProductCart.appendChild(addProductImg(parseCartList[i].productImg))
