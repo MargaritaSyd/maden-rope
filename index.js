@@ -15,8 +15,8 @@ app.use(session({
 	saveUninitialized: false,
 }));
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log('Servidor corriendo en puerto 3000');
+app.listen(process.env.PORT || 8000, function(){
+    console.log('Servidor corriendo en puerto 8000');
 });
 
 app.use(express.urlencoded({ extended: false }));

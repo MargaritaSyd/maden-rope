@@ -213,35 +213,10 @@ let indexController = {
             })
         })
     },
-    /*
-    allProductsApi: (req , res) => {
-        db.product.findAll()
-        .then (products => {
-            let nameProductArray = [];
-            for(let i=0; i<products.length; i++){
-                let oneProductName = {
-                    name: products[i].name,
-                }    
-                nameProductArray.push(oneProductName);
-            }
-        db.category.findAll()
-        .then(categories => {
-            for(let i=0; i<categories.length; i++){
-                let oneCategory = {
-                    name = categories[i].name,
-                }
-                nameProductArray.push(oneCategory);
-            }
-        
-            
-            return res.status(200).json({
-                count: nameProductArray.length,
-                products: productArray,
-                status: 200
-            })
-        })
-    } */
 
+    lamorita: (req,res) => {
+        res.render("lamorita")
+    }
 
 }
 

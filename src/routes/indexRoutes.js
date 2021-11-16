@@ -41,5 +41,7 @@ router.get("/user/cart" , notLogged , indexController.cart);
 
 router.get('/api/products' , indexController.allProductsApi);
 
+router.get('/lamorita' , indexController.lamorita)
+
 
 module.exports = router;

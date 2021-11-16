@@ -1,31 +1,4 @@
-/*
-let cart = document.querySelector("#cart");
-cart.addEventListener("click" , function(){
 
-    let productId=  window.location.pathname.slice(8); 
-    let productName = document.querySelector("#productName").innerHTML
-    let productDescription = document.querySelector("#productDescription").innerHTML
-    let productImg = document.querySelector("#detail-img").src
-    let productPrice = document.querySelector("#productPrice").innerHTML
-    let productInfo = [productName, productDescription, productImg, productPrice]
-
-       localStorage.setItem("producto" + productId , productInfo)
-    
-})
-
-window.addEventListener("load" , function(){
-    let productCart = []
-localStorage.clear()
-if(localStorage){
-   for(let i=0; i<localStorage.length; i++){
-       let productForCart = JSON.parse(localStorage.getItem(localStorage[i]))
-       productCart.push(productForCart)
-   }
-    console.log(productCart)
-    } 
-
-})
-*/
 window.addEventListener("load" , function(){
   //  localStorage.clear()
 
