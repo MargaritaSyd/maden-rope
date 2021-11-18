@@ -198,7 +198,7 @@ let indexController = {
 
          let preference = {
              items: [
-
+                  
                  {
                      title: req.body.name,
                      unit_price: parseInt(req.body.price),

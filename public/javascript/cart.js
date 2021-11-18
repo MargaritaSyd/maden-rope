@@ -138,6 +138,7 @@ if(localStorage.getItem("cartList") != null){
         nameProductCart.appendChild(addProductQuantityInput(quantity))
         
     };
+
 }
 
 
