@@ -52,7 +52,9 @@ if(localStorage.getItem("productForCart") != null){
     }
 }
 
-let nameProductCart = document.querySelector("#nameProductCart")
+let nameProductCart = document.querySelector("#nameProductCart");
+
+let inputsProduct = document.querySelector("#inputsProduct")
 
 let quantity = document.querySelector('#quantity')
 
@@ -67,12 +69,29 @@ if(localStorage.getItem("cartList") != null){
     };
 
     function addProductNameInput(item){
-        let input = document.createElement('input');
-        input.type = "hidden";
-        input.value = item;
-        input.name = 'name';
 
-        return input
+        
+
+        let inputName = document.createElement('input');
+        inputName.type = "hidden";
+        inputName.value = item;
+        inputName.name = 'name';
+        inputName.className = item
+/*
+        let inputPrice = document.createElement('input');
+        inputPrice.type = "hidden";
+        inputPrice.value = item;
+        inputPrice.name = 'price';
+
+        let inputQuantity = document.createElement('input');
+        inputQuantity.type = "number";
+        inputQuantity.value = 1;
+        inputQuantity.name = 'quantity';
+
+        let inputs = {inputName, inputPrice ,inputQuantity}
+*/
+
+        return inputName
     }
 
     function addProductDescription(item){
@@ -105,6 +124,7 @@ if(localStorage.getItem("cartList") != null){
         input.type = "hidden";
         input.value = item;
         input.name = 'price';
+        input.className = item
 
         return input
     };
@@ -130,14 +150,29 @@ if(localStorage.getItem("cartList") != null){
     for(let i=0; i<parseCartList.length; i++){
         
         nameProductCart.appendChild(addProductName(parseCartList[i].productName))
-        nameProductCart.appendChild(addProductNameInput(parseCartList[i].productName))
+        inputsProduct.appendChild(addProductNameInput(parseCartList[i].productName))
         nameProductCart.appendChild(addProductImg(parseCartList[i].productImg))
         nameProductCart.appendChild(addProductDescription(parseCartList[i].productDescription))
         nameProductCart.appendChild(addProductPrice(parseCartList[i].productPrice))
-        nameProductCart.appendChild(addProductPriceInput(parseCartList[i].productPrice))
+        inputsProduct.appendChild(addProductPriceInput(parseCartList[i].productPrice))
         nameProductCart.appendChild(addProductQuantityInput(quantity))
         
     };
+
+    // let products = req.body
+
+    // function Object(title, unit_price, quantity) {
+    //     this.title = title;
+    //     this.unit_price = unit_price;
+    //     this.quantity = quantity;
+    // }
+
+    // let items = [];
+
+    
+    // items.push( new Object (req.body.name , parseInt(req.body.price) , parseInt(req.body.quantity)))
+    
+
 
 }
 

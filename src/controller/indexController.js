@@ -189,6 +189,60 @@ let indexController = {
         res.render("cart" , {userToLog})
         
     },
+    /*
+    checkout: (req,res)=>{
+      //  let items = []
+      //  newItems = new Object()
+
+        let products = req.body
+
+        function Object(title, unit_price, quantity) {
+            this.title = title;
+            this.unit_price = unit_price;
+            this.quantity = quantity;
+        }
+
+        let items = [];
+
+        
+        items.push( new Object (req.body.name , parseInt(req.body.price) , parseInt(req.body.quantity)))
+        
+
+       
+        console.log(items)
+        // let productsName = products.name;
+       // let productsPrice = products.price;
+       // let productsQuantity = products.quantity
+        
+       
+        //   for(i=0; i<productsName.length; i++){
+        //     items.title = productsName[i];
+        //   }
+        //   for(i=0; i<productsPrice.length; i++){
+        //     items.unit_price = parseInt(productsPrice[i])
+        //   }
+        //   for(i=0; i<productsQuantity.length; i++){
+        //     items.quantity = parseInt(productsQuantity[i])
+        //   }
+        // }
+        //   console.log(items)
+      /*   for(i=0; i<products; i++){
+            items.title = products[i].name;
+            items.unit_price = parseInt(products[i].price)
+            items.quantity = parseInt(products[i].quantity)
+        }
+        */
+        //items = [ ]
+            //items = new Object()
+            // items.title = req.body.name
+            // items.unit_price = parseInt(req.body.price)
+            // items.quantity = parseInt(req.body.quantity)
+
+            
+        
+    
+    
+    //*/
 
      checkout: (req,res)=>{
 
@@ -197,14 +251,13 @@ let indexController = {
          })
 
          let preference = {
-             items: [
-                  
-                 {
+              items: [      
+                  {
                      title: req.body.name,
                      unit_price: parseInt(req.body.price),
                      quantity: parseInt(req.body.quantity)
                  }
-             ],
+            ],
              back_urls: {
                  success: "http://localhost:8000/user/cart",
                  failure: "http://localhost:8000/user/cart",
@@ -215,12 +268,13 @@ let indexController = {
 
          mercadopago.preferences.create(preference)
          .then(function(response){
-             res.redirect(response.body.init_point);
+               res.redirect(response.body.init_point);
          })
          .catch(function(e){
              console.log(e)
          })
      },
+     
 
     allProductsApi: (req , res) => {
         db.product.findAll()
