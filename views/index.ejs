@@ -11,48 +11,66 @@
 </head>
 <body>
     <header>
-<<<<<<< HEAD
+       
+        <nav id="navbar">
+            
+        
+            
+        <a href="#"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
+        <a href="#"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-success">Nosotros</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+    </nav>
        
         
-=======
-        <span class="cont-logo">
-            <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
-        </span>
-        <div class="the-header">
-            
-            <input type="text" id="searchBar"> <i class="fas fa-search"></i>
-           
-            <div id="user-cart">
-                <a href="/user/login"><i class="far fa-user fa-2x "></i></a>
-                <a href="/user/cart"><i class="fas fa-shopping-cart fa-2x "></i></a> 
-            </div>
-        </div>
->>>>>>> 5913ec562d479eac34c535d4eb7826b8bf678992
-
         <div class= "banner-index">
             <div class= "img-banner-index">
                 <img src= "/img/frontEnd/banner-index.png">
             </div>
         </div>
 
-          <nav id="navbar">
-            
-        
-                <div id="user-cart">
-                    <a href="/user/login"><i class="far fa-user fa-2x user icon"></i></a>
-                    <i class="fas fa-shopping-cart fa-2x cart icon"></i>
-                </div>
-            
-            <a href="#"><button type="button" class="btn btn-secondary">CONOCENOS!</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Tabla de talles</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Cómo comprar</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Preguntas frecuentes</button></a>
-        </nav>
+          
    
     </header>
     <main>
         <div id="conteiner">
-            <div class="category-product">
+            <div class="subtitulo">
+                <img src="/img/frontEnd/titulo-index.png" alt="Nuestros productos" class= "subtitulo">
+            </div>
+                    <div class= "menuCategorias">
+              
+                        <div class="categoria-listado">
+                            <a class="lightbox" href="#">
+                                <img src="/img/frontEnd/bozales.png" alt="bozales" class="imagenCategoria">
+                                <div class="overlayList">
+                                  <div class="text">Bozales</div>
+                                </div>
+                            </a>
+                           
+                        </div>
+                        <div class="categoria-listado">
+                            <a class="lightbox" href="#">
+                                <img src="/img/frontEnd/riendas.png" alt="riendas" class="imagenCategoria">
+                                <div class="overlayList">
+                                  <div class="text">Riendas</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="categoria-listado">
+                            <a class="lightbox" href="#">
+                                <img src="/img/frontEnd/accesorios.png" alt="accesorios" class="imagenCategoria">
+                                <div class="overlayList">
+                                  <div class="text">Accesorios</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                      
+            
+                </div>
+            <!-- <div class="category-product">
             <h2 class="category"> Bozales</h2>
             <% for(let i=0; i<productosC1.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
@@ -98,7 +116,7 @@
                     </div>
                 </div>
             <%}%>
-            </div>
+            </div> -->
         
         </div>
       
@@ -106,7 +124,7 @@
                 <label class="footer-titulos"></label>
                 <a href="/"><i class="fab fa-whatsapp footer-items fa-4x"></i></label>
                 <a href="https://www.google.com.ar/maps/place/Los+Panas+Centro+Ecuestre,+CGA,+Nicaragua+101,+B1632+Manzanares,+Provincia+de+Buenos+Aires/@-34.4565133,-59.013026,17z/data=!4m2!3m1!1s0x95bc81f343e2b7dd:0x66e179eb76bfce0b"><i class="fas fa-map-marker-alt footer-items fa-4x"></i></label>
-                <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
+                <a href="/"> <img class="logo" src="/img/frontEnd/logo-made.png" alt="logo"></a> 
                 <a href="https://www.instagram.com/madeinrope/"><i class="fab fa-instagram footer-items fa-4x"></i></a>
                 <label><i class="fab fa-facebook footer-items fa-4x"></i></label>
         </footer>
