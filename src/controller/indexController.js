@@ -249,8 +249,10 @@ let indexController = {
          mercadopago.configure({
              access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
          })
-
+         
          let preference = {
+
+            
               items: [      
                   {
                      title: req.body.name,
@@ -274,7 +276,6 @@ let indexController = {
              console.log(e)
          })
      },
-     
 
     allProductsApi: (req , res) => {
         db.product.findAll()
