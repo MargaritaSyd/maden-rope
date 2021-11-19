@@ -5,7 +5,9 @@ let path = require ('path');
 let db = require("../database/models");
 let Op = db.Sequelize.Op;
 const {validationResult} = require ('express-validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const { response } = require('express');
+const mercadopago = require('mercadopago');
 
 let indexController = {
     
@@ -18,6 +20,15 @@ let indexController = {
             res.render("index" , {productosC1,productosC2,productosC3})
          })
      },
+/*
+     probando: function(req,res){
+        fetch('http://localhost:3000/api/products')
+        .then(response => response.json)
+        .then(products => {
+            res.render('probando' , {products})
+        })
+     },
+*/
     error: function(req,res){
         res.render("error")
     },
@@ -48,12 +59,13 @@ let indexController = {
             }
         )
         .then(function(){
-            res.render("index")
+            res.redirect("/")
         });
         
     },
 
     edit: function(req,res){
+        
         let product = db.product.findByPk(req.params.id);
         let category = db.category.findAll(); 
         Promise.all([product, category])
@@ -63,11 +75,12 @@ let indexController = {
     },
 
     editProduct: function(req,res){
+        
         let product = db.product.findByPk(req.params.id)
         let imageProduct;
         if(req.file){
             imageProduct = req.file.filename;
-            fs.unlinkSync(path.join(__dirname+'/../../public/img/productImages/'+ product.image_product));
+        //    fs.unlinkSync(path.join(__dirname+'../../../public/img/productImages/'+ imgProduct));
         } else {
             imageProduct = product.image_product;
         }
@@ -83,7 +96,7 @@ let indexController = {
                 where: {id: req.params.id}
             })
             .then(function(){
-                res.redirect('panel')
+                res.redirect('/')
             })
             .catch(function(e){
                 res.send("error")
@@ -91,11 +104,12 @@ let indexController = {
                 
     },
     detail: function(req,res){
+        let userToLog = req.session.user
         let product = db.product.findByPk(req.params.id);
         let category = db.category.findAll();
         Promise.all([product,category])
         .then(function([product,category]){
-            res.render("detail", {product, category})
+            res.render("detail", {product, category, userToLog})
         })
         
     },
@@ -161,8 +175,137 @@ let indexController = {
     },
     
       profile: function(req,res){
-        res.render("profile")
+        let userToLog = req.session.user
+        res.render("profile" , {userToLog})
+    },
+
+    logout: function(req,res){
+        req.session.destroy();
+        res.redirect("/")
+    },
+    
+    cart: function(req,res){
+        let userToLog = req.session.user;
+        res.render("cart" , {userToLog})
+        
+    },
+    /*
+    checkout: (req,res)=>{
+      //  let items = []
+      //  newItems = new Object()
+
+        let products = req.body
+
+        function Object(title, unit_price, quantity) {
+            this.title = title;
+            this.unit_price = unit_price;
+            this.quantity = quantity;
+        }
+
+        let items = [];
+
+        
+        items.push( new Object (req.body.name , parseInt(req.body.price) , parseInt(req.body.quantity)))
+        
+
+       
+        console.log(items)
+        // let productsName = products.name;
+       // let productsPrice = products.price;
+       // let productsQuantity = products.quantity
+        
+       
+        //   for(i=0; i<productsName.length; i++){
+        //     items.title = productsName[i];
+        //   }
+        //   for(i=0; i<productsPrice.length; i++){
+        //     items.unit_price = parseInt(productsPrice[i])
+        //   }
+        //   for(i=0; i<productsQuantity.length; i++){
+        //     items.quantity = parseInt(productsQuantity[i])
+        //   }
+        // }
+        //   console.log(items)
+      /*   for(i=0; i<products; i++){
+            items.title = products[i].name;
+            items.unit_price = parseInt(products[i].price)
+            items.quantity = parseInt(products[i].quantity)
+        }
+        */
+        //items = [ ]
+            //items = new Object()
+            // items.title = req.body.name
+            // items.unit_price = parseInt(req.body.price)
+            // items.quantity = parseInt(req.body.quantity)
+
+            
+        
+    
+    
+    //*/
+
+     checkout: (req,res)=>{
+
+         mercadopago.configure({
+             access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
+         })
+
+         let preference = {
+              items: [      
+                  {
+                     title: req.body.name,
+                     unit_price: parseInt(req.body.price),
+                     quantity: parseInt(req.body.quantity)
+                 }
+            ],
+             back_urls: {
+                 success: "http://localhost:8000/user/cart",
+                 failure: "http://localhost:8000/user/cart",
+                 pending: "http://localhost:8000/user/cart"
+             },
+             auto_return: "approved"
+         };
+
+         mercadopago.preferences.create(preference)
+         .then(function(response){
+               res.redirect(response.body.init_point);
+         })
+         .catch(function(e){
+             console.log(e)
+         })
+     },
+     
+
+    allProductsApi: (req , res) => {
+        db.product.findAll()
+        .then (products => {
+            let productArray = [];
+            for(let i=0; i<products.length; i++){
+                let oneProduct = {
+                    id: products[i].id,
+                    name: products[i].name,
+                    description: products[i].description,
+                    price: products[i].price,
+                    stock: products[i].stock,
+                    id_category: products[i].id_category,
+                    image_product: "https://localhost3000/img/productImages/" + products[i].image_product
+                }    
+
+                productArray.push(oneProduct);
+            }
+            
+            return res.status(200).json({
+                count: productArray.length,
+                products: productArray,
+                status: 200
+            })
+        })
+    },
+
+    lamorita: (req,res) => {
+        res.render("lamorita")
     }
+
 }
 
 module.exports = indexController;

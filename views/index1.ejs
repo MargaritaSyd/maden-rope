@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<title>Made in Rope</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+   
+        <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
+   
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">Nosotros</a>
+      <a href="#menu" class="w3-bar-item w3-button">Productos</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="/img/carrousel1.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge" id="titulo-index">Made in rope</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="/img/carrousel2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">Sobre nosotrxs</h1><br>
+      <h5 class="w3-center">Algún subitutlo</h5>
+      <p class="w3-large">Algo interesenta que describa la empresa in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.sarasa <span class="w3-tag w3-light-grey">palabra clave</span> sarasa.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">MAs sarasa Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- productos -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Nuestros productos</h1><br>
+      <h4>Bozales</h4>
+      <p class="w3-text-grey">Un poco de sarasa por aqui</p><br>
+    
+
+      <% for(let i=0; i<productosC1.length; i++){%>
+        <div class="card bg-dark text-white product productConteiner">
+            <% if(productosC1[i].image_product){%>
+                <img src="/img/productImages/<%=productosC1[i].image_product%>" > 
+            <%}else{%>
+                <img src="/img/logo.jpg" >
+            <%}%>
+            <div class="card-img-overlay">
+                <a href="/detail/<%=productosC1[i].id%>"><h5 class="card-title textcard"><%= productosC1[i].name %></h5></a>
+            </div>
+        </div>
+        
+      <%}%>
+      <h4>Riendas</h4>
+      <p class="w3-text-grey">Un poco de sarasa por alla</p><br>
+    
+      <% for(let i=0; i<productosC2.length; i++){%>
+        <div class="card bg-dark text-white product productConteiner">
+            <% if(productosC2[i].image_product){%>
+                <img src="/img/productImages/<%=productosC2[i].image_product%>" > 
+            <%}else{%>
+                <img src="/img/logo.jpg" >
+            <%}%>
+            <div class="card-img-overlay">
+               <a href="/detail/<%=productosC2[i].id%>"><h5 class="card-title textcard"><%= productosC2[i].name %></h5> </a>
+            </div>
+        </div>
+      <%}%>
+
+      <h4>Accesorios</h4>
+      <p class="w3-text-grey">Un poco más de sarasa</p><br>
+    
+      <% for(let i=0; i<productosC3.length; i++){%>
+        <div class="card bg-dark text-white product productConteiner">
+            <% if(productosC3[i].image_product){%>
+                <img src="/img/productImages/<%=productosC3[i].image_product%>" > 
+            <%}else{%>
+                <img src="/img/logo.jpg" >
+            <%}%>
+            <div class="card-img-overlay">
+               <a href="/detail/<%=productosC3[i].id%>"> <h5 class="card-title textcard"><%= productosC3[i].name %></h5> </a>
+            </div>
+        </div>
+      <%}%>
+          
+    
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contacto</h1><br>
+    <p>Cualquier duda contactanos</p>
+    <p class="w3-text-blue-grey w3-large"><b>La dire Manzanares 123</b></p>
+    <p>Por whatsapp al 12345678 o email sarasa.com, o dejanos un mensaje:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+Algun footer
+
+  </footer>
+
+</body>
+</html>
+

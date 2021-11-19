@@ -3,6 +3,7 @@ const app = express();
 const path = require ('path');
 const indexRoutes = require('./src/routes/indexRoutes');
 const session = require('express-session');
+const mercadopago = require('mercadopago')
 //const productRoutes = require('./src/routes/productRoutes');
 //const userRoutes = require('./src/routes/userRoutes');
 //const methodOverride= require('method-override');
@@ -14,8 +15,8 @@ app.use(session({
 	saveUninitialized: false,
 }));
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log('Servidor corriendo en puerto 3000');
+app.listen(process.env.PORT || 8000, function(){
+    console.log('Servidor corriendo en puerto 8000');
 });
 
 app.use(express.urlencoded({ extended: false }));

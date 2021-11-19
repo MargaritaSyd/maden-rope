@@ -104,6 +104,12 @@ main{
 #detail-conteiner.detail-product{
     align-self:flex-end;
 }
+
+
+.icon{
+    color: #6AA2A3;
+}
+
 .banner-index{
     width: 100%;
     display: flex;
@@ -111,8 +117,3 @@ main{
     margin-bottom: 8%;
     margin-top: 5%;
 }
-
-.icon{
-    color: #6AA2A3;
-}
-
