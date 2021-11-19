@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "37040374",
+    "password": "",
     "database": "made-in-rope-db",
     "host": "127.0.0.1",
     "dialect": "mysql",

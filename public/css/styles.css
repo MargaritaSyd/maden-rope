@@ -1,6 +1,10 @@
+body{
+    background-color:#1D1B28;;
+}
 main{
     padding-right: 15%;
     padding-left: 15%;
+    background-color: #1D1B28;
 }
 .carousel slide{
     display: flex;
@@ -100,3 +104,15 @@ main{
 #detail-conteiner.detail-product{
     align-self:flex-end;
 }
+.banner-index{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8%;
+    margin-top: 5%;
+}
+
+.icon{
+    color: #6AA2A3;
+}
+
