@@ -10,21 +10,75 @@
     <title>Made in Rope</title>
 </head>
 <body>
+    <header>
+       
+        <nav id="navbar">
+            
+        
+            
+        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Perfil</button></a>    
+        <!-- <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a> -->
+        <a href="#"><button type="button" class="btn btn-outline-success">Nosotros</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+    </nav>
+       
+        
+        <div class= "banner-index">
+            <div class= "img-banner-index">
+                <img src= "/img/frontEnd/banner-index.png">
+            </div>
+        </div>
+
+          
+   
+    </header>
+
+    <main>
     <h1>
         Hola <%=userToLog.user_name%>
     </h1>
 
 
     <h2> Tus artículos</h2>
-
+    <form action="/checkout" method="POST" id="submitForm">
+        <div id="nameProductCart" class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          
+          <div id="inputsProduct"></div>
+        </div>
+      </div>
+<!-- 
     <form action="/checkout" method="POST">
         <h3 id="nameProductCart"></h3>
         <div id="inputsProduct"></div>
-        <input id="comprar" type="submit" value="Comprar">
-    </form>
+        <input id="comprar" type="submit"> -->
 
-    <button id="clear" type="button" class="btn btn-primary">Vaciar carrito</button>
+    <div class="sticky">
+            
+            
+        <div class="total-compra">
+            <label id="texto-importe-total">Tu total hasta ahora:</label>
+            <label id="importe-total"></label>
+        </div>
+        <div class="main-buttons">
+            <!-- <button id="cancel-button">Cancelar</button> -->
+            <!-- <button id="more-products-button">Ver más</button>   -->
+            <button  class="btn btn-outline-success"><a href="/">Seguir mirando</a></button>   
+            <!-- <button id="confirm-button">Confirmar</button> -->
+            <button class="btn btn-outline-success" id="submit">Confirmar compra</button></a>
+            <button id="clear" type="button" class="btn btn-primary">Vaciar carrito</button>
+        </div>
+    </div>
+    </form>
+    
+    </main>
+
     <script src="/javascript/cart.js"></script> 
     <script src="https://sdk.mercadopago.com/js/v2"></script>
 </body>
-</html>

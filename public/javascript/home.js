@@ -1,4 +1,4 @@
-let searchBar = document.getElementById('searchBar')
+let searchBar = document.getElementById('searchBar');
 
 
 searchBar.addEventListener('change', function(){

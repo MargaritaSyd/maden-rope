@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 
 <style>
@@ -26,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">Nosotros</a>
       <a href="#menu" class="w3-bar-item w3-button">Nuestro Lugar</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
       <a href="/maden/" class="w3-bar-item w3-button">Conocé nuestros productos</a>
     </div>
   </div>
@@ -61,6 +64,39 @@ h1, h2, h3, h4, h5, h6 {
   
   <!-- productos -->
       <h1 class="w3-center"> Nuestro lugar</h1><br>
+      <span class= "carrousel">
+        <span class="carfix"></span>
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="imgCarrousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="imgCarrousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="imgCarrousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/img/carrousel1.jpg" class="d-block w-100"  width=100% height=500px >
+                </div>
+                <div class="carousel-item">
+                  <img src="/img/carrousel2.jpg" class="d-block w-100"  width=100% height=500px >
+                </div>
+                <div class="carousel-item">
+                  <img src="/img/carrousel3.jpg" class="d-block w-100"  width=100% height=500px >
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <span class="carfix"></span>
+  
+      </span>
+  
+<!--       
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -81,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> -->
       <h4>El espacio de doma</h4>
       <p class="w3-text-grey">At quaeque adversarium ius, sed at integre persius verterem. Sit summo tibique at, eam et fugit complectitur, vis te natum vivendum mandamus. Iudico quodsi cum ad, dicit everti sensibus in sea, ea eius paulo deterruisset pri. Pro id aliquam hendrerit definitiones. Per et legimus delectus.
 
@@ -197,6 +233,13 @@ Algun footer
 
   </footer>
 
+<script>
+(document).ready(function(){
+  ('.carousel').carousel({
+    interval: 2000
+  })
+})
+</script>
 </body>
 </html>
 

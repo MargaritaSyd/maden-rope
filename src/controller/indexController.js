@@ -245,6 +245,19 @@ let indexController = {
     //*/
 
      checkout: (req,res)=>{
+     
+        function Object (title, unit_price, quantity) {
+            this.title = title;
+            this.unit_price = unit_price;
+            this.quantity = quantity;
+        };
+    
+        let items = [];
+
+        for(let i=0; i<req.body.name.length && i<req.body.price.length && i<req.body.quantity.length; i++){
+            items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
+    
+        }
 
          mercadopago.configure({
              access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
@@ -253,13 +266,8 @@ let indexController = {
          let preference = {
 
             
-              items: [      
-                  {
-                     title: req.body.name,
-                     unit_price: parseInt(req.body.price),
-                     quantity: parseInt(req.body.quantity)
-                 }
-            ],
+              items,
+              
              back_urls: {
                  success: "http://localhost:8000/user/cart",
                  failure: "http://localhost:8000/user/cart",
@@ -276,7 +284,7 @@ let indexController = {
              console.log(e)
          })
      },
-
+     
     allProductsApi: (req , res) => {
         db.product.findAll()
         .then (products => {

@@ -16,8 +16,8 @@
             
         
             
-        <a href="#"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
-        <a href="#"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
+        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
+        <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
         <a href="#"><button type="button" class="btn btn-outline-success">Nosotros</button></a>
         <a href="#"><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
         <a href="#"><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
@@ -42,7 +42,7 @@
                     <div class= "menuCategorias">
               
                         <div class="categoria-listado">
-                            <a class="lightbox" href="#">
+                            <a class="lightbox" href="#categoryBozales">
                                 <img src="/img/frontEnd/bozales.png" alt="bozales" class="imagenCategoria">
                                 <div class="overlayList">
                                   <div class="text">Bozales</div>
@@ -51,7 +51,7 @@
                            
                         </div>
                         <div class="categoria-listado">
-                            <a class="lightbox" href="#">
+                            <a class="lightbox" href="#categoryRiendas">
                                 <img src="/img/frontEnd/riendas.png" alt="riendas" class="imagenCategoria">
                                 <div class="overlayList">
                                   <div class="text">Riendas</div>
@@ -59,7 +59,7 @@
                             </a>
                         </div>
                         <div class="categoria-listado">
-                            <a class="lightbox" href="#">
+                            <a class="lightbox" href="#categoryAccesorios">
                                 <img src="/img/frontEnd/accesorios.png" alt="accesorios" class="imagenCategoria">
                                 <div class="overlayList">
                                   <div class="text">Accesorios</div>
@@ -70,8 +70,8 @@
                       
             
                 </div>
-            <!-- <div class="category-product">
-            <h2 class="category"> Bozales</h2>
+             <div class="category-product">
+            <h2 class="category" id="categoryBozales"> Bozales</h2>
             <% for(let i=0; i<productosC1.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
                     <% if(productosC1[i].image_product){%>
@@ -87,7 +87,7 @@
             <%}%>
             </div>
             <div class="category-product">
-            <h2 class="category">Riendas</h2>
+            <h2 class="category" id="categoryRiendas">Riendas</h2>
             <% for(let i=0; i<productosC2.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
                     <% if(productosC2[i].image_product){%>
@@ -102,7 +102,7 @@
             <%}%>
             </div>
             <div class="category-product">
-            <h2 class="category">Accesorios</h2>
+            <h2 class="category" id="categoryAccesorios">Accesorios</h2>
 
             <% for(let i=0; i<productosC3.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             <%}%>
-            </div> -->
+            </div>
         
         </div>
       
