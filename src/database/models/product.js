@@ -28,6 +28,18 @@ module.exports = function(sequelize, dataTypes)
             type: dataTypes.STRING,
             allowNull: true
         },
+        image_product_1: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
+        image_product_2: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
+        image_product_3: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
         price: {
             type: dataTypes.INTEGER,
             allowNull: false

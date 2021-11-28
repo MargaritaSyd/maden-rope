@@ -36,12 +36,15 @@
         <h1 id="productName" > <%=product.name%> </h1>
         <div id="detail-conteiner">
             <div id="img-conteiner">
-                <img id="detail-img" src="/img/productImages/<%=product.image_product%>" class="img-fluid" alt="...">
+               
+                <img id="detail-img" src="/img/productImages/<%=product.image_product%>" class="img-fluid" alt="..."> 
                 <div class="thumb-img-content">
-                    <img class="thumb-img"  src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
-                    <img class="thumb-img" src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
-                    <img class="thumb-img" src="/img/productImages/<%=product.image_product%>" class="img-thumbnail" alt="...">
-                </div>
+                    
+                    <img class="thumb-img"  src="/img/productImages/<%=product.image_product_1%>" class="img-thumbnail" alt="...">
+                    <img class="thumb-img"  src="/img/productImages/<%=product.image_product_2%>" class="img-thumbnail" alt="...">
+                    <img class="thumb-img"  src="/img/productImages/<%=product.image_product_3%>" class="img-thumbnail" alt="...">
+                   
+                    </div>
             </div>
             <div class='detail-product' id="productDescription">
                 <%=product.description%>
@@ -60,5 +63,6 @@
         
     </footer>
     <script src="/javascript/cart.js"></script>
+    <script src="/javascript/images.js"></script>
 </body>
 </html>

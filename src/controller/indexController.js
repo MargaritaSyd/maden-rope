@@ -20,21 +20,11 @@ let indexController = {
             res.render("index" , {productosC1,productosC2,productosC3})
          })
      },
-/*
-     probando: function(req,res){
-        fetch('http://localhost:3000/api/products')
-        .then(response => response.json)
-        .then(products => {
-            res.render('probando' , {products})
-        })
-     },
-*/
+
     error: function(req,res){
         res.render("error")
     },
-    // detail: function(req,res){
-    //     res.render("detail")
-    // },
+
     create: function(req,res){  
         db.category.findAll()
          .then(function(category){
@@ -42,26 +32,42 @@ let indexController = {
         })
     },
     newProduct: function(req,res){
+        
         let imageProduct;
-        if(req.file){
-            imageProduct = req.file.filename;
-        } else {
-            imageProduct = "";
-        }
-        db.product.create(
+        let imagePath = []
+        
+        if(req.files){
+            imageProduct=req.files
+        
+         for(let i=0; i<imageProduct.length; i++){
+        
+            imagePath.push(imageProduct[i].filename)
+             
+         }}
+
+        // console.log(imagePath[4])
+         
+
+        //   else {
+        //       imagesPath = "";
+        //   }
+         db.product.create(
             {
                 name: req.body.name,
                 id_category: req.body.category,
                 price: req.body.price,
                 description: req.body.description,
-                image_product: imageProduct,
+                image_product: imagePath[0]|| "",
+                image_product_1: imagePath[1] || "",
+                image_product_2: imagePath[2] || "",
+                image_product_3: imagePath[3] || "",
                 stock : 1
             }
         )
         .then(function(){
             res.redirect("/")
         });
-        
+      
     },
 
     edit: function(req,res){
@@ -103,6 +109,24 @@ let indexController = {
             })
                 
     },
+
+    editPrice: function(req , res){
+        res.render("editPrice")
+    },
+
+    priceEdited: function(req,res){
+        db.product.update(
+            {
+                price: (product.price * req.body.priceUp)/100
+            }
+        ).then(function(){
+            res.redirect('/')
+        })
+        .catch(function(e){
+            res.send("error")
+        })
+    },
+
     detail: function(req,res){
         let userToLog = req.session.user
         let product = db.product.findByPk(req.params.id);
@@ -267,7 +291,7 @@ let indexController = {
 
             
               items,
-              
+
              back_urls: {
                  success: "http://localhost:8000/user/cart",
                  failure: "http://localhost:8000/user/cart",
@@ -313,8 +337,43 @@ let indexController = {
 
     lamorita: (req,res) => {
         res.render("lamorita")
-    }
+    },
 
+   // oneProduct: (req,res)=>{
+       
+        // function imageFunction(array){
+        //     for(let i=0; i<array.length; i++){
+        //         return "https://localhost:8000/img/productImages/" + array[i]
+        //     }
+        // }
+
+       
+    //     function getImage(item){
+    //         return "https://localhost:8000/img/productImages/" + item
+    //     }
+       
+    //     function images(item){
+    //         item.map(getImage)
+    //     }
+    //     db.product.findByPk(req.params.id)
+    //     .then(oneProduct => {
+    //         let theProduct = {
+    //             id: oneProduct.id,
+    //             name: oneProduct.name,
+    //             id_category: oneProduct.id_category,
+    //             price: oneProduct.price,
+    //             description: oneProduct.description,
+    //             image_product: images(oneProduct.image_product),
+    //             stock : oneProduct.stock
+    //         }
+    //         return res.status(200).json({
+    //             data: theProduct,
+    //             status: 200
+    //         })
+    //     })
+
+   //  }
+    
 }
 
 module.exports = indexController;

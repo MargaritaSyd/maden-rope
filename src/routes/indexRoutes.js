@@ -9,6 +9,8 @@ const logged = require("../middlewares/logged");
 const notLogged = require("../middlewares/notLogged");
 const notAdmin = require("../middlewares/notAdmin");
 
+//const cpUpload = fileUploadProduct.fields([{ name: "image_product", maxCount: 1 }, { name: 'gallery', maxCount: 8 }])
+
 const { index } = require('../controller/indexController');
 
 router.get('/' , indexController.index);
@@ -19,7 +21,9 @@ router.get('/detail/:id' , indexController.detail)
 
 router.get('/create' , indexController.create);
 
-router.post('/create' , fileUploadProduct.single('image_product') , indexController.newProduct);
+router.post('/create' , fileUploadProduct.array("image_product", 10) , indexController.newProduct);
+
+
 
 router.get('/edit/:id' ,notAdmin, indexController.edit);
 
@@ -43,7 +47,13 @@ router.post("/checkout" , indexController.checkout)
 
 router.get('/api/products' , indexController.allProductsApi);
 
-router.get('/lamorita' , indexController.lamorita)
+router.get('/lamorita' , indexController.lamorita);
+
+router.get('/edit_price' , indexController.editPrice)
+
+router.post('/edit_price' , indexController.priceEdited)
+
+//router.get('/one_product/:id' , indexController.oneProduct)
 
 
 module.exports = router;

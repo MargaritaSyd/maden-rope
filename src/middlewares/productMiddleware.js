@@ -11,7 +11,8 @@ let multerDiskStorage = multer.diskStorage(
             let imageName= Date.now() + path.extname(
                 file.originalname
             );
-            callback(null, imageName)
+           // callback(null,file.fieldname + '-' + imageName)
+           callback(null, imageName)
         }
 
     })
@@ -19,5 +20,6 @@ let multerDiskStorage = multer.diskStorage(
 let fileUpload = multer ({
     storage: multerDiskStorage
 })
+//.array("image_product",10)
 
 module.exports = fileUpload;
