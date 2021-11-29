@@ -11,25 +11,28 @@
 </head>
 <body>
     <header>
-        <span class="cont-logo">
-            <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
-        </span>
-        <div class="the-header">
-            <form id="search">
-                <input type="text"> <i class="fas fa-search"></i>
-            </form>
-            <div id="user-cart">
-                <i class="far fa-user fa-2x "></i>
-                <i class="fas fa-shopping-cart fa-2x "></i>
+       
+        <nav id="navbar">
+            
+        
+            
+        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
+        <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-success">Nosotros</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+    </nav>
+       
+        
+        <div class= "banner-index">
+            <div class= "img-banner-index">
+                <img src= "/img/frontEnd/banner-index.png">
             </div>
         </div>
-        <nav id="navbar">
-            <a href="#"><button type="button" class="btn btn-secondary">CONOCENOS!</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Tabla de talles</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Cómo comprar</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Preguntas frecuentes</button></a>
-        </nav>
-    
+
+          
+   
     </header>
     
     <main>
@@ -52,10 +55,7 @@
             <div class='detail-product' id="productPrice">
                 <%=product.price%>
             </div>
-            <div>
-                <img id="detail-img" src="/img/colorCLS.jpg" class="img-fluid" alt="..."> 
-                <h5> Los colores pueden variar según disponibilidad </h5>
-            </div>
+           
             <div>
                 <form action="">
                     <select class="form-select" aria-label="Default select example">
