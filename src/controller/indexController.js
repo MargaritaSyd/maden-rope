@@ -339,6 +339,14 @@ let indexController = {
         res.render("lamorita")
     },
 
+    talles: (req,res) => {
+        res.render("tablaDeTalles")
+    },
+
+    compra: (req, res) => {
+        res.render("comprar")
+    }
+
    // oneProduct: (req,res)=>{
        
         // function imageFunction(array){
@@ -373,7 +381,7 @@ let indexController = {
     //     })
 
    //  }
-    
+   
 }
 
 module.exports = indexController;

@@ -49,10 +49,13 @@ router.get('/api/products' , indexController.allProductsApi);
 
 router.get('/lamorita' , indexController.lamorita);
 
-router.get('/edit_price' , indexController.editPrice)
+router.get('/edit_price' , indexController.editPrice);
 
-router.post('/edit_price' , indexController.priceEdited)
+router.post('/edit_price' , indexController.priceEdited);
 
+router.get('/talles' , indexController.talles)
+
+router.get('/como_comprar' , indexController.compra)
 //router.get('/one_product/:id' , indexController.oneProduct)
 
 
