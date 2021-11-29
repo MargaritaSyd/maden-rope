@@ -5,6 +5,8 @@ window.addEventListener("load" , function(){
 let cart = document.querySelector("#cart");
 let clear = document.querySelector('#clear')
 
+
+
 //clear.addEventListener('click' , function(){
 //    localStorage.clear()
 //})
@@ -19,8 +21,10 @@ cart.addEventListener("click" , function(){
     }
        localStorage.setItem("productForCart" , JSON.stringify(productInfo))
     
-
+       window.location.href = "http://localhost:8000/user/cart"
 })
+
+
 })
 let cartList = [];
 
@@ -219,45 +223,7 @@ if(localStorage.getItem("cartList") != null){
     
         
     };
-    let submit = document.getElementById('submit');
-      
-      let submitForm = document.getElementById('submitForm');
-    //   submit.addEventListener('click' , function(e){
-    //     //   e.preventDefault();
-    //     //   console.log(items)
-    //        submit(items)
-    //   })       
-      
-      
-
-    
-
-    //    function submitForms(){
-    //     let submitForm = document.getElementsByClassName("submitForm")
-    //     submitForm.submit()
-    //    }
-    // let products = req.body
-
-    // function Object(title, unit_price, quantity) {
-    //     this.title = title;
-    //     this.unit_price = unit_price;
-    //     this.quantity = quantity;
-    // }
-
-    // let items = [];
-
-    
-    // items.push( new Object (req.body.name , parseInt(req.body.price) , parseInt(req.body.quantity)))
-    
 
 
 }
 
-
-// mercadopago.preferences.create(preference)
-// .then(function(response){
-//     res.redirect(response.body.init_point);
-// })
-// .catch(function(e){
-//     console.log(e)
-// })
