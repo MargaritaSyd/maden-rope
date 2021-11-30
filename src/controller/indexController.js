@@ -269,6 +269,8 @@ let indexController = {
     //*/
 
      checkout: (req,res)=>{
+
+        
      
         function Object (title, unit_price, quantity) {
             this.title = title;
@@ -279,7 +281,8 @@ let indexController = {
         let items = [];
 
         for(let i=0; i<req.body.name.length && i<req.body.price.length && i<req.body.quantity.length; i++){
-            items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
+         //   items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
+         items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
     
         }
 
@@ -307,6 +310,7 @@ let indexController = {
          .catch(function(e){
              console.log(e)
          })
+         
      },
      
     allProductsApi: (req , res) => {

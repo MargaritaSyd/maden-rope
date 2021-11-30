@@ -197,13 +197,13 @@ if(localStorage.getItem("cartList") != null){
 */
     let parseCartList = JSON.parse(localStorage.getItem("cartList"));
 
-    function Object (title, unit_price, quantity) {
-        this.title = title;
-        this.unit_price = unit_price;
-        this.quantity = quantity;
-    };
+    // function Object (title, unit_price, quantity) {
+    //     this.title = title;
+    //     this.unit_price = unit_price;
+    //     this.quantity = quantity;
+    // };
 
-    let items = [];
+//    let items = [];
 
    
     for(let i=0; i<parseCartList.length; i++){
