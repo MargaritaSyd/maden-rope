@@ -17,6 +17,7 @@ cart.addEventListener("click" , function(){
         productDescription: document.querySelector("#productDescription").innerHTML,
         productImg: document.querySelector("#detail-img").src,
         productPrice: document.querySelector("#productPrice").innerHTML,
+        selectedColor: document.getElementById("colorSelected").value
       
     }
        localStorage.setItem("productForCart" , JSON.stringify(productInfo))
@@ -148,6 +149,17 @@ if(localStorage.getItem("cartList") != null){
         
          return input
      };
+     
+     
+
+      function addProductColor(item){
+    
+         let p = document.createElement('p');
+         p.className = "cart-product-price"
+         p.textContent = "Elegiste el color: " + item;
+         return p;
+    
+     };
 
      function addDeleteButton(){
          let button = document.createElement('button');
@@ -212,6 +224,7 @@ if(localStorage.getItem("cartList") != null){
         nameProductCart.appendChild(addProductImg(parseCartList[i].productImg));
         nameProductCart.appendChild(addProductDescription(parseCartList[i].productDescription));
         nameProductCart.appendChild(addProductPrice(parseCartList[i].productPrice));
+        nameProductCart.appendChild(addProductColor(parseCartList[i].selectedColor));
         nameProductCart.appendChild(addProductQuantityInput(quantity));
         nameProductCart.appendChild(addDeleteButton());
       //  nameProductCart.appendChild(addForm(parseCartList[i]));
