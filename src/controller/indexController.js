@@ -8,6 +8,7 @@ const {validationResult} = require ('express-validator');
 const bcrypt = require('bcryptjs');
 const { response } = require('express');
 const mercadopago = require('mercadopago');
+const { array } = require('../middlewares/productMiddleware');
 
 let indexController = {
     
@@ -269,9 +270,115 @@ let indexController = {
     //*/
 
      checkout: (req,res)=>{
-
         
-     
+        let item = req.body.name
+        if(Array.isArray(item) == true){
+            function Object (title, unit_price, quantity) {
+                this.title = title;
+                this.unit_price = unit_price;
+                this.quantity = quantity;
+            };
+        
+            let items = [];
+    
+            for(let i=0; i<req.body.name.length && i<req.body.price.length && i<req.body.quantity.length; i++){
+             //   items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
+             items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
+        
+            }
+    
+             mercadopago.configure({
+                 access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
+             })
+             
+             let preference = {
+    
+                
+                  items,
+    
+                 back_urls: {
+                     success: "http://localhost:8000/user/cart",
+                     failure: "http://localhost:8000/user/cart",
+                     pending: "http://localhost:8000/user/cart"
+                 },
+                 auto_return: "approved"
+             };
+    
+             mercadopago.preferences.create(preference)
+             .then(function(response){
+                   res.redirect(response.body.init_point);
+             })
+             .catch(function(e){
+                 console.log(e)
+             })
+           
+        } else {
+            mercadopago.configure({
+                access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
+            })
+            
+            let preference = {
+    
+               
+                 items: [
+                    {
+                     title: req.body.name,
+                     unit_price: parseInt(req.body.price),
+                     quantity: parseInt(req.body.quantity)
+                    }
+                 ],
+    
+                back_urls: {
+                    success: "http://localhost:8000/user/cart",
+                    failure: "http://localhost:8000/user/cart",
+                    pending: "http://localhost:8000/user/cart"
+                },
+                auto_return: "approved"
+            };
+    
+            mercadopago.preferences.create(preference)
+            .then(function(response){
+                  res.redirect(response.body.init_point);
+            })
+            .catch(function(e){
+                console.log(e)
+            })
+          
+        }
+
+        /*
+        mercadopago.configure({
+            access_token: "TEST-3018045663051609-111311-ab28f7e43cf70af5931312d9954fef97-185541546"
+        })
+        
+        let preference = {
+
+           
+             items: [
+                {
+                 title: req.body.name,
+                 unit_price: parseInt(req.body.price),
+                 quantity: parseInt(req.body.quantity)
+                }
+             ],
+
+            back_urls: {
+                success: "http://localhost:8000/user/cart",
+                failure: "http://localhost:8000/user/cart",
+                pending: "http://localhost:8000/user/cart"
+            },
+            auto_return: "approved"
+        };
+
+        mercadopago.preferences.create(preference)
+        .then(function(response){
+              res.redirect(response.body.init_point);
+        })
+        .catch(function(e){
+            console.log(e)
+        })
+        */
+    /* 
         function Object (title, unit_price, quantity) {
             this.title = title;
             this.unit_price = unit_price;
@@ -311,6 +418,7 @@ let indexController = {
              console.log(e)
          })
          
+      */   
      },
      
     allProductsApi: (req , res) => {
