@@ -1,9 +1,9 @@
 
 window.addEventListener("load" , function(){
-  //  localStorage.clear()
+    //localStorage.clear()
 
 let cart = document.querySelector("#cart");
-let clear = document.querySelector('#clear')
+
 
 
 
@@ -59,11 +59,18 @@ if(localStorage.getItem("productForCart") != null){
 
 let nameProductCart = document.querySelector("#nameProductCart");
 
-let inputsProduct = document.querySelector("#inputsProduct")
+let inputsProduct = document.querySelector("#inputsProduct");
 
-let quantity = document.querySelector('#quantity')
+let quantity = document.querySelector('#quantity');
 
-if(localStorage.getItem("cartList") != null){
+let productsInCart = document.getElementById("productsInCart");
+let noProductsInCart = document.getElementById("noProductsInCart");
+
+if(localStorage.getItem("cartList") == null){
+    productsInCart.style.display = "none"
+} else {
+    noProductsInCart.style.display = "none"
+//if(localStorage.getItem("cartList") != null){
 
     function addProductName(item){
        let p = document.createElement('p');
@@ -216,7 +223,7 @@ if(localStorage.getItem("cartList") != null){
     // };
 
 //    let items = [];
-
+     let totalPrice = 0
    
     for(let i=0; i<parseCartList.length; i++){
         
@@ -233,9 +240,24 @@ if(localStorage.getItem("cartList") != null){
         inputsProduct.appendChild(addProductPriceInput(parseCartList[i].productPrice));
        
       //  items.push( new Object (parseCartList[i].productName , parseInt(parseCartList[i].productPrice) , 1));
-    
+        totalPrice = totalPrice + parseInt(parseCartList[i].productPrice)
         
     };
+
+    let importeTotal = document.getElementById("importe-total");
+    importeTotal.innerHTML = "Tu total hasta ahora: " + totalPrice 
+
+    let clear = document.querySelector('#clear')
+
+    clear.addEventListener("click" , function(){
+        localStorage.clear();
+        window.location.reload();
+    })
+
+    let submit = document.getElementById("submit");
+    submit.addEventListener("click" , function(){
+        localStorage.clear();
+    })
 
 
 }

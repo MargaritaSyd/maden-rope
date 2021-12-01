@@ -40,7 +40,13 @@
         Hola <%=userToLog.user_name%>
     </h1>
 
+    <div id="noProductsInCart">
+        <h1>No hay productos agregados a tu carrito</h1>
+        <button  class="btn btn-outline-success"><a href="/">Empieza a comprar!</a></button>   
 
+    </div>
+
+    <div id="productsInCart">
     <h2> Tus artículos</h2>
     <form action="/checkout" method="POST" id="submitForm">
         <div id="nameProductCart" class="card" style="width: 18rem;">
@@ -63,7 +69,6 @@
             
             
         <div class="total-compra">
-            <label id="texto-importe-total">Tu total hasta ahora:</label>
             <label id="importe-total"></label>
         </div>
         <div class="main-buttons">
@@ -76,6 +81,7 @@
         </div>
     </div>
     </form>
+    </div>
     
     </main>
 
