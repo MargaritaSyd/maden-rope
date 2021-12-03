@@ -385,6 +385,10 @@ let indexController = {
 
     compra: (req, res) => {
         res.render("comprar")
+    },
+
+    whatsapp: (req,res) => {
+        res.redirect("https://api.whatsapp.com/send?phone=5491134223248&text=Hola!%20Quiero%20comprar%20todo!")
     }
 
    // oneProduct: (req,res)=>{

@@ -58,5 +58,7 @@ router.get('/talles' , indexController.talles)
 router.get('/como_comprar' , indexController.compra)
 //router.get('/one_product/:id' , indexController.oneProduct)
 
+router.get("/whatsapp" , indexController.whatsapp)
+
 
 module.exports = router;
