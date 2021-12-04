@@ -87,6 +87,7 @@ if(localStorage.getItem("cartList") == null){
          inputName.type = "hidden";
          inputName.value = item;
          inputName.name = 'name';
+        // inputName.id = item
     
 /*
         let inputPrice = document.createElement('input');
@@ -168,10 +169,10 @@ if(localStorage.getItem("cartList") == null){
     
      };
 
-     function addDeleteButton(){
+     function addDeleteButton(item){
          let button = document.createElement('button');
          button.className = 'btn btn-primary';
-         button.id = "remove"
+         button.id = item
          button.textContent = "Borrar item"
 
          return button
@@ -233,7 +234,7 @@ if(localStorage.getItem("cartList") == null){
         nameProductCart.appendChild(addProductPrice(parseCartList[i].productPrice));
         nameProductCart.appendChild(addProductColor(parseCartList[i].selectedColor));
         nameProductCart.appendChild(addProductQuantityInput(quantity));
-        nameProductCart.appendChild(addDeleteButton());
+        nameProductCart.appendChild(addDeleteButton(parseCartList[i].productName));
       //  nameProductCart.appendChild(addForm(parseCartList[i]));
 
         inputsProduct.appendChild(addProductNameInput(parseCartList[i].productName));
@@ -258,6 +259,27 @@ if(localStorage.getItem("cartList") == null){
     submit.addEventListener("click" , function(){
         localStorage.clear();
     })
+
+        for(let i=0; i<parseCartList.length; i++){
+            let remove = document.getElementById(parseCartList[i].productName);
+
+            remove.addEventListener("click" , function(e){
+                     e.preventDefault();
+                    
+                    let idName = parseCartList[i].productName;
+                    let removeItem = parseCartList.filter((item) => item.productName != idName);
+                     localStorage.setItem("cartList" , JSON.stringify(removeItem))
+                     window.location.reload();
+
+
+                     
+            })
+         
+        }
+
+
+
+
 
 
 }
