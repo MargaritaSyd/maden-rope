@@ -277,6 +277,11 @@ if(localStorage.getItem("cartList") == null){
          
         }
 
+        
+
+    
+    
+
 
 
 
