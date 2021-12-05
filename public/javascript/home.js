@@ -10,7 +10,7 @@ window.addEventListener("load" , function(){
      notFav.addEventListener("click" , function(){
      notFav.style.display = "none"
      fav.style.display = "inline"
-/*
+
      let favInfo = {
         favId: window.location.pathname.slice(8),
         favName: document.querySelector("#productName").innerHTML,
@@ -40,21 +40,22 @@ window.addEventListener("load" , function(){
        } else {
 
         if(localStorage.getItem("favList") != null){
+            if(localStorage.getItem("productFav") != null){
         let parseProductFav = JSON.parse(localStorage.getItem("productFav"));
-
+        localStorage.removeItem('productFav')
         let parseFavList = JSON.parse(localStorage.getItem("favList"));
 
-        localStorage.removeItem('productFav')
+       
 
        // localStorage.removeItem('favList')
 
         parseFavList.push(parseProductFav)
 
-        localStorage.setItem("favList" , JSON.stringify(parseCartList))
+        localStorage.setItem("favList" , JSON.stringify(parseFavList))
 
+            }
        }
-       }
-  */          
+    }
      })
     
 
