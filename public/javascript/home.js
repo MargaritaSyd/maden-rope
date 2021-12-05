@@ -6,10 +6,13 @@ window.addEventListener("load" , function(){
     // fav.addEventListener("load" , )
 
      let notFav = document.getElementById("notFav")
+     
+     
 
      notFav.addEventListener("click" , function(){
      notFav.style.display = "none"
      fav.style.display = "inline"
+
 
      let favInfo = {
         favId: window.location.pathname.slice(8),
@@ -57,6 +60,27 @@ window.addEventListener("load" , function(){
        }
     }
      })
-    
+     let productDetailName = document.querySelector("#productName").innerHTML;
+
+     if(localStorage.getItem("favList")!=null){
+        let parseFavList = JSON.parse(localStorage.getItem("favList"));
+        for(let i=0; i<parseFavList.length; i++){
+        if (parseFavList[i].favName == productDetailName){
+            notFav.style.display = "none"
+            fav.style.display = "inline"
+        }
+        }
+     }
+
+     fav.addEventListener("click" , function(){
+        fav.style.display = "none"
+        notFav.style.display = "inline"
+  
+        let parseFavList = JSON.parse(localStorage.getItem("favList"));
+        let removeFavItem = parseFavList.filter((item) => item.favName != productDetailName);
+        localStorage.setItem("favList" , JSON.stringify(removeFavItem))
+        window.location.reload();
+
+     })
 
 })
