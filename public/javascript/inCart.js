@@ -1,7 +1,7 @@
         
   
         let cart = document.querySelector("#cart");
-        let inCart = document.getElementById("inCart");
+        //let inCart = document.getElementById("inCart");
         let productCase = {
             productName: document.querySelector("#productName").innerHTML,
         };
@@ -14,11 +14,9 @@
             case true:
                 cart.style.display = "none"
                 break;
-            case false:
-                inCart.style.display = "none"
-                break;
-            default :
-                inCart.style.display = "none"
-                break;
+            // case false:
+            //     cart.style.color = "blue"
+            //     break;
+           
         }
    

@@ -12,7 +12,7 @@ clickFav.style.color = "violet"
            div.style.width = "30%"
            let img = document.createElement("img")
            img.src = item.favImg;
-           img.className = "card-img-top"
+           img.className = "imgFav"
            let p = document.createElement("p");
            p.className = "card-title"
            p.textContent = item.favName;
@@ -39,6 +39,7 @@ clickFav.style.color = "violet"
                     clickFav.appendChild(addDivFav(parseFavList[i]));
             
                     };
+                
             
             }
         } else {
@@ -46,13 +47,5 @@ clickFav.style.color = "violet"
             }
     
 })
-/*
-<div class="card" style="width: 30%">
-<img src="..." class="card-img-top" alt="...">
-<div class="card-body">
-  <h5 class="card-title">Card title</h5>
-  <a href="#" class="btn btn-primary" style="width: 90%" >Go somewhere</a>
-</div>
-</div>
-*/
+
 })
