@@ -4,9 +4,10 @@ window.addEventListener("load" , function(){
 
 let cart = document.querySelector("#cart");
 
+//let inCart = document.querySelector("#inCart");
+//inCart.style.display = "none"
 
-
-
+ 
 //clear.addEventListener('click' , function(){
 //    localStorage.clear()
 //})
@@ -44,9 +45,28 @@ if(localStorage.getItem("productForCart") != null){
 } 
 } else {
 
+    let productDetailName = document.querySelector("#productName").innerHTML;
+    let cart = document.querySelector("#cart");
+    let inCart = document.getElementById("inCart");
+
+    let parseCartList = JSON.parse(localStorage.getItem("cartList"));   
+    for(let i=0; i<parseCartList.length; i++){
+    if (parseCartList[i].productName == productDetailName){
+       
+        alert(productDetailName)
+      //  cart.style.display = "none"
+      // inCart.style.display = "inline"
+    } else {
+        alert("hola")
+      //
+      //  cart.style.display = "inline"
+      // inCart.style.display = "none"
+    }
+    }
+
     if(localStorage.getItem("productForCart") != null){
         let parseProductForCart = JSON.parse(localStorage.getItem("productForCart"));
-    
+     
         localStorage.removeItem('productForCart')
 
         let parseCartList = JSON.parse(localStorage.getItem("cartList"));
@@ -87,21 +107,6 @@ if(localStorage.getItem("cartList") == null){
          inputName.type = "hidden";
          inputName.value = item;
          inputName.name = 'name';
-        // inputName.id = item
-    
-/*
-        let inputPrice = document.createElement('input');
-        inputPrice.type = "hidden";
-        inputPrice.value = item;
-        inputPrice.name = 'price';
-
-        let inputQuantity = document.createElement('input');
-        inputQuantity.type = "number";
-        inputQuantity.value = 1;
-        inputQuantity.name = 'quantity';
-
-        let inputs = {inputName, inputPrice ,inputQuantity}
-*/
 
         return inputName
     }
@@ -113,15 +118,6 @@ if(localStorage.getItem("cartList") == null){
         p.textContent = item;
         return p;
     };
-
-    // function addProductDescriptionInput(item){
-    //     let input = document.createElement('input');
-    //     input.type = "hidden";
-    //     input.value = item;
-    //     input.name = 'Description';
-
-    //     return input
-    // };
 
     function addProductPrice(item){
     
@@ -177,53 +173,7 @@ if(localStorage.getItem("cartList") == null){
 
          return button
      };
-/*
-     function addForm(item){
-         let form = document.createElement('form');
-         form.action = "/checkout";
-         form.method = "POST"
-         form.type = "hidden"
-         form.className = "submitForm"
-
-         const inputName = document.createElement('input');
-
-         inputName.type = "hidden";
-         inputName.value = item.productName;
-         inputName.name = 'name';
-
-         
-        const input = document.createElement('input');
-        input.type = "hidden";
-        input.value = item.productPrice;
-        input.name = 'price';
-
-        // const submit = document.createElement('button');
-        // submit.type = "submit";
-        // submit.className = "submitForm"
-        
-       
-
-
-         form.append(inputName)
-         
-         form.append(input)
-
-         //form.append(submit)
-
-         
-
-         return form
-     }
-*/
     let parseCartList = JSON.parse(localStorage.getItem("cartList"));
-
-    // function Object (title, unit_price, quantity) {
-    //     this.title = title;
-    //     this.unit_price = unit_price;
-    //     this.quantity = quantity;
-    // };
-
-//    let items = [];
      let totalPrice = 0
    
     for(let i=0; i<parseCartList.length; i++){
@@ -235,12 +185,10 @@ if(localStorage.getItem("cartList") == null){
         nameProductCart.appendChild(addProductColor(parseCartList[i].selectedColor));
         nameProductCart.appendChild(addProductQuantityInput(quantity));
         nameProductCart.appendChild(addDeleteButton(parseCartList[i].productName));
-      //  nameProductCart.appendChild(addForm(parseCartList[i]));
 
         inputsProduct.appendChild(addProductNameInput(parseCartList[i].productName));
         inputsProduct.appendChild(addProductPriceInput(parseCartList[i].productPrice));
        
-      //  items.push( new Object (parseCartList[i].productName , parseInt(parseCartList[i].productPrice) , 1));
         totalPrice = totalPrice + parseInt(parseCartList[i].productPrice)
         
     };
