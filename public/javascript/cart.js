@@ -44,26 +44,7 @@ if(localStorage.getItem("productForCart") != null){
     localStorage.setItem("cartList" , JSON.stringify(cartList))
 } 
 } else {
-
-    let productDetailName = document.querySelector("#productName").innerHTML;
-    let cart = document.querySelector("#cart");
-    let inCart = document.getElementById("inCart");
-
-    let parseCartList = JSON.parse(localStorage.getItem("cartList"));   
-    for(let i=0; i<parseCartList.length; i++){
-    if (parseCartList[i].productName == productDetailName){
-       
-        alert(productDetailName)
-      //  cart.style.display = "none"
-      // inCart.style.display = "inline"
-    } else {
-        alert("hola")
-      //
-      //  cart.style.display = "inline"
-      // inCart.style.display = "none"
-    }
-    }
-
+    
     if(localStorage.getItem("productForCart") != null){
         let parseProductForCart = JSON.parse(localStorage.getItem("productForCart"));
      
@@ -224,6 +205,13 @@ if(localStorage.getItem("cartList") == null){
             })
          
         }
+
+
+
+            
+        
+    
+
 
         
 
