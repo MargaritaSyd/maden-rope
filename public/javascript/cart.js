@@ -4,7 +4,8 @@ window.addEventListener("load" , function(){
 
 let cart = document.querySelector("#cart");
 
-//let inCart = document.querySelector("#inCart");
+let inCart = document.querySelector("#inCart");
+
 //inCart.style.display = "none"
 
  

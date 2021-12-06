@@ -17,5 +17,8 @@
             case false:
                 inCart.style.display = "none"
                 break;
+            default :
+                inCart.style.display = "none"
+                break;
         }
    

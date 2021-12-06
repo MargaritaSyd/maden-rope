@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
@@ -11,25 +11,28 @@
 </head>
 <body>
     <header>
-        <span class="cont-logo">
-            <a href="/"> <img class="logo" src="/img/logo.jpg" alt="logo"></a> 
-        </span>
-        <div class="the-header">
-            <form id="search">
-                <input type="text"> <i class="fas fa-search"></i>
-            </form>
-            <div id="user-cart">
-                <a href="/user/login"><i class="far fa-user fa-2x "></i></a>
-                <i class="fas fa-shopping-cart fa-2x "></i>
+       
+        <nav id="navbar">
+            
+        
+            
+        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
+        <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
+        <a href='/lamorita'><button type="button" class="btn btn-outline-success">Nosotros</button></a>
+        <a href='/talles'><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
+        <a href='/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+        <a href="#"><button type="button"><i class="far fa-heart"></i></button></a>
+    </nav>
+       
+        
+        <div class= "banner-index">
+            <div class= "img-banner-index">
+                <img src= "/img/frontEnd/banner-index.png">
             </div>
         </div>
 
-          <nav id="navbar">
-            <a href="#"><button type="button" class="btn btn-secondary">CONOCENOS!</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Tabla de talles</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Cómo comprar</button></a>
-            <a href="#"><button type="button" class="btn btn-secondary">Preguntas frecuentes</button></a>
-        </nav>
+          
    
     </header>
   <h1> Bienvenid@ <%= userToLog.user_name%></h1>
