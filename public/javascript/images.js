@@ -11,23 +11,52 @@ window.addEventListener("load" , function(){
   let detailImgSrc = detailImg.src;
 
 thumbImg1.addEventListener("mouseover" , function(){
+  if(detailImg.src == thumbImg1Src){
+    detailImg.src = detailImgSrc 
+    thumbImg1.src = thumbImg1Src
+    thumbImg2.src = thumbImg2Src
+    thumbImg3.src = thumbImg3Src 
+  } else {
   detailImg.src = thumbImg1Src
   thumbImg1.src = detailImgSrc
   thumbImg2.src = thumbImg2Src
   thumbImg3.src = thumbImg3Src
+  }
 })
 
 thumbImg2.addEventListener("mouseover" , function(){
+  if(detailImg.src == thumbImg2Src){
+    detailImg.src = detailImgSrc
+    thumbImg2.src = thumbImg2Src
+    thumbImg1.src = thumbImg1Src
+    thumbImg3.src = thumbImg3Src
+  } else {
   detailImg.src = thumbImg2Src
   thumbImg2.src = detailImgSrc
   thumbImg1.src = thumbImg1Src
   thumbImg3.src = thumbImg3Src
+  }
 })
 thumbImg3.addEventListener("mouseover" , function(){
+  if(detailImg.src == thumbImg3Src){
+    detailImg.src = detailImgSrc
+    thumbImg3.src = thumbImg3Src
+    thumbImg2.src = thumbImg2Src
+    thumbImg1.src = thumbImg1Src
+  } else {
   detailImg.src = thumbImg3Src
   thumbImg3.src = detailImgSrc
   thumbImg2.src = thumbImg2Src
   thumbImg1.src = thumbImg1Src
+  }
 })
 
+/*
+detailImg.addEventListener("mouseover" , function(){
+  detailImg.src = detailImgSrc
+  thumbImg3.src = thumbImg3Src
+  thumbImg2.src = thumbImg2Src
+  thumbImg1.src = thumbImg1Src
+})
+*/
 })
