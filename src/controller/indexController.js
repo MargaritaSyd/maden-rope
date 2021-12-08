@@ -214,60 +214,6 @@ let indexController = {
         res.render("cart" , {userToLog})
         
     },
-    /*
-    checkout: (req,res)=>{
-      //  let items = []
-      //  newItems = new Object()
-
-        let products = req.body
-
-        function Object(title, unit_price, quantity) {
-            this.title = title;
-            this.unit_price = unit_price;
-            this.quantity = quantity;
-        }
-
-        let items = [];
-
-        
-        items.push( new Object (req.body.name , parseInt(req.body.price) , parseInt(req.body.quantity)))
-        
-
-       
-        console.log(items)
-        // let productsName = products.name;
-       // let productsPrice = products.price;
-       // let productsQuantity = products.quantity
-        
-       
-        //   for(i=0; i<productsName.length; i++){
-        //     items.title = productsName[i];
-        //   }
-        //   for(i=0; i<productsPrice.length; i++){
-        //     items.unit_price = parseInt(productsPrice[i])
-        //   }
-        //   for(i=0; i<productsQuantity.length; i++){
-        //     items.quantity = parseInt(productsQuantity[i])
-        //   }
-        // }
-        //   console.log(items)
-      /*   for(i=0; i<products; i++){
-            items.title = products[i].name;
-            items.unit_price = parseInt(products[i].price)
-            items.quantity = parseInt(products[i].quantity)
-        }
-        */
-        //items = [ ]
-            //items = new Object()
-            // items.title = req.body.name
-            // items.unit_price = parseInt(req.body.price)
-            // items.quantity = parseInt(req.body.quantity)
-
-            
-        
-    
-    
-    //*/
 
      checkout: (req,res)=>{
         
@@ -297,7 +243,7 @@ let indexController = {
                   items,
     
                  back_urls: {
-                     success: "http://localhost:8000/user/cart",
+                     success: "http://localhost:8000/user/registro_compras",
                      failure: "http://localhost:8000/user/cart",
                      pending: "http://localhost:8000/user/cart"
                  },
@@ -329,7 +275,7 @@ let indexController = {
                  ],
     
                 back_urls: {
-                    success: "http://localhost:8000/user/cart",
+                    success: "http://localhost:8000/user/cart/shopok",
                     failure: "http://localhost:8000/user/cart",
                     pending: "http://localhost:8000/user/cart"
                 },
@@ -348,6 +294,8 @@ let indexController = {
 
           
      },
+
+    
      
     allProductsApi: (req , res) => {
         db.product.findAll()
@@ -389,7 +337,13 @@ let indexController = {
 
     whatsapp: (req,res) => {
         res.redirect("https://api.whatsapp.com/send?phone=5491134223248&text=Hola!%20Quiero%20comprar%20todo!")
-    }
+    },
+
+    shoppingRecord: (req,res)=>{
+        let userToLog = req.session.user;
+
+        res.render("shoppingRecord" , {userToLog})
+    },
 
    // oneProduct: (req,res)=>{
        

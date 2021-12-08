@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/77ea5851fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Made in Rope</title>
+</head>
+<body>
+    <header>
+       
+        <nav id="navbar">
+            
+        
+            
+        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Perfil</button></a>    
+        <!-- <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a> -->
+        <a href="#"><button type="button" class="btn btn-outline-success">Nosotros</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+    </nav>
+       
+        
+        <div class= "banner-index">
+            <div class= "img-banner-index">
+                <img src= "/img/frontEnd/banner-index.png">
+            </div>
+        </div>
+
+          
+   
+    </header>
+
+    <main>
+    <h1>
+        Hola <%=userToLog.user_name%>
+    </h1>
+
+    <div id="noShoppingRecord">
+        <h1>No has comprado nada todavía!</h1>
+        <button  class="btn btn-outline-success"><a href="/">Empieza a comprar!</a></button>   
+
+    </div> 
+
+    <div id="theShoppingRecord">
+    <h2> Tus compras realizadas</h2>
+        <div id="shoppingRecordName" class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          
+        </div>
+      </div>
+    </div>
+    
+    </main>
+
+    <script src="/javascript/shoppingRecord.js"></script> 
+    
+</body>
+

@@ -61,4 +61,8 @@ router.get('/como_comprar' , indexController.compra)
 router.get("/whatsapp" , indexController.whatsapp)
 
 
+
+router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
+
+
 module.exports = router;

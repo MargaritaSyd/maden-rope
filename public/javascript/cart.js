@@ -4,9 +4,6 @@ window.addEventListener("load" , function(){
 
 let cart = document.querySelector("#cart");
 
-let inCart = document.querySelector("#inCart");
-
-//inCart.style.display = "none"
 
  
 //clear.addEventListener('click' , function(){
@@ -185,10 +182,21 @@ if(localStorage.getItem("cartList") == null){
         window.location.reload();
     })
 
-    let submit = document.getElementById("submit");
-    submit.addEventListener("click" , function(){
-        localStorage.clear();
-    })
+    
+    // let submit = document.getElementById("submit");
+    // submit.addEventListener("click" , function(){
+    //     if(localStorage.getItem("shopingRecord") == null){
+    //     localStorage.setItem("shopingRecord" , localStorage.getItem("cartList"))
+    //     localStorage.removeItem("cartList")
+    //     } else {
+    //         let parseShopingRecord = JSON.parse(localStorage.getItem("shopingRecord"));
+    //         let parseCartList = JSON.parse(localStorage.getItem("cartList"));
+    //         parseShopingRecord.push(parseCartList)
+    //         localStorage.setItem("shopingRecord" , JSON.stringify(parseShopingRecord))
+    //         localStorage.removeItem("cartList")
+    //     }
+    //    // localStorage.clear();
+    // })
 
         for(let i=0; i<parseCartList.length; i++){
             let remove = document.getElementById(parseCartList[i].productName);
