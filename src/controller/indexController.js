@@ -275,7 +275,7 @@ let indexController = {
                  ],
     
                 back_urls: {
-                    success: "http://localhost:8000/user/cart/shopok",
+                    success: "http://localhost:8000/user/registro_compras",
                     failure: "http://localhost:8000/user/cart",
                     pending: "http://localhost:8000/user/cart"
                 },
@@ -353,7 +353,9 @@ let indexController = {
         let merchant_account_id = query.merchant_account_id;;
         let id_user = userToLog.id;
         
-
+        if (payment_id == null){
+            res.render("shoppingRecord" , {userToLog})
+        } else {
          db.sales.create(
             
               {
@@ -373,6 +375,7 @@ let indexController = {
          .catch(function(e){
              console.log(e)
          })
+        }
 
     },
 
