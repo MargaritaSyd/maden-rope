@@ -342,7 +342,38 @@ let indexController = {
     shoppingRecord: (req,res)=>{
         let userToLog = req.session.user;
 
-        res.render("shoppingRecord" , {userToLog})
+        var query = require('url').parse(req.url,true).query;
+
+        let payment_id = query.payment_id;
+        let payment_type = query.payment_type;
+        let collection_id = query.collection_id;
+        let merchant_order_id = query.merchant_order_id;
+        let status = query.status;
+        let preference_id = query.preference_id;
+        let merchant_account_id = query.merchant_account_id;;
+        let id_user = userToLog.id;
+        
+
+         db.sales.create(
+            
+              {
+                collection_id: collection_id,
+                payment_type: payment_type,
+                payment_id: payment_id,
+                merchant_order_id: merchant_order_id,
+                status: status,
+                preference_id: preference_id,
+                merchant_account_id: merchant_account_id,
+                id_user: id_user,
+              }
+         )
+         .then(function(){
+            res.render("shoppingRecord" , {userToLog})
+         })
+         .catch(function(e){
+             console.log(e)
+         })
+
     },
 
    // oneProduct: (req,res)=>{
