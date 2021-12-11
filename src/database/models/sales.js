@@ -33,7 +33,11 @@ module.exports = function(sequelize, dataTypes)
             allowNull: false
         },
         created_at: {
-            type: dataTypes.STRING,
+            type: dataTypes.DATE,
+            allowNull: true
+        },
+        active: {
+            type: dataTypes.INTEGER,
             allowNull: true
         },
     };
@@ -43,7 +47,7 @@ module.exports = function(sequelize, dataTypes)
      };
      const sales = sequelize.define(alias, cols, config);
      sales.associate = (models) => {
-         sales.belongsTo(models.category, {
+         sales.belongsTo(models.user, {
              as: "user",
              foreignKey: "id_user"
          })

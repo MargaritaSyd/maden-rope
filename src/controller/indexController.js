@@ -296,33 +296,6 @@ let indexController = {
      },
 
     
-     
-    allProductsApi: (req , res) => {
-        db.product.findAll()
-        .then (products => {
-            let productArray = [];
-            for(let i=0; i<products.length; i++){
-                let oneProduct = {
-                    id: products[i].id,
-                    name: products[i].name,
-                    description: products[i].description,
-                    price: products[i].price,
-                    stock: products[i].stock,
-                    id_category: products[i].id_category,
-                    image_product: "https://localhost3000/img/productImages/" + products[i].image_product
-                }    
-
-                productArray.push(oneProduct);
-            }
-            
-            return res.status(200).json({
-                count: productArray.length,
-                products: productArray,
-                status: 200
-            })
-        })
-    },
-
     lamorita: (req,res) => {
         res.render("lamorita")
     },
@@ -379,6 +352,119 @@ let indexController = {
 
     },
 
+     
+    allProductsApi: (req , res) => {
+        db.product.findAll()
+        .then (products => {
+            let productArray = [];
+            for(let i=0; i<products.length; i++){
+                let oneProduct = {
+                    id: products[i].id,
+                    name: products[i].name,
+                    description: products[i].description,
+                    price: products[i].price,
+                    stock: products[i].stock,
+                    id_category: products[i].id_category,
+                    image_product: "https://localhost3000/img/productImages/" + products[i].image_product
+                }    
+
+                productArray.push(oneProduct);
+            }
+            
+            return res.status(200).json({
+                count: productArray.length,
+                products: productArray,
+                status: 200
+            })
+        })
+    },     
+
+    // oneSale: (req , res) => {
+    //      db.sales.findByPk(req.params.id , {include: [{association: user}]})
+    //      .then( oneSale => {
+    //          if(oneSale==null){
+    //              res.send("Sale not found")
+    //          } else {
+    //             console.log(user)
+    //          }
+    //      })
+    
+    //  },
+    //  oneSale: (req , res) => {
+    //          db.sales.findByPk(req.params.id,{include: 
+    //              [{association: 'user',
+    //              where: { id: id_user }
+
+    //          ])
+
+    //              .then( oneSale => {
+    //                  if(oneSale==null){
+    //                      res.send("Sale not found")
+    //                  }
+    //                  else {
+    //                      let theSale = {
+    //                          collection_id: oneSale.collection_id,
+    //                          payment_id: oneSale.payment_id,
+    //                          payment_type: oneSale.payment_type,   
+    //                          merchant_order_id: oneSale.merchant_order_id,
+    //                          status: oneSale.status,  
+    //                          preference_id: oneSale.preference_id,   
+    //                          merchant_account_id: oneSale.merchant_account_id, 
+    //                          created_at: oneSale.created_at,
+    //                          id_user: oneSale.id_user, 
+    //                          mail: oneSale.user.mail,
+    //                          user_name: oneSale.user.user_name,
+    //                          last_name: oneSale.user.last_name,
+    //                          user_image: oneSale.user.user_image,
+    //                          tel: oneSale.user.tel,
+    //                          dni: oneSale.user.dni,
+    //                          adress: oneSale.user.adress,
+    //                      }
+    //                      return res.status(200).json({
+    //                          data: theSale,
+    //                          status: 200
+    //                      })
+    //                  }
+    //              })    
+
+
+    //     },
+
+   allSalesApi: (req , res) => {
+        db.sales.findAll({include: [{association: "user"}] })
+        .then (sales => {
+           let saleArray = [];
+             for(let i=0; i<sales.length; i++){
+                 let oneSale = {
+                     collection_id: sales[i].collection_id,
+                     payment_id: sales[i].payment_id,
+                     payment_type: sales[i].payment_type,   
+                     merchant_order_id: sales[i].merchant_order_id,
+                     status: sales[i].status,  
+                     preference_id: sales[i].preference_id,   
+                     merchant_account_id: sales[i].merchant_account_id, 
+                     created_at: sales[i].created_at,
+                     active: sales[i].active,
+                     id_user: sales[i].id_user,       
+                     user_mail: sales[i].user.mail,
+                     user_name: sales[i].user.user_name,
+                     last_name: sales[i].user.last_name,
+                     tel: sales[i].user.tel,
+                     dni: sales[i].user.dni,
+                     adress: sales[i].user.adress,
+                } 
+                 saleArray.push(oneSale);
+             }
+            
+             return res.status(200).json({
+                 count: saleArray.length,
+                 sales: saleArray,
+                 status: 200
+             })
+         })
+    }
+
+
    // oneProduct: (req,res)=>{
        
         // function imageFunction(array){
@@ -414,7 +500,7 @@ let indexController = {
 
    //  }
    
-}
+    }
 
 module.exports = indexController;
 

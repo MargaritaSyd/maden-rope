@@ -63,6 +63,9 @@ router.get("/whatsapp" , indexController.whatsapp)
 
 
 router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
+router.get('/api/sales' , indexController.allSalesApi);
+
+//router.get('/api/one_sale/:id' , indexController.oneSale)
 
 
 module.exports = router;
