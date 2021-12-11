@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs');
 const { response } = require('express');
 const mercadopago = require('mercadopago');
 const { array } = require('../middlewares/productMiddleware');
+//const fetch = require("node-fetch");
 
 let indexController = {
     
@@ -462,43 +463,17 @@ let indexController = {
                  status: 200
              })
          })
-    }
+    },
 
+    salesDashboard: (req,res) => {
+    //    fetch("http://localhost:8000/api/sales")
+    //     .then(r => r.json())
+    //     .then(sales => {
+            res.render("salesDashboard")
+     //   })
+        
+    },
 
-   // oneProduct: (req,res)=>{
-       
-        // function imageFunction(array){
-        //     for(let i=0; i<array.length; i++){
-        //         return "https://localhost:8000/img/productImages/" + array[i]
-        //     }
-        // }
-
-       
-    //     function getImage(item){
-    //         return "https://localhost:8000/img/productImages/" + item
-    //     }
-       
-    //     function images(item){
-    //         item.map(getImage)
-    //     }
-    //     db.product.findByPk(req.params.id)
-    //     .then(oneProduct => {
-    //         let theProduct = {
-    //             id: oneProduct.id,
-    //             name: oneProduct.name,
-    //             id_category: oneProduct.id_category,
-    //             price: oneProduct.price,
-    //             description: oneProduct.description,
-    //             image_product: images(oneProduct.image_product),
-    //             stock : oneProduct.stock
-    //         }
-    //         return res.status(200).json({
-    //             data: theProduct,
-    //             status: 200
-    //         })
-    //     })
-
-   //  }
    
     }
 

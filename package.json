@@ -32,5 +32,6 @@
     "npm": "^7.24.2",
     "sequelize": "^5.22.4",
     "session": "^0.1.0"
-  }
+  },
+  "devDependencies": {}
 }
