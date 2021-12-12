@@ -6,6 +6,11 @@ main{
     padding-left: 15%;
     background-color: #1D1B28;
 }
+
+#formRegister{
+    width: 80%;
+}
+
 .carousel slide{
     display: flex;
 }

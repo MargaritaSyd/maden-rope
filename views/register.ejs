@@ -1,14 +1,19 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/77ea5851fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Made in Rope-Registro</title>
+    </head>
 <body>
     <h1>Registrate</h1>
-    <form action="/user/register" method="POST" enctype="multipart/form-data">
+    <form action="/user/register" method="POST" enctype="multipart/form-data" id="formRegister">
     <div class="form-floating mb-3">
+        <label for=""> Nombre</label>
         <% if (locals.error&&error.user_name) { %>
         <input type="text" class="form-control" id="floatingInput" value="<%=locals.old&&old.user_name%>" name="user_name">
         <small style="color:red;"><%=error.user_name.msg%></small>
@@ -56,11 +61,13 @@
         <input type="text" class="form-control" id="floatingInput" placeholder="Correo electrónico"  name="mail">
         <%}%>
     </div>
-    <div class="input-group mb-3">
+    <!-- <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile02" name="user_image" accept=".jpeg,.jpg">
-    </div>
+    </div> -->
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="password">
+        <input id="password" type="password" name="password" class="input inputPasswordCheck" placeholder="*********">
+        <i id="viewPass" class="far fa-eye fa-2x"></i>
+        <i id="viewPassNot" class="far fa-eye-slash fa-2x"></i>
         <% if (locals.error&&error.password) { %>
             <small style="color:red;"><%=error.password.msg%></small>
         <%}%>
@@ -71,5 +78,6 @@
 
     <p> Ya tenes cuenta?</p>
     <a href="/user/login"> Iniciá sesión</a>
+    <script src="/javascript/pass.js"></script>
 </body>
 </html>
