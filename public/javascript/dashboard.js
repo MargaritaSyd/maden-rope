@@ -138,7 +138,7 @@ fetch("http://localhost:8000/api/sales")
         let input = document.getElementById("inputActive")
         delivered.addEventListener("click" , function(e){
                  input.value = delivered.id
-                 window.location.reload();
+            //     window.location.reload();
         })
      //   itemToDeliver.appendChild(addMerchantOrderId(sale.merchant_order_id));
 
