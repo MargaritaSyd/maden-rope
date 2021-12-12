@@ -23,8 +23,6 @@ router.get('/create' , indexController.create);
 
 router.post('/create' , fileUploadProduct.array("image_product", 10) , indexController.newProduct);
 
-
-
 router.get('/edit/:id' ,notAdmin, indexController.edit);
 
 router.post('/edit/:id' , fileUploadProduct.single('image_product')  , indexController.editProduct);
@@ -49,10 +47,6 @@ router.get('/api/products' , indexController.allProductsApi);
 
 router.get('/lamorita' , indexController.lamorita);
 
-router.get('/edit_price' , indexController.editPrice);
-
-router.post('/edit_price' , indexController.priceEdited);
-
 router.get('/talles' , indexController.talles)
 
 router.get('/como_comprar' , indexController.compra)
@@ -60,11 +54,11 @@ router.get('/como_comprar' , indexController.compra)
 
 router.get("/whatsapp" , indexController.whatsapp)
 
-router.get("/sales_dashboard" , indexController.salesDashboard)
+router.get("/sales_dashboard" ,notAdmin, indexController.salesDashboard)
 router.post("/sales_dashboard" , indexController.salesDashboardPost)
 
 router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
-router.get('/api/sales' , indexController.allSalesApi);
+router.get('/api/sales' ,notAdmin, indexController.allSalesApi);
 
 //router.get('/api/one_sale/:id' , indexController.oneSale)
 

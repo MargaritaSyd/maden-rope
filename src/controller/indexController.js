@@ -53,7 +53,8 @@ let indexController = {
         //   else {
         //       imagesPath = "";
         //   }
-         db.product.create(
+       
+        db.product.create(
             {
                 name: req.body.name,
                 id_category: req.body.category,
@@ -69,7 +70,7 @@ let indexController = {
         .then(function(){
             res.redirect("/")
         });
-      
+    
     },
 
     edit: function(req,res){
@@ -112,23 +113,7 @@ let indexController = {
                 
     },
 
-    editPrice: function(req , res){
-        res.render("editPrice")
-    },
-
-    priceEdited: function(req,res){
-        db.product.update(
-            {
-                price: (product.price * req.body.priceUp)/100
-            }
-        ).then(function(){
-            res.redirect('/')
-        })
-        .catch(function(e){
-            res.send("error")
-        })
-    },
-
+    
     detail: function(req,res){
         let userToLog = req.session.user
         let product = db.product.findByPk(req.params.id);
@@ -424,10 +409,11 @@ let indexController = {
     },
     salesDashboardPost: (req,res)=>{
 
-        let delivered = req.body.delivered;
+  //      let delivered = req.body;
 
-      //  console.log(delivered)
+   //    console.log(delivered)
 
+  let delivered = req.body.delivered;
         if(Array.isArray(delivered) == true){
             let theItem = delivered[0]
         

@@ -1,11 +1,14 @@
 function notAdmin(req, res, next) {
-	if (req.session.user) {
+    if (req.session.user) {
         let user = req.session.user;
-        if(!user && user.admin != 0){
+        if(user.admin != 0){
             return res.redirect('/');
         } 
-	next();
-}
+    } else {
+        return res.redirect('/')
+    } 
+    next();
+//}
 }
 
 module.exports = notAdmin;
