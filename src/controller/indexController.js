@@ -380,57 +380,6 @@ let indexController = {
         })
     },     
 
-    // oneSale: (req , res) => {
-    //      db.sales.findByPk(req.params.id , {include: [{association: user}]})
-    //      .then( oneSale => {
-    //          if(oneSale==null){
-    //              res.send("Sale not found")
-    //          } else {
-    //             console.log(user)
-    //          }
-    //      })
-    
-    //  },
-    //  oneSale: (req , res) => {
-    //          db.sales.findByPk(req.params.id,{include: 
-    //              [{association: 'user',
-    //              where: { id: id_user }
-
-    //          ])
-
-    //              .then( oneSale => {
-    //                  if(oneSale==null){
-    //                      res.send("Sale not found")
-    //                  }
-    //                  else {
-    //                      let theSale = {
-    //                          collection_id: oneSale.collection_id,
-    //                          payment_id: oneSale.payment_id,
-    //                          payment_type: oneSale.payment_type,   
-    //                          merchant_order_id: oneSale.merchant_order_id,
-    //                          status: oneSale.status,  
-    //                          preference_id: oneSale.preference_id,   
-    //                          merchant_account_id: oneSale.merchant_account_id, 
-    //                          created_at: oneSale.created_at,
-    //                          id_user: oneSale.id_user, 
-    //                          mail: oneSale.user.mail,
-    //                          user_name: oneSale.user.user_name,
-    //                          last_name: oneSale.user.last_name,
-    //                          user_image: oneSale.user.user_image,
-    //                          tel: oneSale.user.tel,
-    //                          dni: oneSale.user.dni,
-    //                          adress: oneSale.user.adress,
-    //                      }
-    //                      return res.status(200).json({
-    //                          data: theSale,
-    //                          status: 200
-    //                      })
-    //                  }
-    //              })    
-
-
-    //     },
-
    allSalesApi: (req , res) => {
         db.sales.findAll({include: [{association: "user"}] })
         .then (sales => {

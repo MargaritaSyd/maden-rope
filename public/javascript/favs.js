@@ -1,6 +1,6 @@
 window.addEventListener("load" , function(){
 
-
+//localStorage.clear()
 let clickFav = document.getElementById("clickFav");
 
 clickFav.style.color = "violet"
@@ -23,9 +23,25 @@ clickFav.style.color = "violet"
             
            div.append(img);
            div.append(p)
+           div.append(button)
            return div
 
         }
+
+ function addDivNoFav(){
+           let div = document.createElement("div");
+           div.className = "card"
+           div.style.width = "30%"
+           let p = document.createElement("p");
+           p.className = "card-title"
+           p.textContent = "No tienes productos favoritos";
+            
+           div.append(p)
+           return div
+
+        }
+
+
 
         clickFav.addEventListener("click" , function(){
             if(clickFav.style.color == "violet"){
@@ -40,6 +56,10 @@ clickFav.style.color = "violet"
             
                     };
                 
+            
+            } else {
+                clickFav.style.color = "blue"
+                clickFav.appendChild(addDivNoFav());
             
             }
         } else {
