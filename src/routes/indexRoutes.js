@@ -61,6 +61,7 @@ router.get('/como_comprar' , indexController.compra)
 router.get("/whatsapp" , indexController.whatsapp)
 
 router.get("/sales_dashboard" , indexController.salesDashboard)
+router.post("/sales_dashboard" , indexController.salesDashboardPost)
 
 router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
 router.get('/api/sales' , indexController.allSalesApi);

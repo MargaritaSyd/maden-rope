@@ -21,15 +21,25 @@ function addDivSale(item){
     pUserAdress.textContent = item.adress;
     pUserAdress.className = "card-text";
 
+    let input= document.createElement('input');
+    input.type = 'hidden';
+   // input.value = item.collection_id;
+    input.name = "delivered"
+    input.id = "inputActive";
+
+
     let button = document.createElement('button');
     button.textContent = 'Entregado';
+    button.type = "submit"
     button.className = "btn btn-primary";
+    button.id = item.collection_id
 
 
     div.append(pMerchant);
     div.append(pPaymentId);
     div.append(pUserMail);
     div.append(pUserAdress);
+    div.append(input);
     div.append(button);
 
     return div
@@ -124,6 +134,12 @@ fetch("http://localhost:8000/api/sales")
     for( sale of data.sales){
     if(sale.active == 1){
         itemToDeliver.appendChild(addDivSale(sale)) 
+        let delivered = document.getElementById(sale.collection_id);
+        let input = document.getElementById("inputActive")
+        delivered.addEventListener("click" , function(e){
+                 input.value = delivered.id
+                 window.location.reload();
+        })
      //   itemToDeliver.appendChild(addMerchantOrderId(sale.merchant_order_id));
 
     } else { 
@@ -133,3 +149,29 @@ fetch("http://localhost:8000/api/sales")
     }
     
 })
+/*
+fetch("http://localhost:8000/api/sales")
+.then(function(r){
+    return r.json();
+})
+.then(function(data){
+    for( sale of data.sales){
+    let delivered = document.getElementById(sale.collection_id);
+    
+    delivered.addEventListener("click" , function(e){
+             e.preventDefault();
+            //let items = data.sales
+            alert(sale.collection_id)
+            //let submitItem = items.filter((item) => item.collection_id != idItem)
+            // let idName = parseCartList[i].productName;
+            // let removeItem = parseCartList.filter((item) => item.productName != idName);
+            //  localStorage.setItem("cartList" , JSON.stringify(removeItem))
+            //  window.location.reload();
+
+
+             
+    })
+ 
+}
+})
+*/

@@ -473,7 +473,58 @@ let indexController = {
      //   })
         
     },
+    salesDashboardPost: (req,res)=>{
 
+        let delivered = req.body.delivered;
+
+        if(Array.isArray(delivered) == true){
+            let theItem = delivered[0]
+        
+            db.sales.update(
+                    {
+                        active: 0
+                    }, {
+                        where: {collection_id: theItem}
+                    })
+                    .then(function(){
+                        res.redirect('/sales_dashboard')
+                    })
+                    .catch(function(e){
+                        res.send("error")
+                    })
+        } else {
+            db.sales.update(
+                {
+                    active: 0
+                }, {
+                    where: {collection_id: delivered}
+                })
+                .then(function(){
+                    res.redirect('/sales_dashboard')
+                })
+                .catch(function(e){
+                    res.send("error")
+                })
+           // console.log(delivered)
+        }  
+       /*
+        let theItem = delivered[0]
+      
+        db.sales.update(
+                {
+                    active: 0
+                }, {
+                    where: {collection_id: theItem}
+                })
+                 .then(function(){
+                     res.redirect('/sales_dashboard')
+                 })
+                 .catch(function(e){
+                    res.send("error")
+                })
+    */
+      //  console.log(theItem)
+    }
    
     }
 
