@@ -455,6 +455,10 @@ let indexController = {
         })
       },
 
+      prices: (req,res) => {
+          let number = req.body
+          console.log(number)
+      },
 
       allproductsApi: (req,res) => {
        // db.product.findAll({include: [{association: "category"}] })

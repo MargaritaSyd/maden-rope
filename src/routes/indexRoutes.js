@@ -59,6 +59,8 @@ router.post("/sales_dashboard" , indexController.salesDashboardPost)
 
 router.get("/all_products" , indexController.allProducts)
 
+router.post("/all_products" , indexController.prices)
+
 router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
 router.get('/api/sales' , indexController.allSalesApi);
 router.get('/api/products' , indexController.allproductsApi);
