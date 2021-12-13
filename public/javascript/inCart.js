@@ -12,7 +12,8 @@
         
         switch (cartButton){
             case true:
-                cart.style.display = "none"
+                cart.innerHTML = "Este producto está en tu carrito"
+             //   cart.style.display = "none"
                 break;
             // case false:
             //     cart.style.color = "blue"

@@ -442,12 +442,53 @@ let indexController = {
                 .catch(function(e){
                     res.send("error")
                 })
-      }  
-      
-             
-  
       }
-   
+
+      },
+      allProducts: (req,res)=> {
+        db.product.findAll()
+        .then(function(productos){
+           let productosC1 = productos.filter(productos=>productos.id_category==1);
+           let productosC2 = productos.filter(productos=>productos.id_category==2);
+           let productosC3 = productos.filter(productos=>productos.id_category==3);
+           res.render("products" , {productosC1,productosC2,productosC3})
+        })
+      },
+
+
+      allproductsApi: (req,res) => {
+       // db.product.findAll({include: [{association: "category"}] })
+       db.product.findAll()
+       .then (product => {
+           let productsArray = [];
+             for(let i=0; i<product.length; i++){
+                 let oneProduct = {
+                    id: product[i].id,
+                    name: product[i].name,
+                   // id_category: products[i].id_category,
+                    description: product[i].description,
+                    price: product[i].price,
+                    stock: product[i].stock,
+                    id_category: product[i].id_category,
+                    //category_name: products[i].category.name,
+                    image_product: "localhost:8000/img/productImages/"+product[i].image_product,
+                    image_product_1: "localhost:8000/img/productImages/"+product[i].image_product_1,
+                   // image_product_2: product[i].image_product_2,
+                   // image_product_3: product[i].image_product_3,
+                   // price: products[i].price,
+                   // category_name: product[i].category.name
+                } 
+                productsArray.push(oneProduct);
+             }
+            
+             return res.status(200).json({
+                 count: productsArray.length,
+                 products: productsArray,
+                 status: 200
+             })
+         })
+    
+      }
     }
 
 module.exports = indexController;

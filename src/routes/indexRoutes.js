@@ -57,8 +57,11 @@ router.get("/whatsapp" , indexController.whatsapp)
 router.get("/sales_dashboard" ,notAdmin, indexController.salesDashboard)
 router.post("/sales_dashboard" , indexController.salesDashboardPost)
 
+router.get("/all_products" , indexController.allProducts)
+
 router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
-router.get('/api/sales' ,notAdmin, indexController.allSalesApi);
+router.get('/api/sales' , indexController.allSalesApi);
+router.get('/api/products' , indexController.allproductsApi);
 
 //router.get('/api/one_sale/:id' , indexController.oneSale)
 
