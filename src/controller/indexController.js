@@ -337,7 +337,7 @@ let indexController = {
         }
 
     },
-
+/*
      
     allProductsApi: (req , res) => {
         db.product.findAll()
@@ -364,6 +364,7 @@ let indexController = {
             })
         })
     },     
+    */
 
    allSalesApi: (req , res) => {
         db.sales.findAll({include: [{association: "user"}] })
@@ -461,24 +462,24 @@ let indexController = {
       },
 
       allproductsApi: (req,res) => {
-       // db.product.findAll({include: [{association: "category"}] })
-       db.product.findAll()
+        db.product.findAll({include: [{association: "category"}] })
+       //db.product.findAll()
        .then (product => {
            let productsArray = [];
              for(let i=0; i<product.length; i++){
                  let oneProduct = {
                     id: product[i].id,
                     name: product[i].name,
-                   // id_category: products[i].id_category,
+                    id_category: product[i].id_category,
                     description: product[i].description,
                     price: product[i].price,
                     stock: product[i].stock,
                     id_category: product[i].id_category,
-                    //category_name: products[i].category.name,
+                    category_name: product[i].category.name,
                     image_product: "localhost:8000/img/productImages/"+product[i].image_product,
                     image_product_1: "localhost:8000/img/productImages/"+product[i].image_product_1,
-                   // image_product_2: product[i].image_product_2,
-                   // image_product_3: product[i].image_product_3,
+                    image_product_2: "localhost:8000/img/productImages/"+product[i].image_product_2,
+                    image_product_3: "localhost:8000/img/productImages/"+product[i].image_product_3,
                    // price: products[i].price,
                    // category_name: product[i].category.name
                 } 
