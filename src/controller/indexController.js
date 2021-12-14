@@ -337,34 +337,6 @@ let indexController = {
         }
 
     },
-/*
-     
-    allProductsApi: (req , res) => {
-        db.product.findAll()
-        .then (products => {
-            let productArray = [];
-            for(let i=0; i<products.length; i++){
-                let oneProduct = {
-                    id: products[i].id,
-                    name: products[i].name,
-                    description: products[i].description,
-                    price: products[i].price,
-                    stock: products[i].stock,
-                    id_category: products[i].id_category,
-                    image_product: "https://localhost3000/img/productImages/" + products[i].image_product
-                }    
-
-                productArray.push(oneProduct);
-            }
-            
-            return res.status(200).json({
-                count: productArray.length,
-                products: productArray,
-                status: 200
-            })
-        })
-    },     
-    */
 
    allSalesApi: (req , res) => {
         db.sales.findAll({include: [{association: "user"}] })
@@ -447,6 +419,10 @@ let indexController = {
 
       },
       allProducts: (req,res)=> {
+          res.render("productsPrueba")
+      },
+      /*
+      allProducts: (req,res)=> {
         db.product.findAll()
         .then(function(productos){
            let productosC1 = productos.filter(productos=>productos.id_category==1);
@@ -455,7 +431,7 @@ let indexController = {
            res.render("products" , {productosC1,productosC2,productosC3})
         })
       },
-
+*/
       prices: (req,res) => {
           let number = req.body
           console.log(number)
@@ -480,8 +456,7 @@ let indexController = {
                     image_product_1: "localhost:8000/img/productImages/"+product[i].image_product_1,
                     image_product_2: "localhost:8000/img/productImages/"+product[i].image_product_2,
                     image_product_3: "localhost:8000/img/productImages/"+product[i].image_product_3,
-                   // price: products[i].price,
-                   // category_name: product[i].category.name
+               
                 } 
                 productsArray.push(oneProduct);
              }
