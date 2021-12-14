@@ -33,23 +33,23 @@ searchA.addEventListener("click" , function(){
     //div.textContent = item.name
 
     let img = document.createElement('img');
-    if(item.image_product == "localhost:8000/img/productImages/null"){
-        img.src="/img/logo.jpg"
-    } else if (item.image_product != "localhost:8000/img/productImages/ "){
-        img.src="/img/logo.jpg"
+    //img.src = item.image_product;
+    
+    if((item.image_product == "/img/productImages/null")||(item.image_product == "/img/productImages/")) {
+        img.src = "/img/logo.jpg"
+       // img.src = item.image_product
     } else {
-        img.src = item.image_product;
+        img.src = item.image_product
     }
+    
     img.className = "card-img-top";
-    img.id = item.id
+    img.id = item.id;
 
     
     let img1 = document.createElement('img');
-    if(item.image_product_1 == "localhost:8000/img/productImages/null"){
+    if((item.image_product_1 == "/img/productImages/null")||(item.image_product_1 == "/img/productImages/")){
         img1.src="/img/logo.jpg"
-    } else if (item.image_product_1 != "localhost:8000/img/productImages/ "){
-        img1.src="/img/logo.jpg"
-    } else {
+     } else {
         img1.src = item.image_product_1;
     }
     img1.className = "card-img-top";
@@ -59,32 +59,28 @@ searchA.addEventListener("click" , function(){
     
 
     let img2 = document.createElement('img');
-    if(item.image_product_2 == "localhost:8000/img/productImages/null"){
-        img2.src="/img/logo.jpg"
-    } else if (item.image_product_2 != "localhost:8000/img/productImages/ "){
+    if((item.image_product_2 == "/img/productImages/null")||(item.image_product_2 == "/img/productImages/")){
         img2.src="/img/logo.jpg"
     } else {
         img2.src = item.image_product_2;
     }
     img2.className = "card-img-top";
-    img2.id = item.id + "3"
+    img2.id = item.id + "2"
     img2.style.display = "none"
 
     
 
     let img3 = document.createElement('img');
-    if(item.image_product_3 == "localhost:8000/img/productImages/null"){
+    if((item.image_product_3 == "/img/productImages/null")||(item.image_product_3 == "/img/productImages/")){
         img3.src="/img/logo.jpg"
-    } else if (item.image_product_3 != "localhost:8000/img/productImages/ "){
-        img3.src="/img/logo.jpg"
-    } else {
+   } else {
         img3.src = item.image_product_3;
     }
     img3.className = "card-img-top";
     img3.id = item.id + "3"
     img3.style.display = "none"
 
-       
+
     let secondDiv = document.createElement("div");
     secondDiv.className = "card-body"
 
@@ -108,10 +104,6 @@ searchA.addEventListener("click" , function(){
     aEdit.className = "btn btn-primary"
     aEdit.textContent = "Editar producto"
 
-/*
-                    <a href="/edit/<%=productosC3[i].id%>" class="btn btn-primary">Editar producto</a>
-
-                    */
     a.append(h5);
     secondDiv.append(a);
     // secondDiv.append(p);
@@ -141,34 +133,54 @@ fetch("http://localhost:8000/api/products")
     for( product of data.products){
         if(product.id_category == 1){
             categoryBozales.appendChild(addDivProduct(product)) 
-       
+            
         } else if(product.id_category == 2){ 
             categoryRiendas.appendChild(addDivProduct(product)) 
         } else {
             categoryAccesorios.appendChild(addDivProduct(product))
         }
+
+        let img0 = document.getElementById(product.id)
+        let img1 = document.getElementById(product.id + "1")
+        let img2 = document.getElementById(product.id + "2")
+        let img3 = document.getElementById(product.id + "3")
+
+            img0.addEventListener("click" , function(){
+                img0.style.display = "none"
+                img1.style.display = "inline"
+            })
+            img1.addEventListener("click" , function(){
+                img1.style.display = "none"
+                img2.style.display = "inline"
+            })
+           
+            img2.addEventListener("click" , function(){
+                img2.style.display = "none"
+                img3.style.display = "inline"
+            })
+            img3.addEventListener("click" , function(){
+                img3.style.display = "none"
+                img0.style.display = "inline"
+            })
+        
+            
     }
 })
-    /*
-    for( product of data.products){
-    if(product.id_category == 1){
-        alert("Bozales");
-     //   categoryBozales.appendChild(addDivProduct(product)) 
-       // let delivered = document.getElementById(sale.collection_id);
-       // let input = document.getElementById("inputActive")
-       // delivered.addEventListener("click" , function(e){
-        //         input.value = delivered.id
-            //     window.location.reload();
-        //})
-     //   itemToDeliver.appendChild(addMerchantOrderId(sale.merchant_order_id));
+   /*
+    let remove = document.getElementById(parseCartList[i].productName);
 
-    } else if(product.id_category == 2){ 
-        alert("Riendas");
-     //   categoryRiendas.appendChild(addDivProduct(product)) 
-    } else {
-        alert("accesorios");
-     //   ategoryAccesorios.appendChild(addDivProduct(product))
-    }
-   // nameSale.innerHTML += sale.collection_id   
-    }
-  */ 
+            remove.addEventListener("click" , function(e){
+                     e.preventDefault();
+                    
+                    let idName = parseCartList[i].productName;
+                    let removeItem = parseCartList.filter((item) => item.productName != idName);
+                     localStorage.setItem("cartList" , JSON.stringify(removeItem))
+                     window.location.reload();
+
+
+                     
+            })
+         
+        } 
+   */
+   

@@ -452,10 +452,10 @@ let indexController = {
                     stock: product[i].stock,
                     id_category: product[i].id_category,
                     category_name: product[i].category.name,
-                    image_product: "localhost:8000/img/productImages/"+product[i].image_product,
-                    image_product_1: "localhost:8000/img/productImages/"+product[i].image_product_1,
-                    image_product_2: "localhost:8000/img/productImages/"+product[i].image_product_2,
-                    image_product_3: "localhost:8000/img/productImages/"+product[i].image_product_3,
+                    image_product: "/img/productImages/"+product[i].image_product,
+                    image_product_1: "/img/productImages/"+product[i].image_product_1,
+                    image_product_2: "/img/productImages/"+product[i].image_product_2,
+                    image_product_3: "/img/productImages/"+product[i].image_product_3,
                
                 } 
                 productsArray.push(oneProduct);
