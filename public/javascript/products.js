@@ -99,6 +99,7 @@ searchA.addEventListener("click" , function(){
     pPrice.className ="card-text"
     pPrice.textContent = item.price
 
+  
     let aEdit = document.createElement("a");
     aEdit.href ="/edit/" +item.id
     aEdit.className = "btn btn-primary"
@@ -166,21 +167,16 @@ fetch("http://localhost:8000/api/products")
             
     }
 })
-   /*
-    let remove = document.getElementById(parseCartList[i].productName);
 
-            remove.addEventListener("click" , function(e){
-                     e.preventDefault();
-                    
-                    let idName = parseCartList[i].productName;
-                    let removeItem = parseCartList.filter((item) => item.productName != idName);
-                     localStorage.setItem("cartList" , JSON.stringify(removeItem))
-                     window.location.reload();
+let inputPrice = document.getElementById("inputPrice");
+let submitInput = document.getElementById("submitInput")
+//req.body.price = inputPrice.value
 
 
-                     
-            })
-         
-        } 
-   */
-   
+let price = inputPrice.value
+
+submitInput.addEventListener("click" , function(){
+    alert(price)
+})
+
+
