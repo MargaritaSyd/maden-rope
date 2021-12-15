@@ -25,7 +25,7 @@ router.post('/create' , fileUploadProduct.array("image_product", 10) , indexCont
 
 router.get('/edit/:id' ,notAdmin, indexController.edit);
 
-router.post('/edit/:id' , fileUploadProduct.single('image_product')  , indexController.editProduct);
+router.post('/edit/:id' , fileUploadProduct.array('image_product', 10)  , indexController.editProduct);
 
 router.get('/user/register' , logged , indexController.register);
 

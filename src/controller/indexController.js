@@ -84,22 +84,54 @@ let indexController = {
     },
 
     editProduct: function(req,res){
-        
-        let product = db.product.findByPk(req.params.id)
-        let imageProduct;
-        if(req.file){
-            imageProduct = req.file.filename;
-        //    fs.unlinkSync(path.join(__dirname+'../../../public/img/productImages/'+ imgProduct));
-        } else {
-            imageProduct = product.image_product;
+      //  console.log(req.body.prices)
+
+        if(req.body.prices){
+           // let product = db.product.findByPk(req.params.id) 
+            db.product.update(
+               {
+                   
+                   price: req.body.prices,
+                  
+               }, {
+                   where:{id}
+               })
+               .then(function(){
+                   res.redirect('/')
+               })
+               .catch(function(e){
+                   res.send("error")
+               })
+          
+
         }
+  
+        /* 
+        
+        let imageProduct;
+        let imagePath = []
+        
+        if(req.files){
+            imageProduct=req.files
+        
+         for(let i=0; i<imageProduct.length; i++){
+        
+            imagePath.push(imageProduct[i].filename)
+             
+         }
+        //    fs.unlinkSync(path.join(__dirname+'../../../public/img/productImages/'+ imgProduct));
+        }
+        let product = db.product.findByPk(req.params.id) 
          db.product.update(
             {
                 name: req.body.name,
                 id_category: req.body.category,
                 price: req.body.price,
                 description: req.body.description,
-                image_product: imageProduct,
+                image_product: imagePath[0] || product.image_product,
+                image_product_1: imagePath[1] || product.image_product_1,
+                image_product_2: imagePath[2] || product.image_product_2,
+                image_product_3: imagePath[3] || product.image_product_3,
                 stock : req.body.stock
             }, {
                 where: {id: req.params.id}
@@ -110,7 +142,7 @@ let indexController = {
             .catch(function(e){
                 res.send("error")
             })
-                
+            */
     },
 
     
