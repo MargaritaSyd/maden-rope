@@ -11,8 +11,8 @@
         <title>Made in Rope</title>
     </head> 
 <body>
-
     <main id="login-main">
+      <button id="allProductsPrices" type="button" class="btn btn-primary">Prices</button>
         <h1> Editar producto</h1>
         <form action="/edit/<%=product.id%>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
@@ -30,11 +30,11 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="exampleInputPassword1" name="price" value="<%=product.price%>">
+                <input type="number" class="form-control" id="inputThePrice" name="price" value="<%=product.price%>">
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Cambiar todos los precios %</label>
-              <input type="number" class="form-control" id="exampleInputPassword1" name="prices" value="<%=product.price%>">
+              <input type="hidden" class="form-control" id="inputPrices" name="prices">
           </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Descripción</label>
@@ -58,25 +58,17 @@
           </div>
 
           <p>No querés cambiar las imagenes? No cargues ningún archivo! </p>
-            <label> Querés eliminar el producto? </label> 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="stock" id="flexRadioDefault1" value="0">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Si
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="stock" id="flexRadioDefault2" value="1" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  No
-                </label>
-              </div>
+            <label> Querés eliminar el producto? Stock = 0  </label> 
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Stock</label>
+              <input type="number" class="form-control" id="exampleInputPassword1" name="stocl" >
+          </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </main>
    
 
-   
+    <script src="/javascript/editProducts.js"></script>
 </body>
 </html>
 

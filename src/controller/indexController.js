@@ -64,7 +64,7 @@ let indexController = {
                 image_product_1: imagePath[1] || "",
                 image_product_2: imagePath[2] || "",
                 image_product_3: imagePath[3] || "",
-                stock : 1
+                stock : req.body.stock
             }
         )
         .then(function(){
@@ -84,30 +84,31 @@ let indexController = {
     },
 
     editProduct: function(req,res){
-      //  console.log(req.body.prices)
-
         if(req.body.prices){
-           // let product = db.product.findByPk(req.params.id) 
-            db.product.update(
-               {
-                   
-                   price: req.body.prices,
-                  
-               }, {
-                   where:{id}
-               })
-               .then(function(){
-                   res.redirect('/')
-               })
-               .catch(function(e){
-                   res.send("error")
-               })
-          
-
-        }
-  
-        /* 
-        
+      //  let product = db.product.findAll() 
+        db.product.findAll()
+        .then(function(products){
+            let theId
+            for(let i=0; i<products.length; i++){
+                theId = products[i].id
+                //console.log(theId)
+                db.product.update(
+                    {
+                        price: req.body.prices,
+                    }, {
+                        where: {id: theId}
+                    })
+            }
+           
+        })
+        .then(function(){
+            res.redirect('/')
+        })
+        .catch(function(e){
+            res.send("error")
+        })
+    } else {
+    
         let imageProduct;
         let imagePath = []
         
@@ -142,7 +143,7 @@ let indexController = {
             .catch(function(e){
                 res.send("error")
             })
-            */
+        }
     },
 
     
