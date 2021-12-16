@@ -85,16 +85,24 @@ let indexController = {
 
     editProduct: function(req,res){
         if(req.body.prices){
+           let prices = req.body.prices
+           
       //  let product = db.product.findAll() 
         db.product.findAll()
         .then(function(products){
             let theId
+            let thePrice
+            let porcent
+            let final
             for(let i=0; i<products.length; i++){
                 theId = products[i].id
+                thePrice = products[i].price
+                porcent = thePrice * prices
+                final = thePrice + porcent
                 //console.log(theId)
                 db.product.update(
                     {
-                        price: req.body.prices,
+                        price: final,
                     }, {
                         where: {id: theId}
                     })

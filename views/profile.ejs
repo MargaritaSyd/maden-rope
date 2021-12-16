@@ -45,8 +45,8 @@
 
   <% if(userToLog.admin==0){%>  
     <a href="/create"> <button class="btn btn-primary" id="logout" type="submit">Crear producto</button></a>
-    <a href="/edit_price"> <buttonclass="btn btn-primary" id="logout" type="submit"> Editar precios </button></a>
-  <%}%>
+    <button id="allProductsPrices" type="button" class="btn btn-primary">Prices</button>
+    <%}%>
   <div class="d-grid gap-2">
     <form action="/user/logout" method="GET">
     <button class="btn btn-primary" id="logout" type="submit">Cerrar sesión</button>
@@ -55,5 +55,6 @@
   </div>
 <script src="/javascript/usersjs.js"></script>
 <script src="/javascript/favs.js"></script>
+<script src="/javascript/editProducts.js"></script>
 </body>
 </html>
