@@ -190,5 +190,10 @@ main{
   }
   .footer-items{
       padding:2%;
-      color: #6AA2A3;
+      color: #707c7c;
+  }
+  #imgDoma{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-self: center;
   }
