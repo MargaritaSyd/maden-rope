@@ -16,10 +16,10 @@
             
         
             
-        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
-        <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
-        <a href='/lamorita'><button type="button" class="btn btn-outline-success">Nosotros</button></a>
-        <a href='/talles'><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
+        <a href="/user/login"><button type="button" class="btn btn-outline-light">Ingresar</button></a>    
+        <a href="/user/cart"><button type="button" class="btn btn-outline-light">Shop</button></a>
+        <a href='/lamorita'><button type="button" class="btn btn-outline-light">Conocenos</button></a>
+        <a href='/talles'><button type="button" class="btn btn-outline-light">Tabla de talles</button></a>
         <a href='/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
         <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
         <div id="clickFav"><i class="fas fa-heart fa-2x"></i></div>
@@ -38,6 +38,9 @@
    
     </header>
     <main>
+        <div class= "banner-index">
+            <img src= "/img/frontEnd/index-img.png">
+        </div>
         <div id="conteiner">
             <div class="subtitulo">
                 <img src="/img/frontEnd/titulo-index.png" alt="Nuestros productos" class= "subtitulo">
@@ -74,49 +77,66 @@
             
                 </div>
              <div class="category-product">
-            <h2 class="category" id="categoryBozales"> Bozales</h2>
+                <div class="subtitulo-categoria">
+                    <img src="/img/frontEnd/index-bozales.png" alt="Bozales" class= "subtitulo">
+                </div>
+                
             <% for(let i=0; i<productosC1.length; i++){%>
+                
                 <div class="card bg-dark text-white product productConteiner">
+                    <a class="lightbox" href="/detail/<%=productosC1[i].id%>">
                     <% if(productosC1[i].image_product){%>
-                        <img src="/img/productImages/<%=productosC1[i].image_product%>" > 
+                        <img class="imgCat" src="/img/productImages/<%=productosC1[i].image_product%>" > 
                     <%}else{%>
-                        <img src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo.jpg" >
                     <%}%>
-                    <div class="card-img-overlay">
-                        <a href="/detail/<%=productosC1[i].id%>"><h5 class="card-title textcard"><%= productosC1[i].name %></h5></a>
+                    <div class="overlayCat">
+                        <div class="text"><%= productosC1[i].name %></div>
                     </div>
+                    </a>
+                    
                 </div>
                 
             <%}%>
             </div>
             <div class="category-product">
-            <h2 class="category" id="categoryRiendas">Riendas</h2>
+                <div class="subtitulo-categoria">
+                    <img src="/img/frontEnd/index-riendas.png" alt="Riendas" class= "subtitulo">
+                </div>
             <% for(let i=0; i<productosC2.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
-                    <% if(productosC2[i].image_product){%>
-                        <img src="/img/productImages/<%=productosC2[i].image_product%>" > 
+                    <a class="lightbox" href="/detail/<%=productosC2[i].id%>">
+                    <% if(productosC1[i].image_product){%>
+                        <img class="imgCat" src="/img/productImages/<%=productosC2[i].image_product%>" > 
                     <%}else{%>
-                        <img src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo.jpg" >
                     <%}%>
-                    <div class="card-img-overlay">
-                       <a href="/detail/<%=productosC2[i].id%>"><h5 class="card-title textcard"><%= productosC2[i].name %></h5> </a>
+                    <div class="overlayCat">
+                        <div class="text"><%= productosC2[i].name %></div>
                     </div>
+                    </a>
+                    
                 </div>
             <%}%>
             </div>
             <div class="category-product">
-            <h2 class="category" id="categoryAccesorios">Accesorios</h2>
+                <div class="subtitulo-categoria">
+                    <img src="/img/frontEnd/index-accesorios.png" alt="Accesorios" class= "subtitulo">
+                </div>
 
             <% for(let i=0; i<productosC3.length; i++){%>
                 <div class="card bg-dark text-white product productConteiner">
-                    <% if(productosC3[i].image_product){%>
-                        <img src="/img/productImages/<%=productosC3[i].image_product%>" > 
+                    <a class="lightbox" href="/detail/<%=productosC3[i].id%>">
+                    <% if(productosC1[i].image_product){%>
+                        <img class="imgCat" src="/img/productImages/<%=productosC3[i].image_product%>" > 
                     <%}else{%>
-                        <img src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo.jpg" >
                     <%}%>
-                    <div class="card-img-overlay">
-                       <a href="/detail/<%=productosC3[i].id%>"> <h5 class="card-title textcard"><%= productosC3[i].name %></h5> </a>
+                    <div class="overlayCat">
+                        <div class="text"><%= productosC3[i].name %></div>
                     </div>
+                    </a>
+                    
                 </div>
             <%}%>
             </div>
