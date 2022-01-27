@@ -324,7 +324,7 @@ let indexController = {
 
     
     lamorita: (req,res) => {
-        res.render("lamorita")
+        res.render("lamoritaPrueba")
     },
 
     talles: (req,res) => {

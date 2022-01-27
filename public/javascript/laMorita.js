@@ -11,3 +11,4 @@ card1.addEventListener("mouseover" , function(){
     card1.style.display = "none"
     divImg1.style.display = "inline"
 })
+
