@@ -19,7 +19,7 @@ let indexController = {
             let productosC1 = productos.filter(productos=>productos.id_category==1);
             let productosC2 = productos.filter(productos=>productos.id_category==2);
             let productosC3 = productos.filter(productos=>productos.id_category==3);
-            res.render("index" , {productosC1,productosC2,productosC3})
+            res.render("indexPrueba" , {productosC1,productosC2,productosC3})
          })
      },
 
@@ -161,7 +161,7 @@ let indexController = {
         let category = db.category.findAll();
         Promise.all([product,category])
         .then(function([product,category]){
-            res.render("detail", {product, category, userToLog})
+            res.render("detailPrueba", {product, category, userToLog})
         })
         
     },
@@ -332,7 +332,7 @@ let indexController = {
     },
 
     compra: (req, res) => {
-        res.render("comprar")
+        res.render("comprarPrueba")
     },
 
     whatsapp: (req,res) => {

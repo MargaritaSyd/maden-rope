@@ -1,0 +1,135 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/77ea5851fe.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Made in Rope-Registro</title>
+    </head>
+<body>
+    <header>
+
+        <div class= "bannersec">
+            <div class= "img-banner-index">
+                <img src= "/img/frontEnd/bannersec.png">
+            </div>
+        </div>
+       
+        <nav id="navbarSec">
+            
+        
+            
+        <a href="/user/register"><button type="button" class="btn btn-outline-light">No tenes cuenta?</button></a>    
+        <a href="/user/cart"><button type="button" class="btn btn-outline-light">Shop</button></a>
+        <a href='/lamorita'><button type="button" class="btn btn-outline-light">Conocenos</button></a>
+        <a href='/talles'><button type="button" class="btn btn-outline-light">Tabla de talles</button></a>
+        <a href='/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+        
+        </div>
+    </nav>
+       
+        
+        
+
+          
+   
+    </header>
+    <h1 class= "texto titulo">Cambiá tus datos de usuario <%= userToLog.user_name%> </h1>
+    <div class= "registerConteiner">
+    
+    <form action="/user/edit_user" method="POST" enctype="multipart/form-data" id="formRegister">
+    
+        <div class="form-floating mb-3">
+        
+        <% if (locals.error&&error.user_name) { %>
+        <input type="text" class="form-control" id="floatingInput" value="<%=locals.old&&old.user_name%>" name="user_name">
+        <small style="color:red;"><%=error.user_name.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput"  name="user_name" value= <%=userToLog.user_name%>>
+        <%}%>
+         <label class= "texto"> Nombre </label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        
+        <% if (locals.error&&error.last_name) { %>
+        <input type="text" class="form-control" id="floatingInput" value="<%=old.last_name%>" name="last_name">
+        <small style="color:red;"><%=error.last_name.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" value= <%=userToLog.last_name%> name="last_name">
+        <%}%>
+        <label class= "texto">Apellido</label>
+    </div>
+    <div class="form-floating mb-3">
+        <% if (locals.error&&error.dni) { %>
+        <input type="number" class="form-control" id="floatingInput" value="<%=old.dni%>" name="dni">
+        <small style="color:red;"><%=error.dni.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" value= <%=userToLog.dni%> name="dni">
+        <%}%>
+        <label class= "texto">DNI</label>
+    </div>
+    <div class="form-floating mb-3">
+        <% if (locals.error&&error.tel) { %>
+        <input type="number" class="form-control" id="floatingInput" value="<%=old.tel%>" name="tel">
+        <small style="color:red;"><%=error.tel.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" value= <%=userToLog.tel%> name="tel">
+        <%}%>
+        <label class= "texto">Teléfono de contacto</label>
+    </div>
+    <div class="form-floating mb-3">
+        <% if (locals.error&&error.adress) { %>
+        <input type="text" class="form-control" id="floatingInput"  name="adress" value="<%=old.adress%>" >
+        <small style="color:red;"><%=error.adress.msg%></small>
+        <%} else {%>
+        <input type="text" class="form-control" id="floatingInput" name="adress" value= <%=userToLog.last_name%> >
+        <%}%>
+        <label class= "texto">Dirección</label>
+    </div>
+    <div class="form-floating mb-3">
+        <% if (locals.error&&error.mail) { %>
+        <input type="email" class="form-control" id="floatingInput" value= "<%=userToLog.mail%>"  name="mail" readonly> 
+        <small style="color:red;"><%=error.mail.msg%></small>
+        <%} else {%>
+        <input  class="form-control" id="floatingInput" value= "<%=userToLog.mail%>"  name="mail" readonly >
+        <%}%>
+        <label class= "texto">Email</label>
+    </div>
+    <!-- <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" name="user_image" accept=".jpeg,.jpg">
+    </div> -->
+    
+    <div class="form-floating">
+        <input id="password" type="password" name="password" class="input inputPasswordCheck form-control" placeholder="*********">
+        <i id="viewPass" class="far fa-eye fa-2x"></i>
+        <i id="viewPassNot" class="far fa-eye-slash fa-2x"></i>
+        <% if (locals.error&&error.password) { %>
+            <small style="color:red;"><%=error.password.msg%></small>
+        <%}%>
+        <label class= "texto">Cambiá tu contraseña</label>
+        
+    </div>
+    <div class= "contenedorBoton">
+    <button type="submit" class="btn btn-outline-light">Enviar</button>
+    </div>
+
+    </form>
+</div>
+
+
+    <script src="/javascript/pass.js"></script>
+<footer id="foot">
+        <label class="footer-titulos"></label>
+        <a href="/whatsapp"><i class="fab fa-whatsapp footer-items fa-4x"></i></label>
+        <a href="https://www.google.com.ar/maps/place/Los+Panas+Centro+Ecuestre,+CGA,+Nicaragua+101,+B1632+Manzanares,+Provincia+de+Buenos+Aires/@-34.4565133,-59.013026,17z/data=!4m2!3m1!1s0x95bc81f343e2b7dd:0x66e179eb76bfce0b"><i class="fas fa-map-marker-alt footer-items fa-4x"></i></label>
+        <a href="/"> <img class="logo" src="/img/frontEnd/logo-made.png" alt="logo"></a> 
+        <a href="https://www.instagram.com/madeinrope/"><i class="fab fa-instagram footer-items fa-4x"></i></a>
+        <label><i class="fab fa-facebook footer-items fa-4x"></i></label>
+</footer>
+</body>
+</html>

@@ -22,14 +22,10 @@
             
         
             
-        <a href="/user/login"><button type="button" class="btn btn-outline-light">Ingresar</button></a>    
-        <a href="/user/cart"><button type="button" class="btn btn-outline-light">Shop</button></a>
         <a href='/lamorita'><button type="button" class="btn btn-outline-light">Conocenos</button></a>
         <a href='/talles'><button type="button" class="btn btn-outline-light">Tabla de talles</button></a>
         <a href='/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
-        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
         <div id="clickFav"><i class="fas fa-heart fa-2x"></i></div>
-        
         </div>
     </nav>
        
@@ -42,6 +38,7 @@
     
     <main>
         <h1 id="productName" > <%=product.name%> </h1>
+        <h2 id="modelo"> </h2>
         <div id="detail-conteiner">
             <div id="img-conteiner">
                
@@ -59,37 +56,16 @@
                 <%=product.description%>
             </div>
             <div class='detail-product' id="productPrice">
-                <%=product.price%>
+               <h2>$<%=product.price%></h2> 
             </div>
-           
-            <div>
-                <form action="">
-                    <select id="colorSelected" class="form-select" aria-label="Default select example">
-                        <option selected>Elegí el color principal</option>
-                        <option value="Violeta" style="background-color: blueviolet;">Violeta</option>
-                        <option value="Azul" style="background-color:#005cd4" >Azul</option>
-                        <option value="Verde Agua" style="background-color:#6badb1">Verde Agua</option>
-                        <option value="Verde Militar" style="background-color: #353c34" >Verde Militar</option>
-                        <option value="Verde Manzana" style="background-color:#bcd042" >Verde Manzana</option>
-                        <option value="Amarillo" style="background-color:#e9ad45" >Amarillo</option>
-                        <option value="Marrón" style="background-color:#816443" >Marrón</option>
-                        <option value="Marrón Claro" style="background-color: #d4c1b5">Marrón Claro</option>
-                        <option value="Tabaco" style="background-color:#221815">Tabaco</option>
-                        <option value="Gris" style="background-color: #6e8292">Gris</option>
-                        <option value="Negro" style="background-color: black">Negro</option>
-                        <option value="Rojo" style="background-color:#a93f34">Rojo</option>
-                        <option value="Bordo" style="background-color: #6c2727">Bordo</option>
-                        <option value="Salmón" style="background-color:#e08a77">Salmón</option>
-                        <option value="Fucsia" style="background-color: #d65d85">Fucsia</option>
-                    </select>
-                </form>
-            </div>
+            <div class='detail-product' id="productPrice">
+                <h2>No pierdas más tiempo, encargalo por whatsapp!<a href="/whatsapp"><i class="fab fa-whatsapp footer-items fa-2x"></i></a></h2> 
+             </div>
+            
         <%if(userToLog && userToLog.admin==0){%>
             <p><a href="/edit/<%=product.id%>"> <button class="btn btn-primary" id="logout" type="submit">Editar producto</button></a> </p>
         <%} else {%>
-            
-           <button type="button" class="btn btn-outline-light" id="cart">Agregar al carrito</button>
-           
+              
             <p id="notFav"><i class="far fa-heart fa-2x"></i></p>
             <p id="fav"><i class= "fas fa-heart fa-2x"></i></p>
         <%}%>   
