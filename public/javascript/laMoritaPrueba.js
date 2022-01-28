@@ -4,6 +4,11 @@ window.addEventListener("load" , function(){
     carouselClick2.style.display = "none"
     let carouselClick3 = document.getElementById("carouselClick3")
     carouselClick3.style.display = "none"
+    let carouselClick4 = document.getElementById("carouselClick4")
+    carouselClick4.style.display = "none"
+    let carouselClick5 = document.getElementById("carouselClick5")
+    carouselClick5.style.display = "none"
+    
     let domaClick1 = document.getElementById("domaClick1")
     let domaClick2 = document.getElementById("domaClick2")
     domaClick2.style.display = "none"
@@ -23,10 +28,27 @@ window.addEventListener("load" , function(){
    
     })
     carouselClick3.addEventListener("click" , function(){
-        carouselClick.style.display = "inline"
+        carouselClick4.style.display = "inline"
+        carouselClick.style.display = "none"
         carouselClick2.style.display = "none"  
         carouselClick3.style.display = "none" 
    
+    })
+    carouselClick4.addEventListener("click" , function(){
+        carouselClick5.style.display = "inline"
+        carouselClick2.style.display = "none"  
+        carouselClick3.style.display = "none" 
+        carouselClick4.style.display = "none"
+        carouselClick.style.display = "none"
+       
+    })
+    carouselClick5.addEventListener("click" , function(){
+        carouselClick.style.display = "inline"
+        carouselClick2.style.display = "none"  
+        carouselClick3.style.display = "none" 
+        carouselClick4.style.display = "none"
+        carouselClick5.style.display = "none"
+       
     })
 
 

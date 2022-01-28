@@ -68,6 +68,11 @@ main{
     width: 30%;
 }
 
+.carousel-laMorita{
+    width: 100%;
+}
+
+
 .textcard{
     color: black;
 }
@@ -334,4 +339,11 @@ margin-left: 32% ; */
     margin-right: 2%;
     margin-left: 2%;
     color: whitesmoke;
+}
+
+#body_lamorita{
+    background-color: #342434;
+}
+#mainColor-lamorita{
+    background-color: #342434;
 }
