@@ -107,6 +107,101 @@ instalacionesClick6.style.display = "none"
        
     })
 
- 
+    //carousel doma
+
+    let domaClick = document.getElementById("domaClick")
+    let domaClick2 = document.getElementById("domaClick2")
+    domaClick2.style.display = "none"
+    let domaClick3 = document.getElementById("domaClick3")
+    domaClick3.style.display = "none"
+    let domaClick4 = document.getElementById("domaClick4")
+    domaClick4.style.display = "none"
+    let domaClick5 = document.getElementById("domaClick5")
+    domaClick5.style.display = "none"
+    
+
+    domaClick.addEventListener("click" , function(){
+        domaClick.style.display = "none"
+        domaClick2.style.display = "inline"  
+      
+    })
+    domaClick2.addEventListener("click" , function(){
+        domaClick.style.display = "none"
+        domaClick2.style.display = "none"  
+        domaClick3.style.display = "inline"
+   
+    })
+    domaClick3.addEventListener("click" , function(){
+        domaClick4.style.display = "inline"
+        domaClick.style.display = "none"
+        domaClick2.style.display = "none"  
+        domaClick3.style.display = "none" 
+   
+    })
+    domaClick4.addEventListener("click" , function(){
+        domaClick5.style.display = "inline"
+        domaClick2.style.display = "none"  
+        domaClick3.style.display = "none" 
+        domaClick4.style.display = "none"
+        domaClick.style.display = "none"
+       
+    })
+    domaClick5.addEventListener("click" , function(){
+        domaClick.style.display = "inline"
+        domaClick2.style.display = "none"  
+        domaClick3.style.display = "none" 
+        domaClick4.style.display = "none"
+        domaClick5.style.display = "none"
+       
+    })
+
+//carousel pension
+
+let pensionClick = document.getElementById("pensionClick")
+let pensionClick2 = document.getElementById("pensionClick2")
+pensionClick2.style.display = "none"
+let pensionClick3 = document.getElementById("pensionClick3")
+pensionClick3.style.display = "none"
+let pensionClick4 = document.getElementById("pensionClick4")
+pensionClick4.style.display = "none"
+let pensionClick5 = document.getElementById("pensionClick5")
+pensionClick5.style.display = "none"
+
+
+pensionClick.addEventListener("click" , function(){
+    pensionClick.style.display = "none"
+    pensionClick2.style.display = "inline"  
+  
+})
+pensionClick2.addEventListener("click" , function(){
+    pensionClick.style.display = "none"
+    pensionClick2.style.display = "none"  
+    pensionClick3.style.display = "inline"
+
+})
+pensionClick3.addEventListener("click" , function(){
+    pensionClick4.style.display = "inline"
+    pensionClick.style.display = "none"
+    pensionClick2.style.display = "none"  
+    pensionClick3.style.display = "none" 
+
+})
+pensionClick4.addEventListener("click" , function(){
+    pensionClick5.style.display = "inline"
+    pensionClick2.style.display = "none"  
+    pensionClick3.style.display = "none" 
+    pensionClick4.style.display = "none"
+    pensionClick.style.display = "none"
+   
+})
+pensionClick5.addEventListener("click" , function(){
+    pensionClick.style.display = "inline"
+    pensionClick2.style.display = "none"  
+    pensionClick3.style.display = "none" 
+    pensionClick4.style.display = "none"
+    pensionClick5.style.display = "none"
+   
+})
+
 
 })

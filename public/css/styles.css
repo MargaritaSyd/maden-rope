@@ -27,6 +27,23 @@ main{
     
     
     
+    
+}
+#conteiner-laMorita{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+
+#logo-lamorita{
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    
 }
 .category-product{
     display: flex;
@@ -199,6 +216,15 @@ main{
     align-items:baseline;
 }
 
+.menuLamorita{
+    margin-left: 15%;
+    display:flex;
+    justify-content: space-around;
+    align-items:baseline;
+    width: 70%;
+    justify-content: center;
+}
+
 .categoria-listado:hover .overlayList {
     opacity: 1;
   }
@@ -346,4 +372,7 @@ margin-left: 32% ; */
 }
 #mainColor-lamorita{
     background-color: #342434;
+}
+.doma-text{
+    color: #6aa2a3;
 }
