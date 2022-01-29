@@ -9,12 +9,8 @@ window.addEventListener("load" , function(){
     let carouselClick5 = document.getElementById("carouselClick5")
     carouselClick5.style.display = "none"
     
-    let domaClick1 = document.getElementById("domaClick1")
-    let domaClick2 = document.getElementById("domaClick2")
-    domaClick2.style.display = "none"
-    let domaClick3 = document.getElementById("domaClick3")
-    domaClick3.style.display = "none"
-   
+
+//carousel cabaña
 
     carouselClick.addEventListener("click" , function(){
         carouselClick.style.display = "none"
@@ -50,26 +46,67 @@ window.addEventListener("load" , function(){
         carouselClick5.style.display = "none"
        
     })
+//carousel instalaciones:
 
+let instalacionesClick = document.getElementById("instalacionesClick")
+let instalacionesClick2 = document.getElementById("instalacionesClick2")
+instalacionesClick2.style.display = "none"
+let instalacionesClick3 = document.getElementById("instalacionesClick3")
+instalacionesClick3.style.display = "none"
+let instalacionesClick4 = document.getElementById("instalacionesClick4")
+instalacionesClick4.style.display = "none"
+let instalacionesClick5 = document.getElementById("instalacionesClick5")
+instalacionesClick5.style.display = "none"
+let instalacionesClick6 = document.getElementById("instalacionesClick6")
+instalacionesClick6.style.display = "none"
 
-    
-    domaClick1.addEventListener("click" , function(){
-        domaClick1.style.display = "none"
-        domaClick2.style.display = "inline"  
+    instalacionesClick.addEventListener("click" , function(){
+        instalacionesClick.style.display = "none"
+        instalacionesClick2.style.display = "inline"  
       
     })
-    domaClick2.addEventListener("click" , function(){
-        domaClick1.style.display = "none"
-        domaClick2.style.display = "none"  
-        domaClick3.style.display = "inline"
+    instalacionesClick2.addEventListener("click" , function(){
+        instalacionesClick.style.display = "none"
+        instalacionesClick2.style.display = "none"  
+        instalacionesClick3.style.display = "inline"
    
     })
-    domaClick3.addEventListener("click" , function(){
-        domaClick1.style.display = "inline"
-        domaClick2.style.display = "none"  
-        domaClick3.style.display = "none" 
+    instalacionesClick3.addEventListener("click" , function(){
+        instalacionesClick4.style.display = "inline"
+        instalacionesClick.style.display = "none"
+        instalacionesClick2.style.display = "none"  
+        instalacionesClick3.style.display = "none" 
    
+    })
+    instalacionesClick4.addEventListener("click" , function(){
+        instalacionesClick5.style.display = "inline"
+        instalacionesClick2.style.display = "none"  
+        instalacionesClick3.style.display = "none" 
+        instalacionesClick4.style.display = "none"
+        instalacionesClick.style.display = "none"
+       
+    })
+    instalacionesClick5.addEventListener("click" , function(){
+        instalacionesClick6.style.display = "inline"
+        instalacionesClick.style.display = "none"
+        instalacionesClick2.style.display = "none"  
+        instalacionesClick3.style.display = "none" 
+        instalacionesClick4.style.display = "none"
+        instalacionesClick5.style.display = "none"
+       
     })
 
+    instalacionesClick6.addEventListener("click" , function(){
+        instalacionesClick.style.display = "inline"
+        instalacionesClick2.style.display = "none"  
+        instalacionesClick3.style.display = "none" 
+        instalacionesClick4.style.display = "none"
+        instalacionesClick5.style.display = "none"
+        instalacionesClick6.style.display = "none"
+        
+       
+    })
+
+ 
 
 })
