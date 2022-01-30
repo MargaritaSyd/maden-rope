@@ -376,3 +376,16 @@ margin-left: 32% ; */
 .doma-text{
     color: #6aa2a3;
 }
+.contenido-pension{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.imagenes-pension{
+    width: 50%;
+}
+.contenido-parrafo{
+    width: 50%;
+    margin-left: 10%;
+    color: #86899c;
+    font-size: smaller;
+}
