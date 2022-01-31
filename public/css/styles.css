@@ -191,7 +191,7 @@ main{
     text-align:center;
 }
 .subtitulo-categoria{
-    margin-top: 5%;
+   
     display: block;
     
     max-width:100%;
@@ -382,10 +382,21 @@ margin-left: 32% ; */
 }
 .imagenes-pension{
     width: 50%;
-}
-.contenido-parrafo{
-    width: 50%;
     margin-left: 10%;
+
+}
+#contenido-parrafo-pension{
+    width: 50%;
     color: #86899c;
     font-size: smaller;
+    margin-left: 5%
+}
+#contenido-parrafo-doma{
+    width: 50%;
+    color: #86899c;
+    font-size: smaller;
+    
+}
+#texto-desarrollo{
+    margin-top: 5%;
 }
