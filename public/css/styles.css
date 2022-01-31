@@ -34,6 +34,7 @@ main{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    margin-top: 10%;
     
     
 }
@@ -399,4 +400,11 @@ margin-left: 32% ; */
 }
 #texto-desarrollo{
     margin-top: 5%;
+}
+
+#banner-productos{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 25%;
 }
