@@ -101,19 +101,21 @@
                     <img src="/img/frontEnd/index-riendas.png" alt="Riendas" class= "subtitulo">
                 </div>
             <% for(let i=0; i<productosC2.length; i++){%>
+                <% if(productosC2[i].stock != 0) { %>
+
                 <div class="card bg-dark text-white product productConteiner">
                     <a class="lightbox" href="/detail/<%=productosC2[i].id%>">
                     <% if(productosC2[i].image_product){%>
                         <img class="imgCat" src="/img/productImages/<%=productosC2[i].image_product%>" > 
                     <%}else{%>
-                        <img class="imgCat" src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo_made_in_rope.png" >
                     <%}%>
                     <div class="overlayCat">
                         <div class="text"><%= productosC2[i].name %></div>
                     </div>
-                    </a>
-                    
+                    </a>    
                 </div>
+                <%}%>
             <%}%>
             </div>
             <div class="category-product">
@@ -122,12 +124,13 @@
                 </div>
 
             <% for(let i=0; i<productosC3.length; i++){%>
+                <% if(productosC3[i].stock != 0) { %>
                 <div class="card bg-dark text-white product productConteiner">
                     <a class="lightbox" href="/detail/<%=productosC3[i].id%>">
-                    <% if(productosC1[i].image_product){%>
+                    <% if(productosC3[i].image_product){%>
                         <img class="imgCat" src="/img/productImages/<%=productosC3[i].image_product%>" > 
                     <%}else{%>
-                        <img class="imgCat" src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo_made_in_rope.png" >
                     <%}%>
                     <div class="overlayCat">
                         <div class="text"><%= productosC3[i].name %></div>
@@ -135,6 +138,7 @@
                     </a>
                     
                 </div>
+                <%}%>
             <%}%>
             </div>
         
