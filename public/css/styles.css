@@ -392,6 +392,14 @@ margin-left: 32% ; */
     font-size: smaller;
     margin-left: 5%
 }
+#contenido-parrafo-jornadas{
+    width: 50%;
+    color: #86899c;
+    font-size: smaller;
+    margin-left: 5%;
+    margin-top: 3%
+}
+
 #contenido-parrafo-doma{
     width: 50%;
     color: #86899c;
