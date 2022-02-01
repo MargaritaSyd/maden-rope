@@ -43,7 +43,12 @@ module.exports = function(sequelize, dataTypes)
         price: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        description_add: {
+            type: dataTypes.STRING,
+            allowNull: true
         }
+        
     };
      const config = {
          tableName: "product",

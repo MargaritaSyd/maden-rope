@@ -40,6 +40,10 @@
               <label for="exampleInputPassword1" class="form-label">Descripción</label>
               <textarea name="description"> <%=product.description%> </textarea>
             </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Adicionales</label>
+                <textarea name="description_add"> <%=product.description_add%> </textarea>
+            </div>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" id="inputGroupFile02" name="image_product" accept=".gif,.png,.jpeg,.jpg" multiple="multiple">
                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
@@ -61,7 +65,7 @@
             <label> Querés eliminar el producto? Stock = 0  </label> 
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Stock</label>
-              <input type="number" class="form-control" id="exampleInputPassword1" name="stocl" >
+              <input type="number" class="form-control" id="exampleInputPassword1" name="stock" >
           </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
