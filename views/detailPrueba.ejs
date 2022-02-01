@@ -44,11 +44,24 @@
                
                 <img id="detail-img" src="/img/productImages/<%=product.image_product%>" class="img-fluid" alt="..."> 
                 <div class="thumb-img-content">
-                    
+                    <% if(product.image_product_1 != null){%>
                     <img id="thumb-img-1" class="thumb-img"  src="/img/productImages/<%=product.image_product_1%>" class="img-thumbnail" alt="...">
+                    <%}else{%>    
+                    <img id="thumb-img-1" class="thumb-img"  src="/img/logo_made_in_rope.png" class="img-thumbnail" alt="...">
+                    <%}%>
+                    
+                    <% if(product.image_product_2 != null){%>
                     <img id="thumb-img-2" class="thumb-img"  src="/img/productImages/<%=product.image_product_2%>" class="img-thumbnail" alt="...">
+                    <%}else{%>    
+                    <img id="thumb-img-2" class="thumb-img"  src="/img/logo_made_in_rope.png" class="img-thumbnail" alt="...">
+                    <%}%>
+                    
+                    <% if(product.image_product_3){%>    
                     <img id="thumb-img-3" class="thumb-img"  src="/img/productImages/<%=product.image_product_3%>" class="img-thumbnail" alt="...">
-                   
+                    <%}else{%>    
+                    <img id="thumb-img-3" class="thumb-img"  src="/img/logo_made_in_rope.png" class="img-thumbnail" alt="...">
+                    <%}%>
+                        
                     </div>
             </div>
             <div class= "productInfo">

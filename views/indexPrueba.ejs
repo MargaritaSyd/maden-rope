@@ -79,13 +79,13 @@
                 </div>
                 
             <% for(let i=0; i<productosC1.length; i++){%>
-                
+                <% if(productosC1[i].stock != 0) { %>
                 <div class="card bg-dark text-white product productConteiner">
                     <a class="lightbox" href="/detail/<%=productosC1[i].id%>">
                     <% if(productosC1[i].image_product){%>
                         <img class="imgCat" src="/img/productImages/<%=productosC1[i].image_product%>" > 
                     <%}else{%>
-                        <img class="imgCat" src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo_made_in_rope.png" >
                     <%}%>
                     <div class="overlayCat">
                         <div class="text"><%= productosC1[i].name %></div>
@@ -93,7 +93,7 @@
                     </a>
                     
                 </div>
-                
+                <%}%>
             <%}%>
             </div>
             <div class="category-product">
