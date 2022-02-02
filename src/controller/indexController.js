@@ -201,7 +201,7 @@ let indexController = {
     },
 
     login: function(req,res){
-        res.render('login')
+        res.render('loginPrueba')
     },
 
     logged: function(req,res){
@@ -216,7 +216,7 @@ let indexController = {
         
             let passwordOk= bcrypt.compareSync(req.body.password , userToLog.password)
             if(!passwordOk){               
-                    res.render('login',{errorMsg})
+                    res.render('loginPrueba',{errorMsg})
                 } else {
                     req.session.user = userToLog
                     res.render("profile" , {userToLog})
@@ -224,7 +224,7 @@ let indexController = {
         })
                
         .catch(function(e){
-            return res.render('login',{errorMsg})
+            return res.render('loginPrueba',{errorMsg})
         })
     },
     
