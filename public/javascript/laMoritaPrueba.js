@@ -203,5 +203,31 @@ pensionClick5.addEventListener("click" , function(){
    
 })
 
+//carousel vision
+
+let visionClick = document.getElementById("visionClick")
+let visionClick2 = document.getElementById("visionClick2")
+visionClick2.style.display = "none"
+let visionClick3 = document.getElementById("visionClick3")
+visionClick3.style.display = "none"
+
+visionClick.addEventListener("click" , function(){
+    visionClick.style.display = "none"
+    visionClick2.style.display = "inline"  
+  
+})
+visionClick2.addEventListener("click" , function(){
+    visionClick.style.display = "none"
+    visionClick2.style.display = "none"  
+    visionClick3.style.display = "inline"
+
+})
+visionClick3.addEventListener("click" , function(){
+    visionClick.style.display = "inline"
+    visionClick2.style.display = "none"  
+    visionClick3.style.display = "none" 
+
+})
+
 
 })

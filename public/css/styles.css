@@ -442,3 +442,13 @@ margin-left: 32% ; */
 .favs-title{
     width: 150px;
 }
+#vision-conteiner-img{
+    width: 50%;
+}
+#vision-conteiner-text{
+    width: 50%;
+}
+#conteiner-vision{
+    display: flex;
+    flex-wrap: nowrap;
+}
