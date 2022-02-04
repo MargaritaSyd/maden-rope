@@ -210,6 +210,11 @@ let nextClick3 = document.getElementById("nextClick3")
 let nextClick4 = document.getElementById("nextClick4")
 let nextClick5 = document.getElementById("nextClick5")
 
+nextClick2.style.display = "none"
+nextClick3.style.display = "none"
+nextClick4.style.display = "none"
+nextClick5.style.display = "none"
+
 let visionClick = document.getElementById("visionClick")
 let visionClick2 = document.getElementById("visionClick2")
 visionClick2.style.display = "none"
@@ -237,6 +242,9 @@ nextClick.addEventListener("click" , function(){
 
     visionTextClick.style.display = "none"
     visionTextClick2.style.display = "inline"  
+
+    nextClick.style.display = "none"
+    nextClick2.style.display = "inline"
   
 })
 nextClick2.addEventListener("click" , function(){
@@ -247,6 +255,10 @@ nextClick2.addEventListener("click" , function(){
     visionTextClick.style.display = "none"
     visionTextClick2.style.display = "none"  
     visionTextClick3.style.display = "inline"
+
+    nextClick3.style.display = "inline"
+    nextClick.style.display = "none"
+    nextClick2.style.display = "none"
 
 })
 nextClick3.addEventListener("click" , function(){
@@ -259,6 +271,11 @@ nextClick3.addEventListener("click" , function(){
     visionTextClick.style.display = "none"  
     visionTextClick2.style.display = "none"  
     visionTextClick3.style.display = "none" 
+
+    nextClick4.style.display = "inline"
+    nextClick.style.display = "none"
+    nextClick2.style.display = "none"
+    nextClick3.style.display = "none"
 
 })
 nextClick4.addEventListener("click" , function(){
@@ -274,6 +291,13 @@ nextClick4.addEventListener("click" , function(){
     visionTextClick3.style.display = "none" 
     visionTextClick4.style.display = "none" 
 
+    nextClick5.style.display = "inline"
+    nextClick.style.display = "none"
+    nextClick2.style.display = "none"
+    nextClick3.style.display = "none"
+    nextClick4.style.display = "none"
+
+
 })
 nextClick5.addEventListener("click" , function(){
     visionClick.style.display = "inline"
@@ -287,7 +311,57 @@ nextClick5.addEventListener("click" , function(){
     visionTextClick3.style.display = "none" 
     visionTextClick4.style.display = "none" 
     visionTextClick5.style.display = "none" 
+
+    nextClick.style.display = "inline"
+    nextClick2.style.display = "none"
+    nextClick3.style.display = "none"
+    nextClick4.style.display = "none"
+    nextClick5.style.display = "none"
 })
+
+ nextClick.addEventListener("mouseover" , function(){
+     nextClick.src = "/img/laMorita/arrow-blur.png"
+ })
+
+ nextClick.addEventListener("mouseout" , function(){
+    nextClick.src = "/img/laMorita/arrow.png"
+})
+
+nextClick2.addEventListener("mouseover" , function(){
+    nextClick2.src = "/img/laMorita/arrow-blur.png"
+})
+
+nextClick2.addEventListener("mouseout" , function(){
+   nextClick2.src = "/img/laMorita/arrow.png"
+})
+
+
+nextClick3.addEventListener("mouseover" , function(){
+    nextClick3.src = "/img/laMorita/arrow-blur.png"
+})
+
+nextClick3.addEventListener("mouseout" , function(){
+   nextClick3.src = "/img/laMorita/arrow.png"
+})
+
+
+nextClick4.addEventListener("mouseover" , function(){
+    nextClick4.src = "/img/laMorita/arrow-blur.png"
+})
+
+nextClick4.addEventListener("mouseout" , function(){
+   nextClick4.src = "/img/laMorita/arrow.png"
+})
+
+
+nextClick5.addEventListener("mouseover" , function(){
+    nextClick5.src = "/img/laMorita/arrow-blur.png"
+})
+
+nextClick5.addEventListener("mouseout" , function(){
+   nextClick5.src = "/img/laMorita/arrow.png"
+})
+
 
 
 })
