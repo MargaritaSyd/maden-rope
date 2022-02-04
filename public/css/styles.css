@@ -444,11 +444,23 @@ margin-left: 32% ; */
 }
 #vision-conteiner-img{
     width: 50%;
+    margin-top: 5%;
 }
 #vision-conteiner-text{
     width: 50%;
+    margin-top: 10%;
+    margin-left: 5%;
 }
 #conteiner-vision{
     display: flex;
     flex-wrap: nowrap;
 }
+.arrowNext{
+    width: 25%;
+    margin-top: 30%;
+    flex-direction: column-reverse;
+
+}
+.arrowConteiner{
+    display: flex;
+    }

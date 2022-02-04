@@ -204,29 +204,89 @@ pensionClick5.addEventListener("click" , function(){
 })
 
 //carousel vision
+let nextClick = document.getElementById("nextClick")
+let nextClick2 = document.getElementById("nextClick2")
+let nextClick3 = document.getElementById("nextClick3")
+let nextClick4 = document.getElementById("nextClick4")
+let nextClick5 = document.getElementById("nextClick5")
 
 let visionClick = document.getElementById("visionClick")
 let visionClick2 = document.getElementById("visionClick2")
 visionClick2.style.display = "none"
 let visionClick3 = document.getElementById("visionClick3")
 visionClick3.style.display = "none"
+let visionClick4 = document.getElementById("visionClick4")
+visionClick4.style.display = "none"
+let visionClick5 = document.getElementById("visionClick5")
+visionClick5.style.display = "none"
 
-visionClick.addEventListener("click" , function(){
+let visionTextClick = document.getElementById("visionTextClick")
+let visionTextClick2 = document.getElementById("visionTextClick2")
+let visionTextClick3 = document.getElementById("visionTextClick3")
+let visionTextClick4 = document.getElementById("visionTextClick4")
+let visionTextClicK5 = document.getElementById("visionTextClick5")
+
+visionTextClick2.style.display = "none"
+visionTextClick3.style.display = "none"
+visionTextClick4.style.display = "none"
+visionTextClick5.style.display = "none"
+
+nextClick.addEventListener("click" , function(){
     visionClick.style.display = "none"
     visionClick2.style.display = "inline"  
+
+    visionTextClick.style.display = "none"
+    visionTextClick2.style.display = "inline"  
   
 })
-visionClick2.addEventListener("click" , function(){
+nextClick2.addEventListener("click" , function(){
     visionClick.style.display = "none"
     visionClick2.style.display = "none"  
     visionClick3.style.display = "inline"
 
+    visionTextClick.style.display = "none"
+    visionTextClick2.style.display = "none"  
+    visionTextClick3.style.display = "inline"
+
 })
-visionClick3.addEventListener("click" , function(){
+nextClick3.addEventListener("click" , function(){
+    visionClick4.style.display = "inline"
+    visionClick.style.display = "none"  
+    visionClick2.style.display = "none"  
+    visionClick3.style.display = "none" 
+    
+    visionTextClick4.style.display = "inline"
+    visionTextClick.style.display = "none"  
+    visionTextClick2.style.display = "none"  
+    visionTextClick3.style.display = "none" 
+
+})
+nextClick4.addEventListener("click" , function(){
+    visionClick5.style.display = "inline"
+    visionClick.style.display = "none"  
+    visionClick2.style.display = "none"  
+    visionClick3.style.display = "none" 
+    visionClick4.style.display = "none" 
+    
+    visionTextClick5.style.display = "inline"
+    visionTextClick.style.display = "none"  
+    visionTextClick2.style.display = "none"  
+    visionTextClick3.style.display = "none" 
+    visionTextClick4.style.display = "none" 
+
+})
+nextClick5.addEventListener("click" , function(){
     visionClick.style.display = "inline"
     visionClick2.style.display = "none"  
     visionClick3.style.display = "none" 
-
+    visionClick4.style.display = "none"  
+    visionClick5.style.display = "none"  
+ 
+    visionTextClick.style.display = "inline"
+    visionTextClick2.style.display = "none"  
+    visionTextClick3.style.display = "none" 
+    visionTextClick4.style.display = "none" 
+    visionTextClick5.style.display = "none" 
 })
 
 
