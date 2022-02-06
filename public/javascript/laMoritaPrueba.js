@@ -362,6 +362,24 @@ nextClick5.addEventListener("mouseout" , function(){
    nextClick5.src = "/img/laMorita/arrow.png"
 })
 
+//CAROUSEL SERVICIOS
 
+
+let serviciosClick = document.getElementById("serviciosClick")
+let serviciosClick2 = document.getElementById("serviciosClick2")
+serviciosClick2.style.display = "none"
+
+    serviciosClick.addEventListener("click" , function(){
+        serviciosClick.style.display = "none"
+        serviciosClick2.style.display = "inline"  
+      
+    })
+    serviciosClick2.addEventListener("click" , function(){
+       
+        serviciosClick2.style.display = "none"  
+        serviciosClick.style.display = "inline"
+   
+    })
+  
 
 })
