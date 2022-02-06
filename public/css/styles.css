@@ -468,3 +468,10 @@ margin-left: 32% ; */
 .texto-pension{
     margin-bottom: 20px;
 }
+#texto-footer{
+    margin-left: 10%;
+}
+#contactos{
+    display: flex;
+    flex-wrap: nowrap;
+}
