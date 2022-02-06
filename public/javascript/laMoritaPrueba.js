@@ -368,6 +368,8 @@ nextClick5.addEventListener("mouseout" , function(){
 let serviciosClick = document.getElementById("serviciosClick")
 let serviciosClick2 = document.getElementById("serviciosClick2")
 serviciosClick2.style.display = "none"
+let serviciosClick3 = document.getElementById("serviciosClick3")
+serviciosClick3.style.display = "none"
 
     serviciosClick.addEventListener("click" , function(){
         serviciosClick.style.display = "none"
@@ -377,9 +379,17 @@ serviciosClick2.style.display = "none"
     serviciosClick2.addEventListener("click" , function(){
        
         serviciosClick2.style.display = "none"  
-        serviciosClick.style.display = "inline"
+        serviciosClick3.style.display = "inline"
+        serviciosClick.style.display = "none"  
    
     })
-  
+    serviciosClick3.addEventListener("click" , function(){
+       
+        serviciosClick2.style.display = "none"  
+        serviciosClick.style.display = "inline"
+        serviciosClick3.style.display = "none"  
+
+   
+    })
 
 })

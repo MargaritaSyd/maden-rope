@@ -262,7 +262,7 @@ main{
   #foot{
     display:flex;
     align-items: baseline;
-
+    margin-bottom: 10%;
   }
   .footer-items{
       padding:2%;
@@ -474,4 +474,14 @@ margin-left: 32% ; */
 #contactos{
     display: flex;
     flex-wrap: nowrap;
+    margin-top: 5%;
+}
+#mail{
+    width: 30%;
+}
+#telefono{
+    width: 30%;
+}
+#ubicacion{
+    width: 40%;
 }
