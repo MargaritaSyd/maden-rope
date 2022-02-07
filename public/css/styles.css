@@ -34,7 +34,6 @@ main{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10%;
     
     
 }
@@ -378,7 +377,8 @@ margin-left: 32% ; */
     background-color: #342434;
 }
 .doma-text{
-    color: #6aa2a3;
+    font-family: courier;
+    color: whitesmoke;
 }
 .contenido-pension{
     display: flex;
@@ -397,7 +397,7 @@ margin-left: 32% ; */
 }
 #contenido-parrafo-jornadas{
     width: 50%;
-    color: #86899c;
+    color: whitesmoke;
     font-size: smaller;
     margin-left: 5%;
     margin-top: 3%
@@ -405,8 +405,9 @@ margin-left: 32% ; */
 
 #contenido-parrafo-doma{
     width: 50%;
-    color: #86899c;
+    color: whitesmoke;
     font-size: smaller;
+    margin-top: 5%;
     
 }
 #texto-desarrollo{
@@ -457,6 +458,10 @@ margin-left: 32% ; */
  
 }
 
+#titulo-vision{
+    margin-top: 5%;
+}
+
 .arrowConteiner{
     display: flex;
     width: 30%;
@@ -484,4 +489,15 @@ margin-left: 32% ; */
 }
 #ubicacion{
     width: 40%;
+}
+.jornadas-text{
+    margin-top: 5%;
+}
+
+#titulo-pension{
+    margin-bottom: 5%;
+}
+
+#texto-pension{
+    margin-top: 5%;
 }
