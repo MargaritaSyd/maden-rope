@@ -13,6 +13,8 @@ const notAdmin = require("../middlewares/notAdmin");
 
 const { index } = require('../controller/indexController');
 
+router.get('/' , indexController.lamorita);
+
 router.get('/productos' , indexController.indexProducts);
 
 router.get('/error', indexController.error);
@@ -41,15 +43,13 @@ router.get("/user/logout" , indexController.logout);
 
 router.get("/user/cart" , notLogged , indexController.cart);
 
-//router.post("/checkout" , indexController.checkout)
+//router.post("/checkout" , indexController.checkout)---------> MERCADO PAGO
 
 
-router.get('/' , indexController.lamorita);
 
 router.get('/productos/talles' , indexController.talles)
 
 router.get('/productos/como_comprar' , indexController.compra)
-//router.get('/one_product/:id' , indexController.oneProduct)
 
 router.get("/whatsapp" , indexController.whatsapp)
 

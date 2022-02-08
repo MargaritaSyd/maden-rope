@@ -13,6 +13,11 @@ const { array } = require('../middlewares/productMiddleware');
 
 let indexController = {
     
+    lamorita: (req,res) => {
+        res.render("indexLaMorita")
+    },
+
+
      indexProducts: function(req,res){
          db.product.findAll()
          .then(function(productos){
@@ -46,13 +51,6 @@ let indexController = {
             imagePath.push(imageProduct[i].filename)
              
          }}
-
-        // console.log(imagePath[4])
-         
-
-        //   else {
-        //       imagesPath = "";
-        //   }
        
         db.product.create(
             {
@@ -88,7 +86,6 @@ let indexController = {
         if(req.body.prices){
            let prices = req.body.prices
            
-      //  let product = db.product.findAll() 
         db.product.findAll()
         .then(function(products){
             let theId
@@ -100,7 +97,6 @@ let indexController = {
                 thePrice = products[i].price
                 porcent = thePrice * prices
                 final = thePrice + porcent
-                //console.log(theId)
                 db.product.update(
                     {
                         price: final,
@@ -111,7 +107,7 @@ let indexController = {
            
         })
         .then(function(){
-            res.redirect('/')
+            res.redirect('/productos')
         })
         .catch(function(e){
             res.send("error")
@@ -129,7 +125,6 @@ let indexController = {
             imagePath.push(imageProduct[i].filename)
              
          }
-        //    fs.unlinkSync(path.join(__dirname+'../../../public/img/productImages/'+ imgProduct));
         }
         let product = db.product.findByPk(req.params.id) 
          db.product.update(
@@ -148,7 +143,7 @@ let indexController = {
                 where: {id: req.params.id}
             })
             .then(function(){
-                res.redirect('/')
+                res.redirect('/productos')
             })
             .catch(function(e){
                 res.send("error")
@@ -156,7 +151,11 @@ let indexController = {
         }
     },
 
-    
+    prices: (req,res) => {
+        let number = req.body
+        console.log(number)
+    },
+
     detail: function(req,res){
         let userToLog = req.session.user
         let product = db.product.findByPk(req.params.id);
@@ -257,7 +256,6 @@ let indexController = {
             let items = [];
     
             for(let i=0; i<req.body.name.length && i<req.body.price.length && i<req.body.quantity.length; i++){
-             //   items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
              items.push( new Object (req.body.name[i] , parseInt(req.body.price[i]) ,parseInt(req.body.quantity[i])));
         
             }
@@ -325,9 +323,6 @@ let indexController = {
      },
 
     
-    lamorita: (req,res) => {
-        res.render("lamoritaPrueba")
-    },
 
     talles: (req,res) => {
         res.render("tablaDeTalles")
@@ -341,6 +336,8 @@ let indexController = {
         res.redirect("https://api.whatsapp.com/send?phone=5491134223248&text=Hola!%20Quiero%20comprar%20todo!")
     },
 
+    // Registro de compras:
+    /*
     shoppingRecord: (req,res)=>{
         let userToLog = req.session.user;
 
@@ -380,7 +377,7 @@ let indexController = {
         }
 
     },
-
+*/
    allSalesApi: (req , res) => {
         db.sales.findAll({include: [{association: "user"}] })
         .then (sales => {
@@ -414,20 +411,16 @@ let indexController = {
              })
          })
     },
+    
+    //----------Dashboard de ventas
+/*
 
     salesDashboard: (req,res) => {
-    //    fetch("http://localhost:8000/api/sales")
-    //     .then(r => r.json())
-    //     .then(sales => {
+    
             res.render("salesDashboard")
-     //   })
         
     },
     salesDashboardPost: (req,res)=>{
-
-  //      let delivered = req.body;
-
-   //    console.log(delivered)
 
   let delivered = req.body.delivered;
         if(Array.isArray(delivered) == true){
@@ -461,25 +454,13 @@ let indexController = {
       }
 
       },
+
+*/
       allProducts: (req,res)=> {
           res.render("productsPrueba")
       },
-      /*
-      allProducts: (req,res)=> {
-        db.product.findAll()
-        .then(function(productos){
-           let productosC1 = productos.filter(productos=>productos.id_category==1);
-           let productosC2 = productos.filter(productos=>productos.id_category==2);
-           let productosC3 = productos.filter(productos=>productos.id_category==3);
-           res.render("products" , {productosC1,productosC2,productosC3})
-        })
-      },
-*/
-      prices: (req,res) => {
-          let number = req.body
-          console.log(number)
-      },
-
+      
+ 
       allproductsApi: (req,res) => {
         db.product.findAll({include: [{association: "category"}] })
        //db.product.findAll()

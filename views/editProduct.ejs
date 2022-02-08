@@ -14,7 +14,7 @@
     <main id="login-main">
       <button id="allProductsPrices" type="button" class="btn btn-primary">Prices</button>
         <h1> Editar producto</h1>
-        <form id="formEditProduct" action="/edit/<%=product.id%>" method="POST" enctype="multipart/form-data">
+        <form id="formEditProduct" action="/productos/edit/<%=product.id%>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value="<%=product.name%>">
@@ -34,7 +34,7 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Cambiar todos los precios %</label>
-              <input type="hidden" class="form-control" id="inputPrices" name="prices">
+              <input type="number" class="form-control" id="inputPrices" name="prices">
           </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Descripción</label>
@@ -61,7 +61,7 @@
               <label class="input-group-text" for="inputGroupFile02">Upload</label>
           </div>
 
-          <p>No querés cambiar las imagenes? No cargues ningún archivo! </p>
+          <p >No querés cambiar las imagenes? No cargues ningún archivo! </p>
             <label> Querés eliminar el producto? Stock = 0  </label> 
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Stock</label>
