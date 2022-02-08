@@ -13,13 +13,13 @@ const { array } = require('../middlewares/productMiddleware');
 
 let indexController = {
     
-     index: function(req,res){
+     indexProducts: function(req,res){
          db.product.findAll()
          .then(function(productos){
             let productosC1 = productos.filter(productos=>productos.id_category==1);
             let productosC2 = productos.filter(productos=>productos.id_category==2);
             let productosC3 = productos.filter(productos=>productos.id_category==3);
-            res.render("indexPrueba" , {productosC1,productosC2,productosC3})
+            res.render("indexProducts" , {productosC1,productosC2,productosC3})
          })
      },
 
@@ -163,7 +163,7 @@ let indexController = {
         let category = db.category.findAll();
         Promise.all([product,category])
         .then(function([product,category]){
-            res.render("detailPrueba", {product, category, userToLog})
+            res.render("detailProducts", {product, category, userToLog})
         })
         
     },

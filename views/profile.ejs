@@ -14,16 +14,12 @@
        
         <nav id="navbar">
             
-        
-            
-        <a href="/user/login"><button type="button" class="btn btn-outline-secondary">Ingresar</button></a>    
-        <a href="/user/cart"><button type="button" class="btn btn-outline-secondary">Shop</button></a>
-        <a href='/lamorita'><button type="button" class="btn btn-outline-success">Nosotros</button></a>
-        <a href='/talles'><button type="button" class="btn btn-outline-success">Tabla de talles</button></a>
-        <a href='/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
-        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
-        <div id="clickFav"><i class="fas fa-heart fa-2x"></i></div>
-        
+              
+          <a href='/productos'><button type="button" class="btn btn-outline-light">Productos</button></a>
+          <a href='/productos/talles'><button type="button" class="btn btn-outline-light">Tabla de talles</button></a>
+          <a href='/productos/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
+          <div id="clickFav"><i class="fas fa-heart fa-2x"></i></div>
+       
         </div>
     </nav>
        
@@ -38,14 +34,14 @@
    
     </header>  
     <main>
-    <h1> Bienvenid@ <%= userToLog.user_name%></h1>
-
-  <img src="/img/userImages/<%=userToLog.user_image%>">
+    <h1 style="color:whitesmoke"> Bienvenid@ <%= userToLog.user_name%></h1>
  
 
   <% if(userToLog.admin==0){%>  
-    <a href="/create"> <button class="btn btn-primary" id="logout" type="submit">Crear producto</button></a>
-    <button id="allProductsPrices" type="button" class="btn btn-primary">Prices</button>
+    <div id="profile-admin-conteiner">
+      <a href="/create"> <button class="btn btn-primary" id="logout" type="submit">Crear producto</button></a>
+      <button id="allProductsPrices" type="button" class="btn btn-primary">Prices</button>
+    </div>
     <%}%>
   <div class="d-grid gap-2">
     <form action="/user/logout" method="GET">

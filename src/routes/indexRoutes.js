@@ -13,19 +13,19 @@ const notAdmin = require("../middlewares/notAdmin");
 
 const { index } = require('../controller/indexController');
 
-router.get('/' , indexController.index);
+router.get('/productos' , indexController.indexProducts);
 
 router.get('/error', indexController.error);
 
-router.get('/detail/:id' , indexController.detail)
+router.get('/productos/detail/:id' , indexController.detail)
 
-router.get('/create' , indexController.create);
+router.get('/productos/create' , indexController.create);
 
-router.post('/create' , fileUploadProduct.array("image_product", 10) , indexController.newProduct);
+router.post('/productos/create' , fileUploadProduct.array("image_product", 10) , indexController.newProduct);
 
-router.get('/edit/:id' ,notAdmin, indexController.edit);
+router.get('/productos/edit/:id' ,notAdmin, indexController.edit);
 
-router.post('/edit/:id' , fileUploadProduct.array('image_product', 10)  , indexController.editProduct);
+router.post('/productos/edit/:id' , fileUploadProduct.array('image_product', 10)  , indexController.editProduct);
 
 router.get('/user/register' , logged , indexController.register);
 
@@ -41,26 +41,26 @@ router.get("/user/logout" , indexController.logout);
 
 router.get("/user/cart" , notLogged , indexController.cart);
 
-router.post("/checkout" , indexController.checkout)
+//router.post("/checkout" , indexController.checkout)
 
 
-router.get('/lamorita' , indexController.lamorita);
+router.get('/' , indexController.lamorita);
 
-router.get('/talles' , indexController.talles)
+router.get('/productos/talles' , indexController.talles)
 
-router.get('/como_comprar' , indexController.compra)
+router.get('/productos/como_comprar' , indexController.compra)
 //router.get('/one_product/:id' , indexController.oneProduct)
 
 router.get("/whatsapp" , indexController.whatsapp)
 
-router.get("/sales_dashboard" ,notAdmin, indexController.salesDashboard)
-router.post("/sales_dashboard" , indexController.salesDashboardPost)
+//router.get("/sales_dashboard" ,notAdmin, indexController.salesDashboard)
+//router.post("/sales_dashboard" , indexController.salesDashboardPost)
 
-router.get("/all_products" , indexController.allProducts)
+router.get("/productos/all_products" , indexController.allProducts)
 
-router.post("/all_products" , indexController.prices)
+router.post("/productos/all_products" , indexController.prices)
 
-router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
+//router.get("/user/registro_compras" , notLogged , indexController.shoppingRecord);
 router.get('/api/sales' , indexController.allSalesApi);
 router.get('/api/products' , indexController.allproductsApi);
 

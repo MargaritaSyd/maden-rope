@@ -355,7 +355,6 @@ margin-left: 32% ; */
     margin-left: 25%;
     padding-top: 2%;
     border-radius: 55%;
-    height: 80%;
     margin-top: 10%;
 
 }
@@ -511,4 +510,13 @@ margin-left: 32% ; */
 }
 #text-firma{
     margin-top: 3% ;
+}
+#profile-admin-conteiner{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    justify-content: space-between;
+    width: 30%;
 }

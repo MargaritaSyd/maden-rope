@@ -16,12 +16,9 @@
             
         
             
-        <a href="/user/login"><button type="button" class="btn btn-outline-light">Ingresar</button></a>    
-        <a href="/user/cart"><button type="button" class="btn btn-outline-light">Shop</button></a>
-        <a href='/lamorita'><button type="button" class="btn btn-outline-light">Conocenos</button></a>
-        <a href='/talles'><button type="button" class="btn btn-outline-light">Tabla de talles</button></a>
-        <a href='/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
-        <a href="#"><button type="button" class="btn btn-outline-light">Preguntas frecuentes</button></a>
+        <a href='/'><button type="button" class="btn btn-outline-light">Conocenos</button></a>
+        <a href='/productos/talles'><button type="button" class="btn btn-outline-light">Tabla de talles</button></a>
+        <a href='/productos/como_comprar'><button type="button" class="btn btn-outline-light">Cómo comprar</button></a>
         <div id="clickFav"><i class="fas fa-heart fa-2x"></i></div>
         
         </div>
@@ -82,13 +79,13 @@
                 </div>
                 
             <% for(let i=0; i<productosC1.length; i++){%>
-                
+                <% if(productosC1[i].stock != 0) { %>
                 <div class="card bg-dark text-white product productConteiner">
-                    <a class="lightbox" href="/detail/<%=productosC1[i].id%>">
+                    <a class="lightbox" href="/productos/detail/<%=productosC1[i].id%>">
                     <% if(productosC1[i].image_product){%>
                         <img class="imgCat" src="/img/productImages/<%=productosC1[i].image_product%>" > 
                     <%}else{%>
-                        <img class="imgCat" src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo_made_in_rope.png" >
                     <%}%>
                     <div class="overlayCat">
                         <div class="text"><%= productosC1[i].name %></div>
@@ -96,7 +93,7 @@
                     </a>
                     
                 </div>
-                
+                <%}%>
             <%}%>
             </div>
             <div class="category-product">
@@ -104,8 +101,10 @@
                     <img src="/img/frontEnd/index-riendas.png" alt="Riendas" class= "subtitulo">
                 </div>
             <% for(let i=0; i<productosC2.length; i++){%>
+                <% if(productosC2[i].stock != 0) { %>
+
                 <div class="card bg-dark text-white product productConteiner">
-                    <a class="lightbox" href="/detail/<%=productosC2[i].id%>">
+                    <a class="lightbox" href="/productos/detail/<%=productosC2[i].id%>">
                     <% if(productosC2[i].image_product){%>
                         <img class="imgCat" src="/img/productImages/<%=productosC2[i].image_product%>" > 
                     <%}else{%>
@@ -114,9 +113,9 @@
                     <div class="overlayCat">
                         <div class="text"><%= productosC2[i].name %></div>
                     </div>
-                    </a>
-                    
+                    </a>    
                 </div>
+                <%}%>
             <%}%>
             </div>
             <div class="category-product">
@@ -125,12 +124,13 @@
                 </div>
 
             <% for(let i=0; i<productosC3.length; i++){%>
+                <% if(productosC3[i].stock != 0) { %>
                 <div class="card bg-dark text-white product productConteiner">
-                    <a class="lightbox" href="/detail/<%=productosC3[i].id%>">
-                    <% if(productosC1[i].image_product){%>
+                    <a class="lightbox" href="/productos/detail/<%=productosC3[i].id%>">
+                    <% if(productosC3[i].image_product){%>
                         <img class="imgCat" src="/img/productImages/<%=productosC3[i].image_product%>" > 
                     <%}else{%>
-                        <img class="imgCat" src="/img/logo.jpg" >
+                        <img class="imgCat" src="/img/logo_made_in_rope.png" >
                     <%}%>
                     <div class="overlayCat">
                         <div class="text"><%= productosC3[i].name %></div>
@@ -138,6 +138,7 @@
                     </a>
                     
                 </div>
+                <%}%>
             <%}%>
             </div>
         
