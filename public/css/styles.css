@@ -199,6 +199,7 @@ main{
     max-width:100%;
     height: auto;
     text-align:left;
+    margin-top: 5%;
 
 }
 .imagenCategoria{
@@ -285,6 +286,7 @@ main{
     display:flow-root;
     border-color:#6AA2A3;
     border-width: 4px;
+    color: #6AA2A3
 
 }
 
@@ -551,4 +553,12 @@ margin-left: 32% ; */
     justify-content: center;
     margin-bottom: 5%;
     margin-top: 5%;
+}
+#contenedor-talles{
+    display: flex;
+    flex-wrap: nowrap;
+}
+#size-img{
+    width: 40%;
+    height: auto;
 }
