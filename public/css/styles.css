@@ -447,6 +447,7 @@ margin-left: 32% ; */
 #vision-conteiner-img{
     width: 50%;
     margin-top: 5%;
+    
 }
 #vision-conteiner-text{
     width: 50%;
@@ -533,4 +534,21 @@ margin-left: 32% ; */
 }
 #vision-subt{
     margin-bottom: 5%;
+}
+.box-shadow{
+    box-shadow: 4px 3px 17px 3px #000000;
+}
+#logo-banner{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    
+}
+#logoImg{
+    width: 85%;
+    height: auto;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
