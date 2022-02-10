@@ -63,14 +63,16 @@
                     <img src="/img/laMorita/vision-banner.png" height="200px">
                 </div>
                 <!-- vision -->
-                <h4 class="doma-text"> Nos dedicamos al trabajo y entrenamiento de los caballos desde una mirada integral </h4>
-                <h4 class="doma-text"> Para lograr los mejores resultados es necesario cumplir con cinco pilares fundamentales</h4>
-                <h2 class="doma-text" id="titulo-vision"> UNA MIRADA INTEGRAL CON BASE EN EL BIENESTAR EQUINO</h2>
+                <div id="vision-subt">
+                    <h4 class="doma-text"> Nos dedicamos al trabajo y entrenamiento de los caballos desde una mirada integral </h4>
+                    <h4 class="doma-text"> Para lograr los mejores resultados es necesario cumplir con cinco pilares fundamentales</h4>
+                </div>
+                <h2 class="doma-text" class="titulo-vision"> UNA MIRADA INTEGRAL CON BASE EN EL BIENESTAR EQUINO</h2>
                <div id="visionButton">
-                    <a><button type="button" class="btn btn-outline-light">Alimentación</button></a>
-                    <a><button type="button" class="btn btn-outline-light">Plan sanitario</button></a>
-                    <a><button type="button" class="btn btn-outline-light">Desvase</button></a>
-                    <a><button type="button" class="btn btn-outline-light">Vinculo y confianza</button></a>
+                    <a><button id='nextClick' type="button" class="btn btn-outline-light">Alimentación</button></a>
+                    <a><button id='nextClick2' type="button" class="btn btn-outline-light">Plan sanitario</button></a>
+                    <a><button id="nextClick3" type="button" class="btn btn-outline-light">Desvase</button></a>
+                    <a><button id="nextClick4" type="button" class="btn btn-outline-light">Vinculo y confianza</button></a>
                 </div>
                 <div id="conteiner-vision">
                     <div id="vision-conteiner-img">
@@ -86,16 +88,14 @@
                         <div id="visionClick4" class=" text-white carousel-laMorita productConteiner">
                             <img class="imgCat" src="/img/laMorita/manejo.png" > 
                         </div>
-                        <div id="visionClick5" class=" text-white carousel-laMorita productConteiner">
-                            <img class="imgCat" src="/img/laMorita/vinculo.png" > 
-                        </div>
+                        
                     </div>
                     <div id="vision-conteiner-text">    
                         <div id="visionTextClick" class="doma-text">
                             <h2 > Buena alimentación</h2>
                             <h4 > Forraje de calidad</h4>
                             <h4> en multiples franjas horarias</h4>
-                            <h4> optimizando el proceso digestivo</h4>
+                            <h4> optimizando el proceso digestivo</h4> 
                         </div>
                         
                         <div id="visionTextClick2" class="doma-text">
@@ -111,35 +111,14 @@
                         </div>
                         
                         <div id="visionTextClick4" class="doma-text" >
-                            <h2 > Buen manejo</h2>
+                            <h2 > Vínculo y confianza</h2>
                             <h4 > El trato diario con el caballo</h4>
                             <h4> es tan importante </h4>
                             <h4> como lo que sucede en el corral redondo </h4>
-                        </div>
-
-                        <div id="visionTextClick5" class="doma-text" >
-                            <h2 > Vínculo y confianza</h2>
                             <h4 > Por medio de la confianza y el respeto</h4>
                             <h4> logramos un caballo colaborador</h4>
                             <h4> Trabajamos de forma progresiva y no violenta</h4>
                         </div>
-                    </div>
-                </div>
-                <div class="arrowConteiner">
-                    <div class="arrow-Conteiner">
-                        <img id="nextClick" class="arrowNext" src="img/laMorita/arrow.png" >
-                    </div>
-                    <div class="arrow-Conteiner">
-                        <img id="nextClick2" class="arrowNext" src="img/laMorita/arrow.png" >
-                    </div>
-                    <div class="arrow-Conteiner">
-                        <img id="nextClick3" class="arrowNext" src="img/laMorita/arrow.png" >
-                    </div>
-                    <div class="arrow-Conteiner">
-                        <img id="nextClick4" class="arrowNext" src="img/laMorita/arrow.png" >
-                    </div>
-                    <div class="arrow-Conteiner">
-                        <img id="nextClick5" class="arrowNext" src="img/laMorita/arrow.png" >
                     </div>
                 </div>
             </div>
@@ -175,7 +154,7 @@
                     <img src="/img/laMorita/jornadas-banner.png"  height="200px">
                 </div>
                 <div>
-                    <h2 class="doma-text"> DIA DE CAMPO EDUCATIVO</h2>
+                    <h2 class="doma-text" class="titulo-vision"> DIA DE CAMPO EDUCATIVO</h2>
                     <h4 class="doma-text"> Trabajo en equipo, respeto, paciencia, concentración y calma</h4>
                 </div>
             </div>
@@ -214,7 +193,7 @@
                 <div class="subtitulo-categoria">
                     <img src="/img/laMorita/banner-cab.png"  height="200px">
                 </div>
-                
+              
                 <div id="carouselClick" class="card bg-dark text-white carousel-laMorita productConteiner">
                     <img class="imgCat" src="/img/laMorita/cabaña/cabaña_H.jpeg"  > 
                     
@@ -236,8 +215,10 @@
                 </div>
            
             </div>
-            <div class="doma-text" id="texto-pension">
-                <h2 > Escapate</h2>
+            <div class="doma-text">
+                
+                <h2 class="doma-text titulo-vision" > ESCAPATE </h2>
+                
                 
                 <h4 > Ya sea en pareja o con amigos tenemos el espacio perfecto para salir de la rutina y reconectar con la naturaleza</h4>
                 
@@ -248,8 +229,6 @@
                 <div class="subtitulo-categoria">
                     <img src="/img/laMorita/pensiones-banner.png"  height="200px">
                 </div>
-
-                <h2 class="doma-text" id="titulo-pension" > PENSION A CAMPO - PIQUETE - BOX CON PADDOK</h2>
 
                 <div id="imagenes-pension">
                     <div id="pensionClick" class=" text-white carousel-laMorita productConteiner">
@@ -300,6 +279,8 @@
                     </div>
            
                     <div class="doma-text" id="texto-pension">
+                        <h2 class="doma-text titulo-vision" > PENSION A CAMPO - PIQUETE - BOX CON PADDOK</h2>
+
                         <h4 > Corrales redondos - Pista de obstáculos</h4>
                         
                         <h4 > Pista de trial - Pista de vareo perimetral</h4>
@@ -318,7 +299,7 @@
 
                 <div class="contenido-pension">
                     <div id="contenido-parrafo-doma" class="doma-text">
-                        <h2 >ENTRENAMIENTO Y AMANCE </h2>
+                        <h2 class="titulo-vision">ENTRENAMIENTO Y AMANCE </h2>
                         <h4> <i>"La doma es la Iniciación a la carrera deportiva de cualquier caballo"</i></h4>
                         <h4 >PROGRAMA DE 3-6-12 MESES Y PERSONALIZADOS </h4>
                         <h6> Iniciación de potros </h6>
@@ -398,11 +379,18 @@
                     
                 </div>
             </div>
+                <div class="doma-text" >
+                    <h2 class="doma-text titulo-vision" > CLASES Y CURSOS</h2>
+    
+                    <h4 > Doma - Equitación - Manejo y vinculo - Personalizados</h4>
+                </div>
+            
             <div id="banner-productos">
                 <a class="lightbox" href="/productos">
                 <img src= "/img/laMorita/banner-productos.png" width="70%">
                 </a>
             </div>
+            
     </main>
     <footer>
        
