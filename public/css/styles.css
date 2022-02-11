@@ -562,3 +562,41 @@ margin-left: 32% ; */
     width: 40%;
     height: auto;
 }
+
+@media only screen and (max-width: 600px){
+    /* #detail-img{
+        width: 50%;
+
+    }
+    .thumb-img-content{
+        width: 50%
+    
+    }
+    .thumb-img{
+        width: 30%;
+    } */
+    #img-conteiner{
+        width: 90%;
+    }
+    #detail-conteiner{
+        flex-direction: column;
+    }
+    .thumb-img-content{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    
+    }
+    .thumb-img{
+        width: 30%;
+    }
+    #foot{
+        width: 90%;
+
+    }
+    #logo-maden{
+        width: 50%;
+        height: auto;
+    }
+}
