@@ -8,6 +8,9 @@ main{
     background-color: #1D1B28;
     color: whitesmoke;
 }
+#max700{
+    display: none;
+}
 
 #formRegister{
     width: 80%;
@@ -660,5 +663,11 @@ margin-left: 32% ; */
     }
     .imagenes-pension{
         margin-left: 0%;
+    }
+    #max700{
+        display: inline;
+    }
+    #min700{
+        display: none;
     }
 }
