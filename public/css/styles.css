@@ -650,7 +650,17 @@ margin-left: 32% ; */
     #ubicacion{
         width: auto;
     }
+
 }
+@media only screen and (max-width: 1000px){
+    #max700{
+        display: inline; 
+    }
+    #min700{
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 900px){
     .contenido-pension{
         display: inline;
@@ -664,12 +674,12 @@ margin-left: 32% ; */
     .imagenes-pension{
         margin-left: 0%;
     }
-    #max700{
-        display: inline;
+    /* #max700{
+        display: inline; 
     }
     #min700{
         display: none;
-    }
+    } */
 }
 @media only screen and (min-width: 900px){
     #telefono{
