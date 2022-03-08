@@ -50,6 +50,12 @@ main{
     justify-content: center;
     
 }
+
+#image-logo{
+    width:50%;
+    
+
+}
 .category-product{
     display: flex;
     flex-wrap: wrap;
