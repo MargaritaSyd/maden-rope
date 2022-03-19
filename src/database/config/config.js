@@ -18,8 +18,8 @@ module.exports = {
     
   },
   "production": {
-    "username": "root",
-    "password": "",
+    "username": "root_lamorita",
+    "password": "laMoritaEcuestre2022",
     "database": "made-in-rope-db",
     "host": "120.0.0.1",
     "dialect": "mysql",
